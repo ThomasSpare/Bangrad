@@ -1,1 +1,1 @@
-web: gunicorn SPOTIFY_SEARCH.wsgi
+web: gunicorn SPOTIPY_SEARCH.wsgi
