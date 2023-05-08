@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <title>Title</title>
+</head>
+
+<body>
+
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Song Key Search</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter a key A, B#, F">
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Song By Tempo</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter a tempo 90, 120">
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script') }}"></script>
+    <!-- both url_for links are only for my own css and js that will be stored in respective folders-->
+    <!-- files and images, folders not for bootstrap. see video RDBMS 19 (3:00)  -->
+</body>
+
+</html>

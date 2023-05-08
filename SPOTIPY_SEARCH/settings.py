@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 
-# Quick-start development settings - unsuitable for production
+# Quick-start development settings - unsuitable for produfallction
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -32,12 +32,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['bangrad.herokuapp.com']
-
-
+ALLOWED_HOSTS = ['bangrad.herokuapp.com', 'localhost', ' *'
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_APPS= [INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -50,7 +48,7 @@ INSTALLED_APPS = [
     'SPOTIPY_APP',
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE= [MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -60,9 +58,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'SPOTIPY_SEARCH.urls'
+ROOT_URLCONF= 'SPOTIPY_SEARCH.urls'ROOT_URLCONF = 'SPOTIPY_SEARCH.urls'
 
-TEMPLATES = [
+TEMPLATES= [TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [TEMPLATES_DIR],
@@ -78,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'SPOTIPY_SEARCH.wsgi.application'
+WSGI_APPLICATION= 'SPOTIPY_SEARCH.wsgi.application'WSGI_APPLICATION = 'SPOTIPY_SEARCH.wsgi.application'
 
 
 # Database
@@ -91,7 +89,7 @@ WSGI_APPLICATION = 'SPOTIPY_SEARCH.wsgi.application'
 #    }
 # }
 
-DATABASES = {
+DATABASES= {DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
@@ -99,7 +97,7 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
-AUTH_PASSWORD_VALIDATORS = [
+AUTH_PASSWORD_VALIDATORS= [AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
@@ -118,29 +116,29 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE= 'en-us'LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE= 'UTC'TIME_ZONE = 'UTC'
 
-USE_I18N = True
+USE_I18N= TrueUSE_I18N = True
 
-USE_L10N = True
+USE_L10N= TrueUSE_L10N = True
 
-USE_TZ = True
+USE_TZ= TrueUSE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILE_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = ospath.join(BASE_DIR, 'staticfiles')
 
-MEDIA_URL = '/media/'
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+STATIC_ROOT= os.path.join(BASE_DIR, 'staticfiles')
+DEFAULT_FLE_STORAGE'
+DEFAULT_FILE_STORAGE= 'cloudinary_storage.storage.MediaCloudinaryStorage = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD= 'django.db.models.BigAutoField'DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
