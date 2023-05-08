@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-thomasspare-spotipy-sear-ihv4ctt8l4.us2.codeanyapp.com']
+ALLOWED_HOSTS = ['bangrad.herokuapp.com']
 
 
 # Application definition
