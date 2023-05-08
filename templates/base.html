@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,20 +12,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-    <title>Title</title>
+    <title>Bangers Radical Track Search</title>
 </head>
 
 <body>
-
+    <!-- Key tempo form -->
     <div class="mb-3">
-        <label for="formGroupExampleInput" class="form-label">Song Key Search</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter a key A, B#, F">
+        <label for="formGroupExampleInput" class="form-label">Track Key Search</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter key A, B#, F">
     </div>
     <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Song By Tempo</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter a tempo 90, 120">
+        <label for="formGroupExampleInput2" class="form-label">Track By Tempo</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter tempo 90, 120">
     </div>
-
+    <!---- end key tempo form -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="{{ url_for('static', filename='js/script') }}"></script>
