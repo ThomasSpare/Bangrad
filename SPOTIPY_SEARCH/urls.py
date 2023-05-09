@@ -18,6 +18,5 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("", include("SPOTIPY_SEARCH.urls"), name="SPOTIPY_SEARCH-urls"),
+    path('admin/', admin.site.urls)
 ]
