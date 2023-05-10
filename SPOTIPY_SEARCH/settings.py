@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
+import spotipy
+from spotipy.oauth2 import SpotifyClientCredentials
+
+
 import dj_database_url
 if os.path.isfile("env.py"):
     import env
@@ -20,6 +24,12 @@ if os.path.isfile("env.py"):
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+
+
+# SPOTIPY GET CREDENTIALS
+client_credentials_manager = SpotifyClientCredentials()
+sp = spotipy.Spotify(client_credentials_manager=os.environ.get('os.environ["SPOTIPY_CLIENT_ID"], ["SPOTIPY_CLIENT_SECRET"]'))
+sp.trace = True
 
 
 # Quick-start development settings - unsuitable for produfallction
@@ -42,10 +52,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'cloudinary_storage',
     'django.contrib.staticfiles',
-    'cloudinary',
-    'django_summernote',
-    'spotipy',
     'SPOTIPY_APP',
+    'cloudinary',
+    'django_summernote',    
 ]
 
 MIDDLEWARE = [
