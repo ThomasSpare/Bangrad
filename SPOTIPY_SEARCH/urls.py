@@ -19,6 +19,4 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include("SPOTIPY_SEARCH.urls"), name="SPOTIPY_SEARCH-urls"),
-    path('summernote/', include('django_summernote.urls'))
 ]
