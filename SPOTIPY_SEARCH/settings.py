@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'SPOTIPY_APP',
+    'SPOTIPY_SEARCH',
     'spotipy',
     'cloudinary',
 ]
