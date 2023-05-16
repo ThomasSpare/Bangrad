@@ -42,7 +42,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["bangrad2.herokuapp.com", "localhost"]
+ALLOWED_HOSTS = ["bangrad.herokuapp.com", "localhost"]
 # Application definition
 
 INSTALLED_APPS = [
@@ -52,7 +52,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'cloudinary_storage',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles'
+    'accounts',
     'SPOTIPY_APP',
     'spotipy',
     'cloudinary',
