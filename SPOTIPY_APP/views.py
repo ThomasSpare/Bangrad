@@ -4,7 +4,7 @@ from django.views.generic.edit import CreateView
 from .models import BangradSearchFields
 
 
-class BangradSearchFields(CreateView):
+class Search(CreateView):
  
     # specify the model for create view
     model = BangradSearchFields
