@@ -9,7 +9,7 @@ class Search(CreateView):
     # specify the model for create view
     model = BangradSearchFields
     # specify the fields to be displayed
-    fields = ['Key', 'Tempo', 'Language', 'Release_year']
+    fields = ['key', 'tempo', 'language', 'release_year']
 
 
 
