@@ -21,6 +21,9 @@ from django.urls import path, include
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("SPOTIPY_APP.urls"), name="SPOTIPY_APP-urls"),
+    path("accounts/", include("django.contrib.auth.urls"), name="accounts"),
     path("accounts/", include("allauth.urls")),
-    path("", include("blog.urls"), name="blog-urls"),
+    path("accounts/", include("django.contrib.auth.urls"), name="accounts"),
+    path("accounts/", include("accounts.urls"), name="accounts"),
 ]
+
