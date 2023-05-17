@@ -5,12 +5,8 @@ from .models import BangradSearchFields
 
 
 class Search(CreateView):
- 
+
     # specify the model for create view
     model = BangradSearchFields
-    # specify the fields to be displayed
+    template_name = "home.html"
     fields = ['key', 'tempo', 'language', 'release_year']
-
-
-
-

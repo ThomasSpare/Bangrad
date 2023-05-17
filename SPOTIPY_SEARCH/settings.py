@@ -42,8 +42,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["bangrad.herokuapp.com", "localhost", "",
-                 "8000-thomasspare-bangrad-0ebjh0e24d.us2.codeanyapp.com"]
+ALLOWED_HOSTS = ["https://bangrad.herokuapp.com/", "https://bangrad.herokuapp.com/admin/", "localhost", "",
+                 "8000-thomasspare-bangrad-5rnekwb4m9.us2.codeanyapp.com"]
 # Application definition
 
 INSTALLED_APPS = [
@@ -78,8 +78,7 @@ ROOT_URLCONF = 'SPOTIPY_SEARCH.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR + '/templates/'],
-        # added /templates/ after seeing video about it
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
