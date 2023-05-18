@@ -26,4 +26,3 @@ urlpatterns = [
     path("accounts/", include("django.contrib.auth.urls"), name="accounts"),
     path("accounts/", include("accounts.urls"), name="accounts"),
 ]
-

@@ -16,26 +16,20 @@
 
     <title>Bangers Radical Track Search</title>
 </head>
-
+<!-- Nav bar -->
 <body>
-    <!-- Key tempo form -->
-    <div class="mb-3">
-        <label for="formGroupExampleInput" class="form-label">Track Key Search</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter key A, B#, F">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">Login</div>
+            <div class="col-md-6">Header</div>
+            <div class="col-md-3">Links</div>
+        </div>
     </div>
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Track By Tempo</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter tempo 90, 120">
-    </div>
-    {% block content %}
+       {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
-    <!---- end key tempo form -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <!-- both url_for links are only for my own css and js that will be stored in respective folders-->
-    <!-- files and images, folders not for bootstrap. see video RDBMS 19 (3:00)  -->
 </body>
-
 </html>

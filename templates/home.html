@@ -1,20 +1,32 @@
 {% extends "base.html" %}
-
-{% block content %}
-<div>
-    <form method="POST" enctype="multipart/form-data">
+<!-- Search form container -->
+   {% block content %} 
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3"><a id="goto profile" href="{% url 'profile' %}">Profile</a></div>
+                <div class="col-md-6">
+                <form method="POST" enctype="multipart/form-data">
  
-    <!-- Security token -->
-    {% csrf_token %}
- 
-    <!-- Using the formset -->
-    {{ form.as_p }}
-     
-    <input type="submit" value="Submit">
-    </form>
-
-</div>
-{%endblock%}
-
-    <!-- both url_for links are only for my own css and js that will be stored in respective folders-->
-    <!-- files and images, folders not for bootstrap. see video RDBMS 19 (3:00)  -->
+                    <!-- Security token -->
+                    {% csrf_token %}
+                
+                    <!-- Using the formset -->
+                    {{ form.as_p }}
+                    
+                    <input type="submit" value="Submit">
+                    </form>       
+                </div>
+                <div class="col-md-3"><a id="goto lodge" href="{% url 'lodge' %}">Lodge</a></div>
+            </div> 
+        </div>
+<!-- Results container  -->
+  <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3"><a id="goto profile" href="{% url 'profile' %}">Profile</a></div>
+            <div class="col-md-6">Search Results</div>
+            
+            <div class="col-md-3"><a id="goto lodge" >Lodge</a></div>
+    
+        </div>
+    </div>
+    {% endblock content %}
