@@ -3,8 +3,6 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 
 
-
-
 class SpotipyAppConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'SPOTIPY_APP'
@@ -13,4 +11,3 @@ class SpotipyAppConfig(AppConfig):
 class BlogConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'blog'
-      

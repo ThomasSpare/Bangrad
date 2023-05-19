@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300;800&family=Red+Hat+Mono:ital,wght@0,300;1,300&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     <title>Bangers Radical Track Search</title>
@@ -20,14 +23,68 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3">Login</div>
-            <div class="col-md-6">Header</div>
+            <div class="col-md-3">
+
+                <!-- Sign up/ login form -->
+                {% block signup %}
+                <h2>Sign up</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Sign Up</button>
+                </form>
+                {% endblock %}
+
+
+            </div>
+            <div class="col-md-6"><h1>Bangrad</h1>
+            <h2>Radical Track Search</h2>
+        </div>
             <div class="col-md-3">Links</div>
         </div>
     </div>
+    <div class="wrapper">
        {% block content %}
+
         <!-- Content Goes here -->
+
         {% endblock content %}
+    </div>
+
+    <!-- SPOTIPY API  -->
+    <script>
+        // Authorization token that must have been created previously. See : https://developer.spotify.com/documentation/web-api/concepts/authorization
+const token = 'BQDYM8Rdv41LauO7GS-eF-YCQlUwruPq9w2wIEMA4bwj7yygWMF6iPvyK1iEscgUy9B8uEQrZ1QSNAOaIoXtP3xkFGk4dHV52cvBItAubZo25yt4dVTxfbCR-JmmCtJPB9yMK6wQsgi0uj05aRKEDogNlD_gl97qpZRsULqvQcLMMc6qDWYdQ26Ry11hKuBjta_UDAQBUXBk1I7lXKyssS04m4Zxajoe7b1VAKfCWjkbP_oUoKwEJHbFwxouB0r6Mg';
+async function fetchWebApi(endpoint, method, body) {
+  const res = await fetch(`https://api.spotify.com/${endpoint}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    method,
+    body:JSON.stringify(body)
+  });
+  return await res.json();
+}
+
+async function getTopTracks(){
+  // Endpoint reference : https://developer.spotify.com/documentation/web-api/reference/get-users-top-artists-and-tracks
+  return (await fetchWebApi(
+    'v1/me/top/tracks?time_range=short_term&limit=5', 'GET'
+  )).items;
+}
+
+const topTracks = await getTopTracks();
+console.log(
+  topTracks?.map(
+    ({name, artists}) =>
+      `${name} by ${artists.map(artist => artist.name).join(', ')}`
+  )
+);
+
+
+
+
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 

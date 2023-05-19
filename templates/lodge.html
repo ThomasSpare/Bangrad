@@ -1,18 +1,7 @@
-{% extends "base.html" %}{% block content %}
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-3"><a id="goto profile" href="{% url 'profile' %}">Profile</a></div>
-                <div class="col-md-9"><a id="goto lodge" href="{% url 'lodge' %}">Lodge</a></div>
-            </div> 
-        </div>
-<!-- Lodge container  -->
-  <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3"><a id="goto profile" href="{% url 'profile' %}">Profile</a></div>
-            <div class="col-md-9"><a id="goto lodge" >Lodge</a></div>
-    
-        </div>
-    </div>
+{% extends 'base.html' %}
+
+{% block content %}
+
 <h2 class="jumbotron">
             Currently active forums: {{count}}
             <form method="POST" action="{% url 'addInForum' %}">
@@ -38,7 +27,7 @@
                             <hr>     
                             <h4>Views from other users</h4>
                             {%for discuss in discussions%}
-                            {%for objs in discuss%}  
+                            {% for objs in discuss %}  
                             {% if objs.forum == forum %}
                                {{objs.discuss}}
                                <br>
@@ -55,10 +44,12 @@
             <br>
             
             {%endfor%}
-          
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
- {% endblock content %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ {% endblock %}
 
 
 

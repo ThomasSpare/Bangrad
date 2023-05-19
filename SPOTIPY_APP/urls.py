@@ -1,13 +1,13 @@
 from django.contrib import admin
 from . import views
 from django.urls import path, include
-from .views import Search
+from .views import Search, Lodge, LodgeTalk, AddInLodge
 
 
 urlpatterns = [
     path("home/", Search.as_view(), name="home"),
-    path("lodge/", Search.as_view(), name="lodge"),
-    path("lodgetalk/", Search.as_view(), name="lodgetalk"),
-    path("addinlodge/", Search.as_view(), name="addinlodge"),
+    path("lodge/", views.Lodge, name="lodge"),
+    path("lodgetalk/", views.LodgeTalk, name="lodgetalk"),
+    path("addinlodge/", views.AddInLodge, name="addinlodge"),
     path("profile/", Search.as_view(), name="profile"),
 ]
