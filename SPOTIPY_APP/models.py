@@ -1,7 +1,9 @@
 from django.db import models
+from django.db import CacheHandler
 from django import forms
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+import spotipy
 
 
 class BangradSearchFields(models.Model):
@@ -34,6 +36,3 @@ class Discussion(models.Model):
  
     def __str__(self):
         return str(self.forum)
-
-
-
