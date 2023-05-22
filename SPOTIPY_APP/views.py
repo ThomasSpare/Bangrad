@@ -15,27 +15,36 @@ class Search(CreateView):
     fields = ['key', 'tempo', 'language', 'release_year']
 
 
-class Lodge(request):
+def Lodge(request):
     forums = LodgeForum.objects.all()
-    template_name = "home.html"
     count = forums.count()
     discussions = []
     for i in forums:
-        context = {'forums': forums,
-                   'count': count,
-                   'discussions': discussions}
+        discussions.append(i.discussion_set.all())
+
+    context = {'forums': forums,
+               'count': count,
+               'discussions': discussions}
+    return render(request, 'Lodge.html', context)
 
 
-class AddInLodge(request):
+def AddInLodge(request):
     form = CreateInForum()
     if request.method == 'POST':
-        context = {'form': form}
-        return render(request, 'addinlodge.html', context)
-
-
-class LodgeTalk(request):
-    template_name = "lodgetalk.html"
+        form = CreateInForum(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
     context = {'form': form}
-    return render(request, 'templates/addinlodge.html', context)
-    if form.is_valid():
-        return render(request, 'templates/lodgetalk.html', context)
+    return render(request, 'AddInLodge.html', context)
+
+
+def LodgeTalk(request):
+    form = CreateInDiscussion()
+    if request.method == 'POST':
+        form = CreateInDiscussion(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    context = {'form': form}
+    return render(request, 'LodgeTalk.html', context)

@@ -43,7 +43,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ["https://bangrad.herokuapp.com/", "https://bangrad.herokuapp.com/admin/", "localhost", "",
-                 "8000-thomasspare-bangrad-5rnekwb4m9.us2.codeanyapp.com"]
+                 "8000-thomasspare-bangrad-gpkzydmywj.us2.codeanyapp.com"]
 # Application definition
 
 INSTALLED_APPS = [
@@ -61,6 +61,8 @@ INSTALLED_APPS = [
     'SPOTIPY_SEARCH',
     'spotipy',
     'cloudinary',
+    'SPOTIPY_APP_discussion',
+    'SPOTIPY_APP_lodgeforum',
 ]
 
 MIDDLEWARE = [
