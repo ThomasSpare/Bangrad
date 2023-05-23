@@ -30,9 +30,9 @@ class LodgeForum(models.Model):
 
 # Lodge child model
 class Discussion(models.Model):
-    LodgeForum = models.ForeignKey(
+    forum = models.ForeignKey(
         LodgeForum, blank=True, on_delete=models.CASCADE)
     discuss = models.CharField(max_length=1000)
 
     def __str__(self):
-        return str(self.LodgeForum)
+        return str(self.forum)

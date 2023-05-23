@@ -2,7 +2,7 @@
 
 <h2 class="jumbotron">
     Currently active forums: {{count}}
-    <form method="POST" action="{% url 'addInLodge' %}">
+    <form method="POST" action="{% url 'addinlodge' %}">
         {% csrf_token %}
         <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Add more</button>
     </form>
@@ -34,7 +34,7 @@
     {% endif %}
     {% endfor %}
     {% endfor %}
-    <form method="POST" action="{% url 'LodgeTalk' %}">
+    <form method="POST" action="{% url 'lodgetalk' %}">
         {% csrf_token %}
         <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Add more</button>
     </form>
@@ -50,4 +50,3 @@
     crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-{% endblock %}

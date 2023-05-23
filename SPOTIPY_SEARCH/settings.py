@@ -61,8 +61,6 @@ INSTALLED_APPS = [
     'SPOTIPY_SEARCH',
     'spotipy',
     'cloudinary',
-    'SPOTIPY_APP_discussion',
-    'SPOTIPY_APP_lodgeforum',
 ]
 
 MIDDLEWARE = [

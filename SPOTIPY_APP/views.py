@@ -2,9 +2,9 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic.base import View
 from django.forms import ModelForm
 from django.views.generic.edit import CreateView
-from .models import *
+from .models import spotipy, Discussion, LodgeForum, forms, User, CloudinaryField, BangradSearchFields
 from django.shortcuts import render, redirect
-from .forms import *
+from .forms import CreateInForum, CreateInDiscussion
 
 
 class Search(CreateView):
@@ -25,7 +25,7 @@ def Lodge(request):
     context = {'forums': forums,
                'count': count,
                'discussions': discussions}
-    return render(request, 'Lodge.html', context)
+    return render(request, 'lodge.html', context)
 
 
 def AddInLodge(request):
@@ -36,7 +36,7 @@ def AddInLodge(request):
             form.save()
             return redirect('/')
     context = {'form': form}
-    return render(request, 'AddInLodge.html', context)
+    return render(request, 'addinlodge.html', context)
 
 
 def LodgeTalk(request):
@@ -47,4 +47,4 @@ def LodgeTalk(request):
             form.save()
             return redirect('/')
     context = {'form': form}
-    return render(request, 'LodgeTalk.html', context)
+    return render(request, 'lodgetalk.html', context)
