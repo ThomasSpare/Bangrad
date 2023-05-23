@@ -1,36 +1,35 @@
 {% extends 'base.html' %}
 <!-- Search form container -->
-   {% block content %} 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-3"><a id="goto profile" href="{% url 'profile' %}">Profile</a></div>
-                <div class="col-md-6">
-                <form method="POST" enctype="multipart/form-data">
- 
-                    <!-- Security token -->
-                    {% csrf_token %}
-                
-                    <!-- Using the formset -->
-                    {{ form.as_p }}
-                    
-                    <input type="submit" value="Submit">
-                    </form>       
-                </div>
-                <div class="col-md-3"><a id="goto lodge" href="{% url 'lodge' %}">Lodge</a></div>
-            </div> 
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3"><a id="goto profile" href="{% url 'profile' %}">Profile</a></div>
+        <div class="col-md-6">
+            <form method="POST" enctype="multipart/form-data">
+
+                <!-- Security token -->
+                {% csrf_token %}
+
+                <!-- Using the formset -->
+                {{ form.as_p }}
+
+                <input type="submit" value="Submit">
+            </form>
         </div>
-<!-- Results container  -->
-  <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3"><a id="goto profile" href="{% url 'profile' %}">Profile</a></div>
-            <div class="col-md-6">Search Results</div>
-            
-            <div class="col-md-3"><a id="goto lodge" >Lodge</a></div>
-    
-        </div>
+        <div class="col-md-3"><a id="goto lodge" href="{% url 'lodge' %}">Lodge</a></div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    {% endblock %}
-    
+</div>
+<!-- Results container  -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3"><a id="goto profile" href="{% url 'profile' %}">Profile</a></div>
+        <div class="col-md-6">Search Results</div>
+
+        <div class="col-md-3"><a id="goto lodge">Lodge</a></div>
+
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+{%endblock%}

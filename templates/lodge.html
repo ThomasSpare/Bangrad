@@ -1,10 +1,14 @@
+{% extends 'base.html' %}
 {% load static %}
+{% block lodge %}
+
+
 
 <h2 class="jumbotron">
     Currently active forums: {{count}}
     <form method="POST" action="{% url 'addinlodge' %}">
         {% csrf_token %}
-        <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Add more</button>
+        <button class="btn btn-success" style="width:fit-content; padding: 6px; margin:14px;">Create Thread</button>
     </form>
 </h2>
 <div class="card-columns" style="padding: 10px; margin: 20px;"></div>
@@ -36,7 +40,7 @@
     {% endfor %}
     <form method="POST" action="{% url 'lodgetalk' %}">
         {% csrf_token %}
-        <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Add more</button>
+        <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Comment</button>
     </form>
 </div>
 </div>
@@ -45,8 +49,10 @@
 
 {% endfor %}
 
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% endblock %}

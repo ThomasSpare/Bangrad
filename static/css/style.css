@@ -1,94 +1,104 @@
 body {
-  background-color: rgb(242, 227, 219);
-  font-family: 'Red Hat Mono', monospace;
-  color: black;
-  
+    background-color: rgb(242, 227, 219);
+    font-family: 'Red Hat Mono', monospace;
+    color: black;
+
 }
 
 h1 {
-  font-family: 'Martian Mono', monospace;
-  font-weight: 800;
-  color: black;
+    font-family: 'Martian Mono', monospace;
+    font-weight: 800;
+    color: black;
 }
 
 h2 {
-  font-family: 'Martian Mono', monospace;
-  font-weight: 300;
-  color: black;
+    font-family: 'Martian Mono', monospace;
+    font-weight: 300;
+    color: black;
 }
+
 /* || General styles */
 
 a {
-  font-family: "Epilogue", sans-serif;
-  font-weight: 400;
+    font-family: "Epilogue", sans-serif;
+    font-weight: 400;
 }
 
 #header {
-  background-color: rgb(38, 58, 41);
-  height: 10vh;
+    background-color: rgb(38, 58, 41);
+    height: 10vh;
 }
 
 /* Navbar container  */
-body > div:nth-child(1) {
-  height: 200px;
+body>div:nth-child(1) {
+    height: 200px;
 }
 
 /* left side navbar */
-body > div:nth-child(1) > div > div:nth-child(1) {
-  height: 200px;
-  background-color: rgb(229, 124, 35);
+body>div:nth-child(1)>div>div:nth-child(1) {
+    height: 200px;
+    background-color: rgb(229, 124, 35);
 }
 
 /* middle navbar */
-body > div:nth-child(1) > div > div.col-md-6 {
-  background-color: rgb(232, 170, 66);
-  height: 200px;
-  font-family: "Epilogue", sans-serif;
-  height: 200px;
-  font-weight: 400;
+body>div:nth-child(1)>div>div.col-md-6 {
+    background-color: rgb(232, 170, 66);
+    height: 200px;
+    font-family: "Epilogue", sans-serif;
+    height: 200px;
+    font-weight: 400;
 }
+
 /* right side navbar */
-body > div:nth-child(1) > div > div:nth-child(3) {
-  height: 200px;
-  background-color: rgb(2, 84, 100);
-}
-/* Profile div */
-
-body > div:nth-child(2) > div > div:nth-child(1) {
-  height: 200px;
-  background-color: rgb(229, 124, 35);
-}
-body > div:nth-child(3) > div > div:nth-child(1) {
-  height: 1000px;
-  background-color: rgb(229, 124, 35);
-}
-/* Lodge div */
-
-body > div:nth-child(2) > div > div:nth-child(3) {
-  height: 200px;
-  background-color: rgb(2, 84, 100);
-}
-body > div:nth-child(3) > div > div:nth-child(3) {
-  height: 1000px;
-  background-color: rgb(2, 84, 100);
-}
-
-/* lodge site */
-.box {
-  border: 4px solid black;
-
-body > div:nth-child(2) > div > div:nth-child(3){
+body>div:nth-child(1)>div>div:nth-child(3) {
     height: 200px;
     background-color: rgb(2, 84, 100);
-
 }
-body > div:nth-child(3) > div > div:nth-child(3){
+
+/* Profile div */
+
+body>div:nth-child(2)>div>div:nth-child(1) {
+    height: 200px;
+    background-color: rgb(229, 124, 35);
+}
+
+body>div:nth-child(3)>div>div:nth-child(1) {
+    height: 1000px;
+    background-color: rgb(229, 124, 35);
+}
+
+/* Lodge div */
+
+body>div:nth-child(2)>div>div:nth-child(3) {
+    height: 200px;
+    background-color: rgb(2, 84, 100);
+}
+
+body>div:nth-child(3)>div>div:nth-child(3) {
     height: 1000px;
     background-color: rgb(2, 84, 100);
 }
 
 /* lodge site */
-.box{
-    border: 4px solid black;
+
+.box {
+    border: 4px solid rgb(38, 58, 41);
+}
+
+
+body>div:nth-child(2)>div>div:nth-child(3) {
+    height: 200px;
+    background-color: rgb(2, 84, 100);
+
+}
+
+body>div:nth-child(3)>div>div:nth-child(3) {
+    height: 1000px;
+    background-color: rgb(2, 84, 100);
+}
+
+/* lodge site */
+.box {
+    border: 4px solid rgb(2, 84, 100);
     margin: 0 auto;
 }
