@@ -52,16 +52,23 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'accounts',
     'allauth',
     'allauth.account',
+    'allauth.socialaccount',
     'SPOTIPY_APP',
     'SPOTIPY_SEARCH',
     'spotipy',
     'cloudinary',
 ]
+
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

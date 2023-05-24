@@ -16,13 +16,14 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import url, include
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("home/", include("accounts.urls"), name="home"),
     path("", include("SPOTIPY_APP.urls"), name="SPOTIPY_APP-urls"),
-    path("accounts/", include("django.contrib.auth.urls"), name="accounts"),
     path("accounts/", include("allauth.urls")),
-    path("accounts/", include("django.contrib.auth.urls"), name="accounts"),
-    path("accounts/", include("accounts.urls"), name="accounts"),
+    path("accounts/", include("django.contrib.auth.urls")),
+    path("accounts/", include("accounts.urls")),
 ]

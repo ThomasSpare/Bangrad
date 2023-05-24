@@ -5,6 +5,7 @@ from django.views.generic.edit import CreateView
 from .models import spotipy, Discussion, LodgeForum, forms, User, CloudinaryField, BangradSearchFields
 from django.shortcuts import render, redirect
 from .forms import CreateInForum, CreateInDiscussion
+from accounts import views as accounts_views
 
 
 class Search(CreateView):
