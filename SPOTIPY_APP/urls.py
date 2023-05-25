@@ -9,5 +9,4 @@ urlpatterns = [
     path("lodge/", views.Lodge, name="lodge"),
     path("lodgetalk/", views.LodgeTalk, name="lodgetalk"),
     path("addinlodge/", views.AddInLodge, name="addinlodge"),
-    path("profile/", Search.as_view(), name="profile"),
 ]

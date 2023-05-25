@@ -1,24 +1,35 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
 {% block addinlodge %}
 
-<head>
-    <style>
-        form {
-            border: 4px solid black;
-            margin: 0 auto;
-            padding: 40px;
-            width: fit-content;
-        }
-    </style>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" 0 />
-</head>
-
-<form action="{% url 'addinlodge' %}" method="POST">
-    {% csrf_token %} {{form.as_p}}
-    <input type="submit" class="btn btn-success" value="submit">
-</form>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
+<div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6">
+        <h2>Add a new forum thread</h2>
+        <h3>You need to add a link to the topic</h3>
+        <form action="{% url 'addinlodge' %}" method="POST">
+            <article class="media content-section">
+                <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}" />
+                <div class="media-body">
+                    <div class="article-metadata">
+                        <a class="mr-2" href="#">{{ post.author }}</a>
+                        <small class="text-muted">{{ post.date|date:"F d, Y" }}</small>
+                    </div>
+                    <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+                    <p class="article-content">{{ post.content }}</p>
+                </div>
+            </article>
+            {% csrf_token %} {{form.as_p}}
+            <input type="submit" class="btn btn-success" value="submit">
+        </form>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    </div>
+    <div class="col-md-3">
+    </div>
+</div>
+</div>
 {%endblock%}
