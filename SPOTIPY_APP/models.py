@@ -32,7 +32,7 @@ class LodgeForum(models.Model):
 class Discussion(models.Model):
     forum = models.ForeignKey(
         LodgeForum, blank=True, on_delete=models.CASCADE)
-    discuss = models.CharField(max_length=1000)
+    discuss = models.TextField(max_length=1000)
 
     def __str__(self):
         return str(self.forum)
