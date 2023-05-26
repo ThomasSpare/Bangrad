@@ -86,6 +86,7 @@ body>div:nth-child(1)>div>div:nth-child(3) {
 
 body>div.wrapper>div:nth-child(1)>div>div:nth-child(1) {
     height: 218px;
+    background-color: rgb(229, 124, 35);
 }
 
 
@@ -106,18 +107,22 @@ body>div.wrapper>div:nth-child(1)>div>div.col-md-6>form {
 body>div.wrapper>div:nth-child(2)>div>div:nth-child(1) {
     height: 600px;
     position: sticky;
+    background-color: rgb(229, 124, 35);
+
 }
 
 body>div.wrapper>div:nth-child(2)>div>div:nth-child(3) {
     height: 600px;
     position: sticky;
-    background-color: rgb(2, 84, 100);
+    background-color: rgb(2 84 100);
 }
 
 div.row {
-    background-color: rgb(242, 227, 219);
+    background-color: rgb(242 227 219 / 0%);
 
 }
+
+
 
 
 
@@ -157,7 +162,7 @@ body>div:nth-child(3)>div>div:nth-child(3) {
 
 body>div:nth-child(2)>div>div:nth-child(3) {
     height: 200px;
-    background-color: rgb(2, 84, 100);
+    background-color: rgba(2, 84, 100, 0);
 
 }
 
@@ -186,14 +191,47 @@ iframe {
 
 /* Position Results Below Search Bar */
 #song-list {
+    padding-top: 50px;
     position: absolute;
-    top: 50%;
-    left: 25%;
+    top: 65%;
+    left: 0%;
+
 }
+
+div#song-list.container {
+    z-index: 999;
+}
+
+
+#firstsongdiv,
+#secondsongdiv,
+#thirdsongdiv,
+#fourthsongdiv {
+    margin-top: 20px;
+    height: 100px;
+    margin-left: 0;
+    z-index: 99;
+}
+
+#song_0,
+#song_1,
+#song_2,
+#song_3,
+#song_4,
+#song_5,
+#song_6,
+#song_7,
+#song_8,
+#song_9,
+#song_10,
+#song_11 {
+    z-index: 0;
+}
+
 
 .buscar-caja {
     position: absolute;
-    top: 30%;
+    top: auto;
     left: 50%;
     transform: translate(-50%, -50%);
     background: #fff;

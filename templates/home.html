@@ -27,51 +27,58 @@
         <div class="col-md-6">
             {% block spotipy %}
             <!-- Spotipy Search  -->
-
-            <body>
-                <!-- Search Bar -->
-                <div class="buscar-caja">
-                    <input type="text" name="tempo" id="search-text" class="buscar-txt" placeholder="Search ....." />
-                    <a class="buscar-btn" id="search_button"> <i class="fa fa-search"></i> </a>
+            <!-- Search Bar -->
+            <div class="buscar-caja">
+                <input type="text" name="tempo" id="search-text" class="buscar-txt" placeholder="Track search....." />
+                <a class="buscar-btn" id="search_button"> <i class="fa fa-search"></i> </a>
+            </div>
+            <!-- Spotipy will Load songs into here -->
+            <div class="container" id="song-list">
+                <div class="row" id="firstsongdiv">
+                    <div id="song_0" class="col"></div>
+                    <div id="song_1" class="col"></div>
+                    <div id="song_2" class="col"></div>
                 </div>
-
-                <!-- Spotipy will Load songs into here -->
-                <div class="container" id="song-list">
-                    <div class="row">
-                        <div id="song_0" class="col"></div>
-                        <div id="song_1" class="col"></div>
-                        <div id="song_2" class="col"></div>
-                    </div>
-                    <div class="row">
-                        <div id="song_3" class="col"></div>
-                        <div id="song_4" class="col"></div>
-                        <div id="song_5" class="col"></div>
-                    </div>
-                    <div class="row">
-                        <div id="song_6" class="col"></div>
-                        <div id="song_7" class="col"></div>
-                        <div id="song_8" class="col"></div>
-                    </div>
-                    <div class="row">
-                        <div id="song_9" class="col"></div>
-                        <div id="song_10" class="col"></div>
-                        <div id="song_11" class="col"></div>
-                    </div>
+                <div class="row" id="secondsongdiv">
+                    <div id="song_3" class="col"></div>
+                    <div id="song_4" class="col"></div>
+                    <div id="song_5" class="col"></div>
                 </div>
+                <div class="row" id="thirdsongdiv">
+                    <div id="song_6" class="col"></div>
+                    <div id="song_7" class="col"></div>
+                    <div id="song_8" class="col"></div>
+                </div>
+                <div class="row" id="fourthsongdiv">
+                    <div id="song_9" class="col"></div>
+                    <div id="song_10" class="col"></div>
+                    <div id="song_11" class="col"></div>
+                </div>
+            </div>
 
-                <script src="https://apis.google.com/js/platform.js"></script>
+            <script src="https://apis.google.com/js/platform.js"></script>
 
 
-                <!-- jQuery -->
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-                <!-- Latest compiled and minified Bootstrap JavaScript -->
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-                    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-                    crossorigin="anonymous"></script>
-                <!-- Loading our JavaScript -->
-                <script src="{% static 'script.js' %}" charset="utf-8"></script>
-            </body>
+            <!-- jQuery -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <!-- Latest compiled and minified Bootstrap JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+                crossorigin="anonymous"></script>
+            <!-- Loading our JavaScript -->
+            <script src="{% static 'script.js' %}" charset="utf-8"></script>
 
+
+            <!-- JavaScript to search Track with enter button -->
+            <script>
+                var input = document.getElementById("search-text");
+                input.addEventListener("keyup", function (event) {
+                    if (event.keyCode === 13) {
+                        event.preventDefault();
+                        document.getElementById("search_button").click();
+                    }
+                });
+            </script>
             {%endblock%}
         </div>
 
