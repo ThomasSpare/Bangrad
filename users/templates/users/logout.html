@@ -1,36 +1,10 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %} {% block logout %}
-
-<div class="content-section">
-    <!-- Sign up form -->
-    <form method="POST">
-        {% csrf_token %}
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Log in</legend>
-            {{ form|crispy }}
-        </fieldset>
-        <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Login</button>
-        </div>
-    </form>
-
-    <!-- Sign in form -->
-    <div class="border-top pt-3">
-        <small class="text-muted">
-            Do you need an account? <a class="ml-2" href="#">Sign up now</a>
-        </small>
-    </div>
-</div>
-{%endblock%}
 {% block content %}
-<div class="content-section">
-    <div class="media">
-        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" />
-        <div class="media-body">
-            <h2 class="account-heading">{{ user.username }}</h2>
-            <p class="text-secondary">{{ user.email }}</p>
-        </div>
-    </div>
-    <!-- FORM HERE -->
+{% load crispy_forms_tags %}
+<h2>You have been logged out</h2>
+<div class="border-top pt-3">
+    <small class="text-muted">
+        <a href="{% url 'login' %}">Log in again</a>
+    </small>
 </div>
 {% endblock content %}

@@ -32,9 +32,8 @@ $(document).ready(function () {
 
     let client_secret = 'os.environ["SPOTIPY_CLIENT_SECRET"]';
 
-    // Use the following site to convert your regular url to the encoded version:
-    // https://www.url-encode-decode.com/
-    let redirect_uri = "https%3A%2F%2F8000-thomasspare-bangrad-gpkzydmywj.us2.codeanyapp.com%2Fhome%2F"; // GitHub Pages URL or whatever your public url to this app is
+
+    let redirect_uri = "https%3A%2F%2F8000-thomasspare-bangrad-gpkzydmywj.us2.codeanyapp.com%2Fhome%2F";
     // *************** END *************************
 
     const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}`;
@@ -51,7 +50,8 @@ $(document).ready(function () {
         // Make Spotify API call
         // Note: We are using the track API endpoint.
         $.ajax({
-            url: `https://api.spotify.com/v1/search?q=${search_query}&type=track`,
+            url: `https://api.spotify.com/v1/search?q=${search_query}&audio-features/${tempo}&audio-features/${key}&audio-features/${energy}`,
+
             type: "GET",
             headers: {
                 Authorization: "Bearer " + accessToken,

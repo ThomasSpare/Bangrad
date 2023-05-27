@@ -8,5 +8,5 @@ urlpatterns = [
     path("home/", Search.as_view(), name="home"),
     path("lodge/", views.Lodge, name="lodge"),
     path("lodgetalk/", views.LodgeTalk, name="lodgetalk"),
-    path("addinlodge/", views.AddInLodge, name="addinlodge"),
+    path("addinlodge/", views.AddInLodge, name="addinlodge")
 ]

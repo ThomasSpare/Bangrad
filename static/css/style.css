@@ -35,6 +35,13 @@ h2 {
     margin: 20px;
 }
 
+
+/* Register/ Login Page */
+
+body>div.wrapper>div>div>div.col-6.col-md-6>div>form>fieldset {
+    padding: 30px;
+}
+
 /* || General styles */
 
 .form {
