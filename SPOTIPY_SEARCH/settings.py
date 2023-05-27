@@ -43,7 +43,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ["https://bangrad.herokuapp.com/", "https://bangrad.herokuapp.com/admin/", "localhost", "",
-                 "8000-thomasspare-bangrad-gpkzydmywj.us2.codeanyapp.com"]
+                 "8000-thomasspare-bangrad-7itmgtzghs.us2.codeanyapp.com"]
 # Application definition
 
 INSTALLED_APPS = [

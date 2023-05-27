@@ -30,10 +30,10 @@ $(document).ready(function () {
     // *************** REPLACE THESE VALUES! *************************
     let client_id = '343dc32e612a47cbbd658a30197599d1';
 
-    let client_secret = 'os.environ["SPOTIPY_CLIENT_SECRET"]';
+    let client_secret = '9c037b11dbe74bb6b102337a3f624c8e';
 
 
-    let redirect_uri = "https%3A%2F%2F8000-thomasspare-bangrad-gpkzydmywj.us2.codeanyapp.com%2Fhome%2F";
+    let redirect_uri = "https%3A%2F%2F8000-thomasspare-bangrad-7itmgtzghs.us2.codeanyapp.com%2Fhome";
     // *************** END *************************
 
     const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}`;
