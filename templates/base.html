@@ -27,7 +27,7 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-1 col-md-3" id="Firstcol">
+            <div class="col-md-3" id="Firstcol">
                 <div class="col-md-8">
                     {% if messages %} {% for message in messages %}
                     <div class="alert alert-{{ message.tag }}">{{ message }}</div>
@@ -35,71 +35,68 @@
                 </div>
             </div>
 
-            <div class="col-1 col-md-6 col-sm-12">
+            <div class="col-md-6">
                 <h1>Bangrad</h1>
                 <h2>Radical Track Search</h2>
-                <div class="wrapper">
-                    <nav class="navbar navbar-dark bg-dark">
-                        <a class="navbar-brand" href="{% url 'home' %}">Home</a>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav mr-auto">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="{% url 'lodge' %}">Lodge Forums<span
-                                            class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    {% if user.is_authenticated %}
-                                    <a class="nav-link" href="{% url 'profile' %}">Profile</a>
-                                    <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
-                                    {% else %}
-                                    <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
-                                    <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
-                                    {% endif %}
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Find Music
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="https://radiooooo.com/"
-                                            target="_blank">RADIOOOO</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="https://www.loudly.com/ai-recommender"
-                                            target="_blank">LOUDLY- AI</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="https://everynoise.com/" target="_blank">EVERY
-                                            NOISE</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="https://hypem.com/latest/all"
-                                            target="_blank">HYPEM</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="https://www.discogs.com/"
-                                            target="_blank">DISCOGS</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="https://open.spotify.com/"
-                                            target="_blank">SPOTIFY</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="https://tidal.com/" target="_blank">TIDAL</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="https://www.youtube.com/musicpremium"
-                                            target="_blank">YOUTUBE MUSIC</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="https://www.apple.com/apple-music/"
-                                            target="_blank">APPLE MUSIC</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="https://music.amazon.com/" target="_blank">AMAZON
-                                            MUSIC</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link disabled" href="#">Contact Us</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
+
+                <nav class="navbar navbar-dark bg-dark">
+                    <a class="navbar-brand" href="{% url 'home' %}">Home</a>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{% url 'lodge' %}">Lodge Forums<span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                {% if user.is_authenticated %}
+                                <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                                <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                                {% else %}
+                                <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                                <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                                {% endif %}
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Find Music
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="https://radiooooo.com/" target="_blank">RADIOOOO</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="https://www.loudly.com/ai-recommender"
+                                        target="_blank">LOUDLY- AI</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="https://everynoise.com/" target="_blank">EVERY
+                                        NOISE</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="https://hypem.com/latest/all"
+                                        target="_blank">HYPEM</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="https://www.discogs.com/" target="_blank">DISCOGS</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="https://open.spotify.com/"
+                                        target="_blank">SPOTIFY</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="https://tidal.com/" target="_blank">TIDAL</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="https://www.youtube.com/musicpremium"
+                                        target="_blank">YOUTUBE MUSIC</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="https://www.apple.com/apple-music/"
+                                        target="_blank">APPLE MUSIC</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="https://music.amazon.com/" target="_blank">AMAZON
+                                        MUSIC</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" href="#">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
-            <div class="col-1 col-md-3">Links</div>
+            <div class="col-md-3">Links</div>
         </div>
     </div>
     <div class="wrapper">
@@ -107,22 +104,35 @@
 
         <!-- Content Goes here -->
 
-        {% endblock%} {% block lodge %}
+        {% endblock%}
+
+        {% block lodge %}
+
         <!-- Active forums in lodge -->
 
-        {%endblock%} {% block addinlodge %}
+        {%endblock%}
+
+        {% block addinlodge %}
+
         <!-- Add new thread in lodge -->
 
-        {%endblock%} {% block lodgetalk %}
+        {%endblock%}
+
+        {% block lodgetalk %}
 
         <!-- add in discussion -->
 
-        {%endblock%} {% block profile %}
+        {%endblock%}
+
+        {% block profile %}
 
         <!-- Profile -->
 
         {%endblock%}
+
         {% block login %}
+
+        <!-- Login opens up profile area after succesful login -->
 
         {%endblock%}
 
@@ -140,6 +150,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
+
+</html>
 
 </html>
 

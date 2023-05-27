@@ -196,49 +196,21 @@ iframe {
     display: inline-block !important;
 }
 
+.center {
+    margin-left: 26vw;
+    width: 100%;
+}
+
 /* Position Results Below Search Bar */
 #song-list {
-    padding-top: 50px;
     position: absolute;
-    top: 65%;
-    left: 0%;
-
+    top: 32%;
+    margin: auto;
 }
-
-div#song-list.container {
-    z-index: 999;
-}
-
-
-#firstsongdiv,
-#secondsongdiv,
-#thirdsongdiv,
-#fourthsongdiv {
-    margin-top: 20px;
-    height: 100px;
-    margin-left: 0;
-    z-index: 99;
-}
-
-#song_0,
-#song_1,
-#song_2,
-#song_3,
-#song_4,
-#song_5,
-#song_6,
-#song_7,
-#song_8,
-#song_9,
-#song_10,
-#song_11 {
-    z-index: 0;
-}
-
 
 .buscar-caja {
     position: absolute;
-    top: auto;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: #fff;
@@ -294,3 +266,17 @@ div#song-list.container {
     color: #CB356B;
     border: none;
 }
+
+#firstsongdiv,
+#secondsongdiv,
+#thirdsongdiv,
+#fourthsongdiv {
+    height: 30px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+
+
+/* Buttons SCSS  */
