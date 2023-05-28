@@ -33,7 +33,7 @@ $(document).ready(function () {
     let client_secret = '9c037b11dbe74bb6b102337a3f624c8e';
 
 
-    let redirect_uri = "https%3A%2F%2F8000-thomasspare-bangrad-zp1umrj14x.us2.codeanyapp.com%2Fhome";
+    let redirect_uri = "https%3A%2F%2F8000-thomasspare-bangrad-5q314617lj.us2.codeanyapp.com%2Fhome";
     // *************** END *************************
 
     const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}`;
