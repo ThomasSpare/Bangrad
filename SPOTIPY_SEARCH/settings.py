@@ -47,7 +47,6 @@ ALLOWED_HOSTS = ["https://bangrad.herokuapp.com/", "https://bangrad.herokuapp.co
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.contenttypes',
     'users.apps.UsersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -56,6 +55,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'cloudinary_storage',
     'django.contrib.staticfiles',
+    'django.contrib.contenttypes',
     'crispy_forms',
     'crispy_bootstrap4',
     'allauth',
@@ -91,6 +91,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.media',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
