@@ -1,12 +1,10 @@
 # Bangrad radical music discovery
-
 Bangrad is a place for music connoisseurs, hobby musicians and anyone looking to search
 the Spotify database for a particular track based on its tempo, musical key, location, language,
 popularity, release year and more. The large spotify database, sometimes called the jukebox
 of the universe, had in fact in 2023 around 80 million tracks to choose from.
 
-
-
+![Bangrad Home page](https://github.com/ThomasSpare/Bangrad/blob/bangrad2/images/bangrad%20home.jpg)
 ## Features
 
 ### search queries
@@ -25,3 +23,4 @@ dancefloor bangers and inside this folder create more folders with names of thei
 ### The Lodge
 
 The lodge is where users can meet and exchange artists they've discovered and share their lists.
+
