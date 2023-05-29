@@ -30,9 +30,6 @@ $(document).ready(function () {
     // *************** REPLACE THESE VALUES! *************************
     let client_id = '343dc32e612a47cbbd658a30197599d1';
 
-    let client_secret = '9c037b11dbe74bb6b102337a3f624c8e';
-
-
     let redirect_uri = "https%3A%2F%2F8000-thomasspare-bangrad-5q314617lj.us2.codeanyapp.com%2Fhome";
     // *************** END *************************
 

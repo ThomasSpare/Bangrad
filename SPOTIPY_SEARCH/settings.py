@@ -38,29 +38,29 @@ sp.trace = True
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
-
+SPOTIPY_CLIENT_SECRET = os.environ.get('SPOTIPY_CLIENT_SECRET')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+
 
 ALLOWED_HOSTS = ["https://bangrad.herokuapp.com/", "https://bangrad.herokuapp.com/admin/", "localhost", "",
                  "8000-thomasspare-bangrad-5q314617lj.us2.codeanyapp.com"]
 # Application definition
 
 INSTALLED_APPS = [
-    'users.apps.UsersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'django.contrib.contenttypes',
     'crispy_forms',
     'crispy_bootstrap4',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
     'SPOTIPY_APP',
     'SPOTIPY_SEARCH',
     'spotipy',
