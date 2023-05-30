@@ -3,11 +3,13 @@ from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from django.forms import ModelForm
 from django.views.generic.edit import CreateView
-from .models import spotipy, Discussion, LodgeForum, forms, User, CloudinaryField, BangradSearchFields
+from .models import Profile, Discussion, LodgeForum, forms, User, CloudinaryField, BangradSearchFields
 from django.shortcuts import render, redirect
-from .forms import CreateInForum, CreateInDiscussion
+from .forms import UserUpdateForm, UserCreationForm, UserRegisterForm, CreateInDiscussion, CreateInForum, ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
-from .models import Profile
+from django.contrib import messages
+from django.views.decorators.clickjacking import xframe_options_exempt
+from SPOTIPY_SEARCH.settings import sp
 
 
 class Search(CreateView):
@@ -54,6 +56,7 @@ def LodgeTalk(request):
 
 
 @login_required  # user logged in before they can access profile page
+@xframe_options_exempt
 def profile(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
@@ -76,4 +79,3 @@ def profile(request):
     }
 
     return render(request, 'profile.html', context)
-

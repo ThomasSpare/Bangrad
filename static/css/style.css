@@ -17,8 +17,40 @@ h2 {
     color: black;
 }
 
+#leftcol,
+#midcol,
+#Rightcol {
+    height: 65vh;
+}
+
+#leftcol {
+    background-color: rgb(229, 124, 35);
+}
+
+#midcol {
+    background-color: rgb(242, 227, 219);
+}
+
+#Rightcol {
+    background-color: rgb(2, 84, 100);
+}
+
+
 .nav-item {
     list-style-type: none;
+}
+
+footer {
+    margin-bottom: 0%;
+}
+
+/* container above footer */
+body>div:nth-child(3) {
+    height: 500px;
+}
+
+body>div.row>div.col-md-3 {
+    height: 200px;
 }
 
 
@@ -197,20 +229,20 @@ iframe {
 }
 
 .center {
-    margin-left: 26vw;
+    margin-left: 0vw;
     width: 100%;
 }
 
 /* Position Results Below Search Bar */
 #song-list {
     position: absolute;
-    top: 32%;
-    margin: auto;
+    top: 10%;
+    margin: 0;
 }
 
 .buscar-caja {
     position: absolute;
-    top: 20%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: #fff;
@@ -271,6 +303,7 @@ iframe {
 #secondsongdiv,
 #thirdsongdiv,
 #fourthsongdiv {
+    margin-left: 0px;
     height: 30px;
     margin-top: 100px;
     margin-bottom: 20px;

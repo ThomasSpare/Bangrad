@@ -99,51 +99,96 @@
             <div class="col-md-3">Links</div>
         </div>
     </div>
-    <div class="wrapper">
-        {% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3" id="leftcol">LEFT</div>
+            <div class="col-md-6" id="midcol">
+                {% block spotipy %}
 
-        <!-- Content Goes here -->
+                {%endblock%}
+            </div>
+            <div class="col-md-3" id="Rightcol">
+                <div class="d-inline p-2 bg-primary text-white">
+                    <h2>HOW TO SEARCH</h2>
+                    Narrow down your search using filters
+                    album, artist, track, year, upc, tag:hipster, tag:new, isrc, and genre<br>
+                    <br>
+                    Example:<br>
+                    <br>
+                    techno, album:new<br>
+                    will return techno albums released within 2 weeks<br>
+                    <br>
+                    The artist and year filters can be used while searching albums, artists and tracks. You can filter
+                    on a single year or a
+                    range (e.g. 1955-1960).
 
-        {% endblock%}
+                    The album filter can be used while searching albums and tracks.
+                    The genre filter can be used while searching artists and tracks.
+                    The isrc and track filters can be used while searching tracks.
 
-        {% block lodge %}
+                    The upc, tag:new and tag:hipster filters can only be used while searching albums.
+                    The tag:new filter will return albums released in the past two weeks
+                    tag:hipster can be used to return only albums with the lowest 10%
+                    popularity.
+                </div>
+            </div>
 
-        <!-- Active forums in lodge -->
 
-        {%endblock%}
 
-        {% block addinlodge %}
+            {% block content %}
 
-        <!-- Add new thread in lodge -->
+            <!-- Content Goes here -->
 
-        {%endblock%}
+            {% endblock%}
 
-        {% block lodgetalk %}
+            {% block lodge %}
 
-        <!-- add in discussion -->
+            <!-- Active forums in lodge -->
 
-        {%endblock%}
+            {%endblock%}
 
-        {% block profile %}
+            {% block addinlodge %}
 
-        <!-- Profile -->
+            <!-- Add new thread in lodge -->
 
-        {%endblock%}
+            {%endblock%}
 
-        {% block login %}
+            {% block lodgetalk %}
 
-        <!-- Login opens up profile area after succesful login -->
+            <!-- add in discussion -->
 
-        {%endblock%}
+            {%endblock%}
 
-        {% block register %}
+            {% block profile %}
 
-        {%endblock%}
+            <!-- Profile -->
 
-        {% block spotipy %}
+            {%endblock%}
 
-        {%endblock%}
+            {% block login %}
+
+            <!-- Login opens up profile area after succesful login -->
+
+            {%endblock%}
+
+            {% block register %}
+
+            {%endblock%}
+        </div>
     </div>
+
+
+
+    <footer class="footer mt-auto py-3 dark-bg">
+        <p class="m-0 text-center text-white">&copy; Bangrad
+        </p>
+        <p class="m-0 text-center text-white">Follow us:
+            <a href="#" target="_blank" rel="noopener"><i class="social-link fab fa-facebook-square ms-3"></i></a>
+            <a href="#" target="_blank" rel="noopener"><i class="social-link fab fa-twitch ms-3"></i></a>
+            <a href="#" target="_blank" rel="noopener"><i class="social-link fa-brands fa-soundcloud ms-3"></i></a>
+            <a href="#" target="_blank" rel="noopener"><i class="social-link fab fa-youtube-square ms-3"></i></a>
+        </p>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

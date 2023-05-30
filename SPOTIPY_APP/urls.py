@@ -5,6 +5,7 @@ from .views import Search, Lodge, LodgeTalk, AddInLodge
 
 
 urlpatterns = [
+    path('', Search.as_view(), name="home"),
     path('home/', Search.as_view(), name="home"),
     path("lodge/", views.Lodge, name="lodge"),
     path("lodgetalk/", views.LodgeTalk, name="lodgetalk"),
