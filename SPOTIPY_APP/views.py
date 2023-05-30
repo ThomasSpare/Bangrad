@@ -1,10 +1,13 @@
 from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from django.forms import ModelForm
 from django.views.generic.edit import CreateView
 from .models import spotipy, Discussion, LodgeForum, forms, User, CloudinaryField, BangradSearchFields
 from django.shortcuts import render, redirect
 from .forms import CreateInForum, CreateInDiscussion
+from django.contrib.auth.decorators import login_required
+from .models import Profile
 
 
 class Search(CreateView):
@@ -48,3 +51,8 @@ def LodgeTalk(request):
             return redirect('/lodge')
     context = {'form': form}
     return render(request, 'lodgetalk.html', context)
+
+
+@login_required  # user logged in before they can access profile page
+def profile(request):
+    return render(request, 'users/profile.html')
