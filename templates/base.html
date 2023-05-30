@@ -95,7 +95,7 @@
                     </div>
                 </nav>
             </div>
-            <div class="col-md-3">Links</div>
+            <div class="col-md-3"></div>
         </div>
     </div>
     <div class="container-fluid">
@@ -118,10 +118,28 @@
 
             </div>
             <div class="col-md-6" id="midcol">
+                {% block lodge %}
+
+                <!-- Active forums in lodge -->
+
+                {%endblock%}
+
+                {% block addinlodge %}
+
+                <!-- Add new thread in lodge -->
+
+                {%endblock%}
 
                 {% block spotipy %}
 
                 {%endblock%}
+
+                {% block profile %}
+
+                <!-- Profile -->
+
+                {%endblock%}
+
             </div>
             <div class="col-md-3" id="Rightcol">
                 <div class="d-inline p-2 bg-primary text-white">
@@ -151,30 +169,11 @@
                 </div>
             </div>
 
-            {% block lodge %}
-
-            <!-- Active forums in lodge -->
-
-            {%endblock%}
-
-            {% block addinlodge %}
-
-            <!-- Add new thread in lodge -->
-
-            {%endblock%}
-
             {% block lodgetalk %}
 
             <!-- add in discussion -->
 
             {%endblock%}
-
-            {% block profile %}
-
-            <!-- Profile -->
-
-            {%endblock%}
-
         </div>
     </div>
     <footer class="footer mt-auto py-3 dark-bg">

@@ -48,7 +48,7 @@ p {
 
 .nav-item {
     list-style-type: none;
-    z-index: 999;
+    z-index: 0;
 }
 
 footer {
@@ -325,22 +325,28 @@ iframe {
 
     #navbarSupportedContent>ul>li.nav-item>a {
         margin-trim: 6px;
-
-
-
         font-size: medium;
-
-
     }
+
+    body>div:nth-child(1)>div>div.col-md-6 {
+        height: 170px;
+    }
+
+    body>div:nth-child(1)>div>div:nth-child(3) {}
 
 
     #midcol {
         height: 100px;
-        margin-top: 30px;
+
     }
 
     #midcol>div {
         margin-bottom: 80px;
+
+    }
+
+    body>div:nth-child(1) {
+        height: 350px;
     }
 
 
@@ -361,19 +367,6 @@ iframe {
     body>div:nth-child(1) {
         background-color: rgb(2 84 100);
     }
-
-    #song_1,
-    #song_2,
-    #song_3,
-    #song_4,
-    #song_5,
-    #song_6,
-    #song_7,
-    #song_8,
-    #song_9,
-    #song_10,
-    #song_11,
-    #song_12 {}
 
     #firstsongdiv,
     #secondsongdiv,

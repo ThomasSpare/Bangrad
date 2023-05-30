@@ -55,8 +55,21 @@ def LodgeTalk(request):
     return render(request, 'lodgetalk.html', context)
 
 
+def register(request):
+    if request.method == 'POST':
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            messages.success(
+                request, f'Your account has been created! You are now able to log in')
+            return redirect('login')
+    else:
+        form = UserRegisterForm()
+    return render(request, 'account/signup.html', {'form': form})
+
+
 @login_required  # user logged in before they can access profile page
-@xframe_options_exempt
 def profile(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
@@ -67,7 +80,7 @@ def profile(request):
             u_form.save()
             p_form.save()
             messages.success(request, f'Your account has been updated!')
-            return redirect('profile')  # Redirect back to profile page
+            return redirect('profile.html')  # Redirect back to profile page
 
     else:
         u_form = UserUpdateForm(instance=request.user)

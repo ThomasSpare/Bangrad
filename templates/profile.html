@@ -1,10 +1,10 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% load static %}
-{% block content %}
+{% block profile %}
 <div class="content-section">
     <div class="media">
-        <img class="rounded-circle account-img" src="{{  }}" />
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" />
         <div class="media-body">
             <h2 class="account-heading">{{ user.username }}</h2>
             <p class="text-secondary">{{ email }}</p>
@@ -28,4 +28,4 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
-{% endblock content %}
+{% endblock %}
