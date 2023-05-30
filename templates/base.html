@@ -34,14 +34,13 @@
                     {% endfor%} {% endif %} {% block message %}{% endblock %}
                 </div>
             </div>
-
             <div class="col-md-6">
                 <h1>Bangrad</h1>
                 <h2>Radical Track Search</h2>
 
                 <nav class="navbar navbar-dark bg-dark">
                     <a class="navbar-brand" href="{% url 'home' %}">Home</a>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="navbar navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
                                 <a class="nav-link" href="{% url 'lodge' %}">Lodge Forums<span
@@ -101,8 +100,25 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3" id="leftcol">LEFT</div>
+            {% block register %}
+
+            {%endblock%}
+
+            <div class="col-sm-1 col-md-3" id="leftcol">
+                {% block login %}
+
+                <!-- Login opens up profile area after succesful login -->
+
+                {%endblock%}
+                {% block content %}
+
+                <!-- Content Goes here -->
+
+                {% endblock%}
+
+            </div>
             <div class="col-md-6" id="midcol">
+
                 {% block spotipy %}
 
                 {%endblock%}
@@ -110,36 +126,30 @@
             <div class="col-md-3" id="Rightcol">
                 <div class="d-inline p-2 bg-primary text-white">
                     <h2>HOW TO SEARCH</h2>
-                    Narrow down your search using filters
-                    album, artist, track, year, upc, tag:hipster, tag:new, isrc, and genre<br>
-                    <br>
-                    Example:<br>
-                    <br>
-                    techno, album:new<br>
-                    will return techno albums released within 2 weeks<br>
-                    <br>
-                    The artist and year filters can be used while searching albums, artists and tracks. You can filter
-                    on a single year or a
-                    range (e.g. 1955-1960).
+                    <p>Narrow down your search using filters
+                        album, artist, track, year, upc, tag:hipster, tag:new, isrc, and genre<br>
+                        <br>
+                        Example:<br>
+                        <br>
+                        techno, album:new<br>
+                        will return techno albums released within 2 weeks<br>
+                        <br>
+                        The artist and year filters can be used while searching albums, artists and tracks. You can
+                        filter
+                        on a single year or a
+                        range (e.g. 1955-1960).
 
-                    The album filter can be used while searching albums and tracks.
-                    The genre filter can be used while searching artists and tracks.
-                    The isrc and track filters can be used while searching tracks.
+                        The album filter can be used while searching albums and tracks.
+                        The genre filter can be used while searching artists and tracks.
+                        The isrc and track filters can be used while searching tracks.
 
-                    The upc, tag:new and tag:hipster filters can only be used while searching albums.
-                    The tag:new filter will return albums released in the past two weeks
-                    tag:hipster can be used to return only albums with the lowest 10%
-                    popularity.
+                        The upc, tag:new and tag:hipster filters can only be used while searching albums.
+                        The tag:new filter will return albums released in the past two weeks
+                        tag:hipster can be used to return only albums with the lowest 10%
+                        popularity.
+                    </p>
                 </div>
             </div>
-
-
-
-            {% block content %}
-
-            <!-- Content Goes here -->
-
-            {% endblock%}
 
             {% block lodge %}
 
@@ -165,20 +175,8 @@
 
             {%endblock%}
 
-            {% block login %}
-
-            <!-- Login opens up profile area after succesful login -->
-
-            {%endblock%}
-
-            {% block register %}
-
-            {%endblock%}
         </div>
     </div>
-
-
-
     <footer class="footer mt-auto py-3 dark-bg">
         <p class="m-0 text-center text-white">&copy; Bangrad
         </p>
@@ -195,9 +193,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
-
-</html>
-
-</html>
 
 </html>

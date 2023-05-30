@@ -1,4 +1,3 @@
-from PIL import Image
 from django.db import models
 from django import forms
 from django.contrib.auth.models import User
@@ -19,7 +18,7 @@ class BangradSearchFields(models.Model):
         return self.key
 
 
-# Lodge Forum parent model
+# Lodge parent model
 class LodgeForum(models.Model):
     name = models.CharField(max_length=200, default='anonymous')
     email = models.CharField(max_length=200, null=True)

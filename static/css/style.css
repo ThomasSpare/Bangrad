@@ -17,6 +17,16 @@ h2 {
     color: black;
 }
 
+p {
+    font-family: 'Martian Mono', monospace;
+    font-weight: 100;
+    font-size: 10px;
+    text-align: left;
+    margin-inline: 5px;
+
+
+}
+
 #leftcol,
 #midcol,
 #Rightcol {
@@ -38,6 +48,7 @@ h2 {
 
 .nav-item {
     list-style-type: none;
+    z-index: 999;
 }
 
 footer {
@@ -310,6 +321,71 @@ iframe {
     justify-content: center;
 }
 
+@media only screen and (max-width: 1024px) {
+
+    #navbarSupportedContent>ul>li.nav-item>a {
+        margin-trim: 6px;
 
 
-/* Buttons SCSS  */
+
+        font-size: medium;
+
+
+    }
+
+
+    #midcol {
+        height: 100px;
+        margin-top: 30px;
+    }
+
+    #midcol>div {
+        margin-bottom: 80px;
+    }
+
+
+    #Firstcol,
+    #leftcol {
+        height: 0;
+        display: none;
+    }
+
+    #Rightcol {
+        margin-bottom: 0;
+        z-index: -99;
+        font-size: small;
+        margin-top: 90px;
+    }
+
+
+    body>div:nth-child(1) {
+        background-color: rgb(2 84 100);
+    }
+
+    #song_1,
+    #song_2,
+    #song_3,
+    #song_4,
+    #song_5,
+    #song_6,
+    #song_7,
+    #song_8,
+    #song_9,
+    #song_10,
+    #song_11,
+    #song_12 {}
+
+    #firstsongdiv,
+    #secondsongdiv,
+    #thirdsongdiv,
+    #fourthsongdiv {
+        margin-left: 0px;
+        height: 60px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        justify-content: center;
+    }
+
+
+
+}

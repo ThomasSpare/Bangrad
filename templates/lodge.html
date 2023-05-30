@@ -1,15 +1,13 @@
-{% extends 'base.html' %}
 {% load static %}
+{% extend base.html %}
 {% load crispy_forms_tags %}
+
 {% block lodge %}
-
-
-
 <h2 class="jumbotron">
     Currently active forums: {{count}}
     <form method="POST" action="{% url 'addinlodge' %}">
         {% csrf_token %}
-        <button class="btn btn-success" style="width:fit-content; padding: 6px; margin:14px;">Create Thread</button>
+        <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Add more</button>
     </form>
 </h2>
 <div class="card-columns" style="padding: 10px; margin: 20px;"></div>
@@ -20,14 +18,14 @@
 <div class="card box container">
     <br>
     <h5 class="card-title">
-        <a href='{{forum.link}}'><img src='{{forum.link.img}}' height=”50px” width=”50px”>
+        <a href='{{forum.link}}'>
             <h3>{{forum.topic}}</h3>
         </a>
         <div class="card-body container">
             <p>{{forum.description}}</p>
     </h5>
     <hr>
-    <p> By: {{user.username}}</p>
+    <p> By: {{forum.name}}</p>
     email- {{forum.email}}
     <hr>
     <h4>Views from other users</h4>
@@ -41,19 +39,17 @@
     {% endfor %}
     <form method="POST" action="{% url 'lodgetalk' %}">
         {% csrf_token %}
-        <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Comment</button>
+        <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Add more</button>
     </form>
 </div>
 </div>
 </div>
 <br>
-
-{% endfor %}
-
-
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-{% endblock %}
+
+{% endfor %}
+{%endblock%}
