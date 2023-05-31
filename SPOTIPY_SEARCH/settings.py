@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
+from django.contrib.messages import constants as messages
 
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
@@ -51,22 +52,21 @@ ALLOWED_HOSTS = ["bangrad.herokuapp.com", "localhost"]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.sites',
+    'cloudinary_storage',
+    'django.contrib.staticfiles',
+    'cloudinary',
+    'crispy_forms',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'cloudinary_storage',
-    'django.contrib.staticfiles',
-    'django.contrib.contenttypes',
-    'crispy_forms',
     'crispy_bootstrap4',
     'SPOTIPY_APP',
     'SPOTIPY_SEARCH',
     'spotipy',
-    'cloudinary',
-    'users',
 ]
 
 SITE_ID = 1
@@ -118,7 +118,7 @@ WSGI_APPLICATION = 'SPOTIPY_SEARCH.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL")),
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 
 }
 
@@ -166,7 +166,6 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 STATIC_URL = '/static/'
 STATICFILE_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
