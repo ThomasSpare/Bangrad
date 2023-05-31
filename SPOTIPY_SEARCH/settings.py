@@ -32,7 +32,6 @@ sp = spotipy.Spotify(client_credentials_manager=os.environ.get(
 sp.trace = True
 
 
-
 # Quick-start development settings - unsuitable for produfallction
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -44,8 +43,7 @@ DEBUG = False
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 
-ALLOWED_HOSTS = ["https://bangrad.herokuapp.com/", "https://bangrad2.herokuapp.com/", "https://bangrad2.herokuapp.com/admin/", "localhost", "",
-                 "8000-thomasspare-bangrad-5q314617lj.us2.codeanyapp.com"]
+ALLOWED_HOSTS = ["https://bangrad.herokuapp.com/", "localhost"]
 # Application definition
 
 INSTALLED_APPS = [
