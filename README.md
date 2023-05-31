@@ -85,15 +85,15 @@ I had alot of technical issues as descibed above.
 
 # USER STORIES
 
-As a user I want to search for music and share my finds with others
-As a user I can Search for music
-As a user I can post links from searches in the forums
-As a user I can posts comments on threads in the forum
-As a user I can create a profile and edit it (does not work)
-As an admin I can create, edit and delete user from the admin panel
-As an admin I can delete comments in the forum
-As an admin I can delete threads in the forum
-As an admin i can see information about the users in the admin panel
+- As a user I want to search for music and share my finds with others
+- As a user I can Search for music
+- As a user I can post links from searches in the forums
+- As a user I can posts comments on threads in the forum
+- As a user I can create a profile and edit it (does not work)
+- As an admin I can create, edit and delete user from the admin panel
+- As an admin I can delete comments in the forum
+- As an admin I can delete threads in the forum
+- As an admin i can see information about the users in the admin panel
 
 
 # FUTURE IMPROVEMENTS
