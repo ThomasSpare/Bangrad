@@ -26,12 +26,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 
-# SPOTIPY GET CREDENTIALS
-client_credentials_manager = SpotifyClientCredentials()
-sp = spotipy.Spotify(client_credentials_manager=os.environ.get(
-    'os.environ["SPOTIPY_CLIENT_ID"], ["SPOTIPY_CLIENT_SECRET"]'))
-sp.trace = True
-
 
 # Quick-start development settings - unsuitable for produfallction
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
