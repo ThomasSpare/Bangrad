@@ -36,9 +36,8 @@ sp.trace = True
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SPOTIPY_CLIENT_SECRET = os.environ.get('SECRET_KEY')
-SPOTIPY_CLIENT_ID = os.environ.get('SPOTIPY_CLIENT_SECRET')
-
+SECRET_KEY = os.environ.get('SECRET_KEY')
+SPOTIPY_CLIENT_SECRET = os.environ.get('SPOTIPY_CLIENT_SECRET')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
