@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 import spotipy
 from PIL import Image
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 # Search fields on home page
 
@@ -44,10 +46,10 @@ class Discussion(models.Model):
 # Model to create user profile
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    image = models.ImageField(default='', upload_to='profile_pics')
 
     def __str__(self):
-        return f'{self.user} Profile'
+        return f'{self.user.username} Profile'
 
     def save(self):
         super().save()

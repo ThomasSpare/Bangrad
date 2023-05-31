@@ -14,7 +14,7 @@ class BlogConfig(AppConfig):
 
 
 class UsersConfig(AppConfig):
-    name = 'accounts'
+    name = 'users'
 
     def ready(self):
         import SPOTIPY_APP.signals

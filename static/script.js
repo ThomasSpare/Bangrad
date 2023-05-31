@@ -46,7 +46,7 @@ $(document).ready(function () {
         let raw_search_query = $('#search-text').val();
         let search_query = encodeURI(raw_search_query);
         // Make Spotify API call
-        // Note: We are using the track API endpoint.
+        // Note: We are using the track API endpoint below. This endpoint can later be modified to search for Tempo, Key and more
         $.ajax({
             url: `https://api.spotify.com/v1/search?q=${search_query}&type=track`,
             type: 'GET',

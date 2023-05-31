@@ -39,7 +39,7 @@
                 <h2>Radical Track Search</h2>
 
                 <nav class="navbar navbar-dark bg-dark">
-                    <a class="navbar-brand" href="{% url 'home' %}">Home</a>
+                    <a class="navbar-link" href="{% url 'home' %}">Home</a>
                     <div class="navbar navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
@@ -116,6 +116,7 @@
 
                 {% endblock%}
 
+
             </div>
             <div class="col-md-6" id="midcol">
                 {% block lodge %}
@@ -126,9 +127,10 @@
 
                 {% block addinlodge %}
 
-                <!-- Add new thread in lodge -->
+                <!-- Create new thread in lodge -->
 
-                {%endblock%}
+                {% endblock%}
+
 
                 {% block spotipy %}
 

@@ -39,7 +39,7 @@ def AddInLodge(request):
         form = CreateInForum(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/lodge')
+            return redirect('lodge.html')
     context = {'form': form}
     return render(request, 'addinlodge.html', context)
 
@@ -50,7 +50,7 @@ def LodgeTalk(request):
         form = CreateInDiscussion(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/lodge')
+            return redirect('lodge.html')
     context = {'form': form}
     return render(request, 'lodgetalk.html', context)
 
@@ -63,7 +63,7 @@ def register(request):
             username = form.cleaned_data.get('username')
             messages.success(
                 request, f'Your account has been created! You are now able to log in')
-            return redirect('login')
+            return redirect('login.html')
     else:
         form = UserRegisterForm()
     return render(request, 'account/signup.html', {'form': form})

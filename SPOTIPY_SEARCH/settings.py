@@ -66,6 +66,7 @@ INSTALLED_APPS = [
     'SPOTIPY_SEARCH',
     'spotipy',
     'cloudinary',
+    'users',
 ]
 
 SITE_ID = 1
