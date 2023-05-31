@@ -40,11 +40,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 SPOTIPY_CLIENT_SECRET = os.environ.get('SPOTIPY_CLIENT_SECRET')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 
-ALLOWED_HOSTS = ["https://bangrad.herokuapp.com/", "localhost"]
+ALLOWED_HOSTS = ["bangrad.herokuapp.com/", "localhost"]
 # Application definition
 
 INSTALLED_APPS = [
