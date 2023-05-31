@@ -44,7 +44,7 @@ DEBUG = False
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 
-ALLOWED_HOSTS = ["https://bangrad2.herokuapp.com/", "https://bangrad2.herokuapp.com/admin/", "localhost", "",
+ALLOWED_HOSTS = ["https://bangrad.herokuapp.com/", "https://bangrad2.herokuapp.com/", "https://bangrad2.herokuapp.com/admin/", "localhost", "",
                  "8000-thomasspare-bangrad-5q314617lj.us2.codeanyapp.com"]
 # Application definition
 
