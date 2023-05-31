@@ -59,6 +59,57 @@ So when having been authorized the user can search in the round search field and
 rows beneath. The thought was that the user could then copy the links directly in the results and add in forums to recommend 
 new finds and favorite artists.
 
+# DEPLOYMENT
+
+I used Heroku to deploy my site in the following steps:
+
+1. In settings.py set DEBUG: False
+2. Final git Push from Code Anywhere
+3. delete DISABLE_COOLECTSTATIC in Heroku config Vars
+4. Deploy branch from Heroku
+
+
+
+# Technologies and Languages used
+
+## Code Anywhere IDE
+## Django
+## JQuery
+## SPOTPY API (python library)
+## Bootstrap
+
+
+# Testing
+## As time ran out I did not have much time to write and go through all testing such as lighthouse and PEP8 validation.
+I had alot of technical issues as descibed above.
+
+# USER STORIES
+
+As a user I want to search for music and share my finds with others
+As a user I can Search for music
+As a user I can post links from searches in the forums
+As a user I can posts comments on threads in the forum
+As a user I can create a profile and edit it (does not work)
+As an admin I can create, edit and delete user from the admin panel
+As an admin I can delete comments in the forum
+As an admin I can delete threads in the forum
+As an admin i can see information about the users in the admin panel
+
+
+# FUTURE IMPROVEMENTS
+
+In the user profile page the user could be able to create more advanced setups. For
+instance be able to create folders, name these and fill these with links to music they want to store.
+They could then grant access to these fodlers or share them with other user in the forum.
+
+Desgin of forum and overall site could be better. As I didnt have the time to properly go through the layout of the forum.
+
+Add advanced search query functionality to the spotipy endpoint. The endpoint in script.js
+can be changed to search for more specific information for music such as tempo, musical keys, danceabilty, popularity, language, 
+locations and much more.
+
+The spotify credentials should be linked up so that the user dont need to grant the site permission every time.
+
 
 # Special thanks
 
