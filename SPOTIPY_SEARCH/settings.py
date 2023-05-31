@@ -44,7 +44,7 @@ DEBUG = False
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 
-ALLOWED_HOSTS = ["bangrad.herokuapp.com/", "localhost"]
+ALLOWED_HOSTS = ["bangrad.herokuapp.com", "localhost"]
 # Application definition
 
 INSTALLED_APPS = [
