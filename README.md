@@ -30,7 +30,7 @@ post and comment in the lodge forums.
 The lodge is where users can meet and exchange artists they've discovered and share their links and saved lists.
 All registered users can comment in the forums. 
 
-# TECHNICAL ISSUES
+# DEBUGGING AND TECHNICAL ISSUES
 
 This project had a bad turn in the end as I had to delete my whole user registration folder called 'users'
 as this was causing a major conflict and caused errors I could not correct. This error stopped the project
@@ -45,6 +45,10 @@ I also had to reset my databases several times during the build.
 
 I started building the user registraion from the start using this guide.
 https://www.devhandbook.com/django/user-registration/
+
+A frequent error also I had was when I logged in and tried entering the profile page I received
+this error message.
+
 
 
 # THE SPOTIPY API
