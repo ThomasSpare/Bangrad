@@ -63,10 +63,10 @@ new finds and favorite artists.
 
 I used Heroku to deploy my site in the following steps:
 
-1. In settings.py set DEBUG: False
-2. Final git Push from Code Anywhere
-3. delete DISABLE_COOLECTSTATIC in Heroku config Vars
-4. Deploy branch from Heroku
+- In settings.py set DEBUG: False
+- Final git Push from Code Anywhere
+- delete DISABLE_COOLECTSTATIC in Heroku config Vars
+- Deploy branch from Heroku
 
 
 
