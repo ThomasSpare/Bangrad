@@ -46,7 +46,8 @@ DEBUG = False
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 
-ALLOWED_HOSTS = ["bangrad.herokuapp.com", "localhost"]
+ALLOWED_HOSTS = ["bangrad.herokuapp.com",
+                 "8000-thomasspare-bangrad-5q314617lj.us2.codeanyapp.com", "localhost"]
 # Application definition
 
 INSTALLED_APPS = [
@@ -165,7 +166,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 STATIC_URL = '/static/'
-STATICFILE_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
