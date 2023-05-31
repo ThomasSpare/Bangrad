@@ -14,3 +14,6 @@ urlpatterns = [
     path("addinlodge/", views.AddInLodge, name="addinlodge"),
     path("profile/", views.Profile, name="profile"),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
