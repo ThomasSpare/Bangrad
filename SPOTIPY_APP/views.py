@@ -8,7 +8,6 @@ from django.shortcuts import render, redirect
 from .forms import UserUpdateForm, UserCreationForm, UserRegisterForm, CreateInDiscussion, CreateInForum, ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.views.decorators.clickjacking import xframe_options_exempt
 from SPOTIPY_SEARCH.settings import sp
 
 
@@ -39,9 +38,13 @@ def AddInLodge(request):
         form = CreateInForum(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(
+                request, f'Your forum is added successfully')
             return redirect('lodge.html')
-    context = {'form': form}
-    return render(request, 'addinlodge.html', context)
+        else:
+            form = CreateInForum()
+            return render(request, 'addinlodge.html', {'form': form})
+    return redirect('lodge.html')
 
 
 def LodgeTalk(request):
@@ -69,8 +72,16 @@ def register(request):
     return render(request, 'account/signup.html', {'form': form})
 
 
-@login_required  # user logged in before they can access profile page
 def profile(request):
+    """
+    View to render about page
+    """
+    return render(request, 'profile.html')
+
+
+@login_required  # user logged in before they can access profile page
+def profile_update(request):
+
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST,
@@ -91,4 +102,4 @@ def profile(request):
         'p_form': p_form
     }
 
-    return render(request, 'profile.html', context)
+    return render(request, 'profile_update.html', context)
