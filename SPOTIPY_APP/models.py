@@ -49,7 +49,7 @@ class Profile(models.Model):
     image = models.ImageField(default='', upload_to='profile_pics')
 
     def __str__(self):
-        return f'{self.User.username} Profile'
+        return f'{self.user.username} Profile'
 
     def save(self):
         super().save()
