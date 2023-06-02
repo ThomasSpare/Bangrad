@@ -68,8 +68,8 @@ new finds and favorite artists.
 
 As I wanted to integrate the Spotipy API I followed this simple method to use a sript.js file in the Static folder
 to run the API from. 
-https://www.youtube.com/watch?v=d0FFlTeyAY8
-https://github.com/mujibsardar/spotify_jquery_only/blob/master/script.js
+- https://www.youtube.com/watch?v=d0FFlTeyAY8
+- https://github.com/mujibsardar/spotify_jquery_only/blob/master/script.js
 
 ### STEPS
 - To have the API working I had to first create the app at https://developer.spotify.com/
