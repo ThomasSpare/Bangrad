@@ -98,11 +98,11 @@ I used Heroku to deploy my site in the following steps:
 
 # Technologies and Languages used
 
-## Code Anywhere IDE
-## Django
-## JQuery
-## SPOTPY API (python library)
-## Bootstrap
+- ### Code Anywhere IDE
+- ### Django
+- ### JQuery
+- ### SPOTPY API (python library)
+- ### Bootstrap
 
 
 # Testing
