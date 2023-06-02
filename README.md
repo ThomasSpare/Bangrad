@@ -43,8 +43,15 @@ I also had to reset my databases several times during the build.
 
 ![Database reset](https://github.com/ThomasSpare/Bangrad/blob/bangrad2/images/last%20error.jpg)
 
+
+## Code Sources
 I started building the user registraion from the start using this guide.
 https://www.devhandbook.com/django/user-registration/
+
+
+
+
+
 
 A frequent error also I had was when I logged in and tried entering the profile page I received
 this error message.
@@ -58,6 +65,25 @@ his/her spotify account. I had the credentials and secret keys stored in the env
 So when having been authorized the user can search in the round search field and hit enter. The results will be collected in
 rows beneath. The thought was that the user could then copy the links directly in the results and add in forums to recommend 
 new finds and favorite artists.
+
+As I wanted to integrate the Spotipy API I followed this simple method to use a sript.js file in the Static folder
+to run the API from. 
+https://www.youtube.com/watch?v=d0FFlTeyAY8
+https://github.com/mujibsardar/spotify_jquery_only/blob/master/script.js
+
+### STEPS
+- To have the API working I had to first create the app at https://developer.spotify.com/
+- Using the address for my homepage https://bangrad.herokuapp.com (without the '/' at the end)
+I put this in my redirect URI at my app settings in Spotify for developers.
+-then this same address has to be inserted in the script.js file redirect URI as encoded
+so using this site to encode it
+https://www.url-encode-decode.com/
+I get this redirect URI address in my script.js file.
+https%3A%2F%2Fbangrad.herokuapp.com
+
+- the script.js is lastly inserted in the base.html as <script>
+
+- The Spotipy API is now linked up 
 
 # DEPLOYMENT
 
