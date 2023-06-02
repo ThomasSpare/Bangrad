@@ -75,7 +75,7 @@ https://github.com/mujibsardar/spotify_jquery_only/blob/master/script.js
 - To have the API working I had to first create the app at https://developer.spotify.com/
 - Using the address for my homepage https://bangrad.herokuapp.com (without the '/' at the end)
 I put this in my redirect URI at my app settings in Spotify for developers.
--then this same address has to be inserted in the script.js file redirect URI as encoded
+- then this same address has to be inserted in the script.js file redirect URI as encoded
 so using this site to encode it
 https://www.url-encode-decode.com/
 I get this redirect URI address in my script.js file.
