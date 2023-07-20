@@ -31,7 +31,8 @@ $(document).ready(function () {
     let client_id = "343dc32e612a47cbbd658a30197599d1";
 
     let redirect_uri =
-        "https%3A%2F%2Fbangrad.herokuapp.com";
+        "https%3A%2F%2F8000-thomasspare-bangrad-sgwgrdlwu4y.ws-eu101.gitpod.io%2F"
+    
     // *************** END *************************
 
     const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}`;

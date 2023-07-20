@@ -49,10 +49,10 @@ class Profile(models.Model):
     image = models.ImageField(default='', upload_to='profile_pics')
 
     def __str__(self):
-        return f'{self.user.username} Profile'
-
-    def save(self):
-        super().save()
+        return self.user.username
+    
+    def get_absolute_url(self):
+        return reverse('profile_page', kwargs={'pk': self.pk})
 
         img = Image.open(self.image.path)  # Open image
 
@@ -62,3 +62,11 @@ class Profile(models.Model):
             img.thumbnail(output_size)  # Resize image
             # Save it again and override the larger image
             img.save(self.image.path)
+            
+@receiver(post_save, sender=User)
+def create_or_update_user_profile(sender, instance, created, **kwargs):
+    """
+    Create or update the user profile
+    """
+    if created:
+        Profile.objects.create(user=instance)

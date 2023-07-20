@@ -69,15 +69,18 @@ def register(request):
             return redirect('login.html')
     else:
         form = UserRegisterForm()
-    return render(request, 'account/signup.html', {'form': form})
+    return render(request, '/account/signup.html', {'form': form})
 
 
 def profile(request):
     """
     View to render about page
     """
-    return render(request, 'profile.html')
+    model = Profile
+    template_name = '/profile.html'
 
+    def get_object(self, *args, **kwargs):
+        return self.request.user
 
 @login_required  # user logged in before they can access profile page
 def profile_update(request):
@@ -91,11 +94,10 @@ def profile_update(request):
             u_form.save()
             p_form.save()
             messages.success(request, f'Your account has been updated!')
-            return redirect('profile.html')  # Redirect back to profile page
-
-    else:
-        u_form = UserUpdateForm(instance=request.user)
-        p_form = ProfileUpdateForm(instance=request.user.profile)
+            return redirect('profile.html')  # Redirect back to profile pag
+        else:
+            u_form = UserUpdateForm(instance=request.user)
+            p_form = ProfileUpdateForm(instance=request.user.profile)
 
     context = {
         'u_form': u_form,

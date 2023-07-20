@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% if user.is_authenticated %}
 {% block lodgetalk %}
 <form action="{% url 'lodgetalk' %}" method="POST">
     {% csrf_token %}
     {{form.as_p}}
     <input type="submit" class="btn btn-success" value="submit">
 </form>
-
 {%endblock%}
+{% else %}
+    <a class="nav-item nav-link" href="{% url 'account_login' %}">Login</a>
+
+    <a class="nav-item nav-link" href="{% url 'account_signup' %}">Register</a>
+{% endif %}

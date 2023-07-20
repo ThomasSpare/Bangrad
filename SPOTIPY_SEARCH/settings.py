@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+from datetime import timedelta
 from pathlib import Path
 from django.contrib.messages import constants as messages
 
@@ -42,11 +43,12 @@ SPOTIPY_CLIENT_SECRET = os.environ.get('SPOTIPY_CLIENT_SECRET')
 SPOTIPY_CLIENT_ID = os.environ.get('SPOTIPY_CLIENT_ID')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 
 ALLOWED_HOSTS = ["bangrad.herokuapp.com",
+                "8000-thomasspare-bangrad-sgwgrdlwu4y.ws-eu101.gitpod.io",
                  "8000-thomasspare-bangrad-5q314617lj.us2.codeanyapp.com", "localhost"]
 # Application definition
 
@@ -83,7 +85,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'SPOTIPY_SEARCH.urls'
@@ -176,6 +178,10 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFTETIME': timedelta(minutes=30),
+}
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
