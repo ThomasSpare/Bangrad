@@ -77,7 +77,7 @@ def profile(request):
     View to render about page
     """
     model = Profile
-    template_name = '/profile.html'
+    template_name = '/templates/home/profile_page.html'
 
     def get_object(self, *args, **kwargs):
         return self.request.user
@@ -94,7 +94,7 @@ def profile_update(request):
             u_form.save()
             p_form.save()
             messages.success(request, f'Your account has been updated!')
-            return redirect('profile.html')  # Redirect back to profile pag
+            return redirect('/templates/home/profile_page.html')  # Redirect back to profile pag
         else:
             u_form = UserUpdateForm(instance=request.user)
             p_form = ProfileUpdateForm(instance=request.user.profile)
