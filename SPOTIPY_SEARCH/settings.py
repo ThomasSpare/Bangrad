@@ -48,8 +48,8 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 
 ALLOWED_HOSTS = ["bangrad.herokuapp.com",
-                "8000-thomasspare-bangrad-sgwgrdlwu4y.ws-eu101.gitpod.io",
-                 "8000-thomasspare-bangrad-5q314617lj.us2.codeanyapp.com", "localhost"]
+                "8000-thomasspare-bangrad-sgwgrdlwu4y.ws-eu102.gitpod.io",
+                "8000-thomasspare-bangrad-5q314617lj.us2.codeanyapp.com", "localhost"]
 # Application definition
 
 INSTALLED_APPS = [

@@ -47,6 +47,9 @@ class Discussion(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(default='', upload_to='profile_pics')
+    first_name = models.CharField(blank=True, max_length=50)
+    last_name = models.CharField(blank=True, max_length=50)
+    email = models.EmailField(max_length=100, blank=True, null=True)
 
     def __str__(self):
         return self.user.username

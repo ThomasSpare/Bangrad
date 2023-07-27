@@ -11,6 +11,26 @@ h1 {
     color: black;
 }
 
+/* messages navbar */
+
+.section{
+    display: flexbox;
+    flex-direction: column;
+}
+.main{
+    display: flex;
+    flex-direction: row;
+}
+
+.messages{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    font-size: medium;
+}
+
 h2 {
     font-family: 'Martian Mono', monospace;
     font-weight: 300;

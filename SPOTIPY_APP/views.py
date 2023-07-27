@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from django.forms import ModelForm
 from django.views.generic.edit import CreateView
+from django.views.generic import (UpdateView, DetailView, DeleteView)
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Profile, Discussion, LodgeForum, forms, User, CloudinaryField, BangradSearchFields
 from django.shortcuts import render, redirect
 from .forms import UserUpdateForm, UserCreationForm, UserRegisterForm, CreateInDiscussion, CreateInForum, ProfileUpdateForm
@@ -72,15 +74,16 @@ def register(request):
     return render(request, '/account/signup.html', {'form': form})
 
 
-def profile(request):
+class profile(LoginRequiredMixin, DetailView):
     """
     View to render about page
     """
     model = Profile
-    template_name = '/templates/home/profile_page.html'
+    template_name = '/templates/profile.html'
 
     def get_object(self, *args, **kwargs):
         return self.request.user
+
 
 @login_required  # user logged in before they can access profile page
 def profile_update(request):
