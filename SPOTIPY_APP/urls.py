@@ -12,7 +12,7 @@ urlpatterns = [
     path("lodge/", views.Lodge, name="lodge"),
     path("lodgetalk/", views.LodgeTalk, name="lodgetalk"),
     path("addinlodge/", views.AddInLodge, name="addinlodge"),
-    path("profile/", views.Profile, name="profile"),
+    path("profile/", Profile.as_view(), name="profile"),
 ]
 # if settings.DEBUG:
 #     urlpatterns += static(settings.MEDIA_URL,

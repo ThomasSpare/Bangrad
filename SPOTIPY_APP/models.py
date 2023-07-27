@@ -45,17 +45,30 @@ class Discussion(models.Model):
 
 # Model to create user profile
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = models.ImageField(default='', upload_to='profile_pics')
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    bio = models.TextField(null=True)
+    image = models.ImageField(null=True, upload_to='profile_pics')
+    # profile_pic = models.ImageField(null=True, upload_to='profile_pics')
     first_name = models.CharField(blank=True, max_length=50)
     last_name = models.CharField(blank=True, max_length=50)
-    email = models.EmailField(max_length=100, blank=True, null=True)
+    email = models.EmailField(max_length=100, null=True, blank=True)
+    website_url = models.CharField(max_length=255, null=True, blank=True)
+    spotify_artist = models.CharField(max_length=255, null=True, blank=True)
+    instagram = models.CharField(max_length=255, null=True, blank=True)
+    facebook = models.CharField(max_length=255, null=True, blank=True)
+    twitter = models.CharField(max_length=255, null=True, blank=True)
+    mixcloud = models.CharField(max_length=255, null=True, blank=True)
+    soundcloud = models.CharField(max_length=255, null=True, blank=True)
+    youtube = models.CharField(max_length=255, null=True, blank=True)
+    link_1 = models.CharField(max_length=255, null=True, blank=True)
+    link_2 = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
-        return self.user.username
+        return str(self.user)
     
     def get_absolute_url(self):
-        return reverse('profile_page', kwargs={'pk': self.pk})
+        return reverse('profile.html', kwargs={'pk': self.pk})
+
 
         img = Image.open(self.image.path)  # Open image
 

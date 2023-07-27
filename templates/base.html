@@ -108,11 +108,7 @@
             {%endblock%}
 
             <div class="col-sm-1 col-md-3" id="leftcol">
-                {% block login %}
-
-                <!-- Login opens up profile area after succesful login -->
-
-                {%endblock%}
+               
 
 
             </div>
@@ -127,6 +123,13 @@
                 <!-- Content Goes here -->
 
                 {% endblock%}
+
+                {% block login %}
+
+                <!-- Login opens up profile area after succesful login -->
+
+                {%endblock%}
+                
                 {% block lodge %}
 
                 <!-- Active forums in lodge -->
