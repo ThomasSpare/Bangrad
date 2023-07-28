@@ -1,5 +1,6 @@
 from django.contrib import admin
 from . import views
+from .views import UserListView
 from django.urls import path, include
 from .views import Search, Lodge, LodgeTalk, AddInLodge, Profile
 from django.conf import settings
@@ -13,6 +14,7 @@ urlpatterns = [
     path("lodgetalk/", views.LodgeTalk, name="lodgetalk"),
     path("addinlodge/", views.AddInLodge, name="addinlodge"),
     path("profile/", Profile.as_view(), name="profile"),
+    path('memberlist/', UserListView.as_view(), name='memberlist'),
 ]
 # if settings.DEBUG:
 #     urlpatterns += static(settings.MEDIA_URL,

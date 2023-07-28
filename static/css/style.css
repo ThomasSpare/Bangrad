@@ -39,7 +39,7 @@ h2 {
 
 p {
     font-family: 'Martian Mono', monospace;
-    font-weight: 100;
+    font-weight: 300;
     font-size: 10px;
     text-align: left;
     margin-inline: 5px;
@@ -127,6 +127,26 @@ body>div.row>div.col-md-3 {
 body>div.wrapper>div>div>div.col-6.col-md-6>div>form>fieldset {
     padding: 30px;
 }
+
+.d-flex{
+    width: 50%;
+    display: flex!important;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+#card{
+      width: 20vw;  
+}
+
+.shadow {
+    box-shadow: 0 1rem 1rem rgba(0,0,0,.15)!important;
+}
+
+
 
 /* || General styles */
 

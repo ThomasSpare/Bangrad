@@ -6,17 +6,66 @@
 
 <h3>Bangrad profile</h3>
 <br/><br/>
-
+<container class="container-fluid d-flex">
+<section class="col-md-4 d-flex">
+<img height="200" class="rounded-circle" src="{{ user.profile.image.url }}"/>
+<br/><br/>
+<h2>{{ user.profile.first_name }} {{ user.profile.last_name }}</h2>
 {{ user.profile.bio }}
+{% if user.profile.email %}
+<a href="{{ user.profile.email }}">{{ user.profile.email }}</a>
+{% endif %}
+{% if user.profile.website_url %}
+<a href="{{ user.profile.website_url }}">{{ user.profile.website_url }}</a>
+{% endif %}
+{% if user.spotify_artist %}
+<a href="{{ user.profile.spotify_artist }}">{{ user.profile.spotify_artist }}</a>
+{% endif %}
+{% if user.profile.instagram %}
+<a href="{{ user.profile.instagram }}">{{ user.profile.instagram }}</a>
+{% endif %}
+{% if user.profile.facebook %}
+<a href="{{ user.profile.facebook }}">{{ user.profile.facebook }}</a>
+{% endif %}
+{% if user.profile.twitter %}
+<a href="{{ user.profile.twitter }}">{{ user.profile.twitter }}</a>
+{% endif %}
+{% if user.profile.mixcloud %}
+<a href="{{ user.profile.mixcloud }}">{{ user.profile.mixcloud }}</a>
+{% endif %}
+{% if user.profile.soundcloud %}
+<a href="{{ user.profile.soundcloud }}">{{ user.profile.soundcloud }}</a>
+{% endif %}
+{% if user.profile.youtube %}
+<a href="{{ user.profile.youtube }}">{{ user.profile.youtube }}</a>
+{% endif %}
+{% if user.profile.link_1 %}
+<a href="{{ user.profile.link_1 }}">{{ user.profile.link_1 }}</a>
+{% endif %}
+{% if user.profile.link_2 %}
+<a href="{{ user.profile.link_2 }}">{{ user.profile.link_2 }}</a>
+{% endif %}
 
-
-<div class="form-group">
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn btn-info" type="submit">
-            Update Profile</button>
-       
-    </form>
-</div>
+</section>
+<section class="col-md-4 account-body d-flex">
+    <div class="container p-3">
+        <div class="py-3 mt-5">
+            <div class="col-12 col-sm-10 col-md-6 col-lg-4 mx-auto">
+                <div class="card shadow" id="card">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <form method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                <button class="btn btn-dark btn-rounded" type="submit">
+                                    Update Profile</button>
+                            </form>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</container>
 {% endblock %}

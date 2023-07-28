@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import render, redirect
 from django.views.generic.base import View
+from django.views.generic.list import ListView
 from django.forms import ModelForm
 from django.views.generic.edit import CreateView
 from django.views.generic import UpdateView, DetailView, DeleteView
@@ -76,11 +77,11 @@ def register(request):
 
 class Profile(UpdateView):
     """
-    View to render about page
+    View to render Edit profile page
     """
     model = Profile
     template_name = 'profile.html'
-    fields = [  'bio', 'first_name', 'last_name', 'email',
+    fields = [  'image', 'bio', 'first_name', 'last_name', 'email',
                 'website_url', 'spotify_artist', 'instagram', 'facebook',
                 'twitter', 'mixcloud', 'soundcloud', 'youtube', 'link_1',
                 'link_2'
@@ -114,3 +115,9 @@ def profile_update(request):
     }
 
     return render(request, '/profile.html', context)
+
+
+class UserListView(ListView):
+
+    model = User
+    template_name = 'memberlist.html'

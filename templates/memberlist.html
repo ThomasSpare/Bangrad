@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block memberlist %}
+
+<h1>Bangrad Members</h1>
+<ul>
+{% for user in object_list %}
+{% if user.profile.image %}
+    <img height="50" class="rounded-circle" src="{{ user.profile.image.url }}"/>
+    {% else %}
+       <li>  {{ user.username }}</li>
+       {% endif %}
+{% empty %}
+    <li>No users yet.</li>
+{% endfor %}
+</ul>
+{% endblock %}
