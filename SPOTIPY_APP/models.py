@@ -6,7 +6,7 @@ import spotipy
 from PIL import Image
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from django.urls import reverse
+from django.urls import reverse_lazy
 
 # Search fields on home page
 
@@ -66,8 +66,9 @@ class Profile(models.Model):
     def __str__(self):
         return str(self.user)
     
-    def get_absolute_url(self):
-        return reverse(Profile, 'profile.html', kwargs={'pk': self.pk})
+    # def get_absolute_url(self):
+    #     return reverse('profile', kwargs={'self.s})
+
 
 
         img = Image.open(self.image.path)  # Open image

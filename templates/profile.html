@@ -7,7 +7,7 @@
 <h3>Bangrad profile</h3>
 <br/><br/>
 <container class="container-fluid d-flex">
-<section class="col-md-4 d-flex">
+<section class="col-md-6 d-flex">
 <img height="200" class="rounded-circle" src="{{ user.profile.image.url }}"/>
 <br/><br/>
 <h2>{{ user.profile.first_name }} {{ user.profile.last_name }}</h2>
@@ -51,3 +51,29 @@
 {% endblock %}
 
 
+<<<<<<< HEAD
+=======
+</section>
+<section class="col-md-4 account-body d-flex">
+    <div class="container p-4">
+        <div class="py-3 mt-5">
+            <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+                <div class="card shadow" id="card">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <form method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                <button class="btn btn-dark btn-rounded" type="submit">
+                                    Update Profile</button>
+                            </form>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</container>
+{% endblock %}
+>>>>>>> 1cac00e229a662e1dc030b142611512e16290a0c
