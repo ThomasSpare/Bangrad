@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from django.views.generic.list import ListView
+from django.views import generic
 from django.forms import ModelForm
 from django.views.generic.edit import CreateView
 from django.views.generic import UpdateView, DetailView, DeleteView
@@ -12,6 +13,7 @@ from .forms import UserUpdateForm, UserCreationForm, UserRegisterForm, CreateInD
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from SPOTIPY_SEARCH.settings import sp
+from django.urls import reverse_lazy
 
 
 class Search(CreateView):
@@ -90,6 +92,14 @@ class Profile(UpdateView):
     def get_object(self, *args, **kwargs):
         return self.request.user
 
+
+class EditProfilePageView(generic.UpdateView):
+    model = Profile
+    template_name = 'edit_profile_page'
+    fields = ['bio', 'image', 'website_url', 'spotify_artist', 'instagram',
+                'facebook', 'twitter', 'mixcloud', 'soundcloud', 'youtube',
+                'link_1', 'link_2']
+    success_url = reverse_lazy('home')
 
 
 @login_required  # user logged in before they can access profile page

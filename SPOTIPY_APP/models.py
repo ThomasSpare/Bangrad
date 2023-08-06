@@ -23,11 +23,10 @@ class BangradSearchFields(models.Model):
 
 # Lodge parent model
 class LodgeForum(models.Model):
-    name = models.CharField(max_length=200, default='anonymous')
-    email = models.CharField(max_length=200, null=True)
     topic = models.CharField(max_length=300)
-    description = models.CharField(max_length=1000, blank=True)
+    description = models.TextField(max_length=1000, blank=True)
     link = models.CharField(max_length=100, null=True)
+    image = models.ImageField(null=True, upload_to='forum')
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
@@ -37,7 +36,7 @@ class LodgeForum(models.Model):
 # Lodge child model
 class Discussion(models.Model):
     forum = models.ForeignKey(
-        LodgeForum, blank=True, on_delete=models.CASCADE)
+    LodgeForum, blank=True, on_delete=models.CASCADE)
     discuss = models.CharField(max_length=1000)
 
     def __str__(self):

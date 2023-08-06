@@ -45,27 +45,9 @@
 {% if user.profile.link_2 %}
 <a href="{{ user.profile.link_2 }}">{{ user.profile.link_2 }}</a>
 {% endif %}
-
-</section>
-<section class="col-md-4 account-body d-flex">
-    <div class="container p-3">
-        <div class="py-3 mt-5">
-            <div class="col-12 col-sm-10 col-md-6 col-lg-4 mx-auto">
-                <div class="card shadow" id="card">
-                    <div class="card-body">
-                        <div class="form-group">
-                            <form method="POST" enctype="multipart/form-data">
-                                {% csrf_token %}
-                                {{ form.as_p }}
-                                <button class="btn btn-dark btn-rounded" type="submit">
-                                    Update Profile</button>
-                            </form>
-                        </div>   
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-</container>
 {% endblock %}
+{% block update %}
+
+{% endblock %}
+
+

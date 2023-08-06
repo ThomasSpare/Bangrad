@@ -15,7 +15,7 @@
 
 {%for forum in forums %}
 
-<div class="card box container">
+<div class="card" style="width: 30rem;">
     <br>
     <h5 class="card-title">
         <a href='{{forum.link}}'>
@@ -24,10 +24,31 @@
         <div class="card-body container">
             <p>{{forum.description}}</p>
     </h5>
-    <hr>
-    <p> By: {{forum.name}}</p>
-    email- {{forum.email}}
-    <hr>
+    <img src="{{post.author.profile.image}}" class="card-image" alt="author_picture">
+    <h5 class="card-title"> By: {{post.author.first_name}} {{post.author.last_name}}</h5>
+    <p class="small text muted">
+        {% if post.author.profile.facebook %}
+        <a href="{{post.author.profile.facebook}}">Facebook</a>
+        {% endif %}
+        {% if post.author.profile.instagram %}
+        <a href="{{post.author.profile.instagram}}">instagram</a>
+        {% endif %}
+        {% if post.author.profile.spotify_artist %}
+        <a href="{{post.author.profile.spotify_artist}}">Spotify</a>
+        {% endif %}
+        {% if post.author.profile.soundcloud %}
+        <a href="{{post.author.profile.soundcloud}}">Soundcloud</a>
+        {% endif %}
+        {% if post.author.profile.mixcloud %}
+        <a href="{{post.author.profile.mixcloud}}">Mixcloud</a>
+        {% endif %}
+        {% if post.author.profile.youtube %}
+        <a href="{{post.author.profile.youtube}}">Youtube</a>
+        {% endif %}
+    </p>
+    <p class="card-text">
+        {{post.author.profile.bio}}
+    </p>
     <h4>Views from other users</h4>
     {% for discuss in discussions %}
     {% for objs in discuss %}
