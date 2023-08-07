@@ -7,7 +7,7 @@
     Currently active forums: {{count}}
     <form method="POST" action="{% url 'addinlodge' %}">
         {% csrf_token %}
-        <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Add more</button>
+        <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Create a post</button>
     </form>
 </h2>
 <div class="card-columns" style="padding: 10px; margin: 20px;"></div>
@@ -15,8 +15,9 @@
 
 {%for forum in forums %}
 
-<div class="card" style="width: 30rem;">
+<div class="card" style="width: 40rem; align-items: center; margin-left: 5vw; margin-bottom: 10px; background-color: #ebac757c;">
     <br>
+    {{ post.body|safe }}
     <h5 class="card-title">
         <a href='{{forum.link}}'>
             <h3>{{forum.topic}}</h3>
@@ -25,7 +26,10 @@
             <p>{{forum.description}}</p>
     </h5>
     <img src="{{post.author.profile.image}}" class="card-image" alt="author_picture">
-    <h5 class="card-title"> By: {{post.author.first_name}} {{post.author.last_name}}</h5>
+    <h5 class="card-title"> By: {{post.author.first_name}} {{post.author.last_name}} - <small>
+        <a href="{url 'updatepost' post.pk}">Edit</a>
+        <a href="{url 'deletepost' post.pk}">Delete</a>
+    </small></h5>
     <p class="small text muted">
         {% if post.author.profile.facebook %}
         <a href="{{post.author.profile.facebook}}">Facebook</a>
@@ -49,7 +53,7 @@
     <p class="card-text">
         {{post.author.profile.bio}}
     </p>
-    <h4>Views from other users</h4>
+    <h4 class="small muted">Comments:</h4>
     {% for discuss in discussions %}
     {% for objs in discuss %}
     {% if objs.forum == forum %}
@@ -60,12 +64,9 @@
     {% endfor %}
     <form method="POST" action="{% url 'lodgetalk' %}">
         {% csrf_token %}
-        <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Add more</button>
+        <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Comment</button> 
     </form>
 </div>
-</div>
-</div>
-<br>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>

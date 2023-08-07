@@ -25,9 +25,10 @@ from SPOTIPY_APP import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('members/', include('django.contrib.auth.urls')),
+    path('members/', include('members.urls')),
     path('accounts/', include('allauth.urls')),
     path('', include("SPOTIPY_APP.urls"), name="SPOTIPY_APP.urls"),
-    path('register/', views.register, name='register'),
     path('login/', auth_views.LoginView.as_view(template_name='account/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='account/logout.html'), name='logout'),
 ] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

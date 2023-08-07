@@ -2,7 +2,7 @@
 {% load static %}
 {% if user.is_authenticated %}
 {% block lodgetalk %}
-<form action="{% url 'lodgetalk' %}" method="POST">
+<form action="{% url 'lodge' %}" method="POST">
     {% csrf_token %}
     {{form.as_p}}
     <input type="submit" class="btn btn-success" value="submit">

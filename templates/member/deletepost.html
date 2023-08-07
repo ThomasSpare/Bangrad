@@ -1,27 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block title %}Delete Post{% endblock %}
 {% load crispy_forms_tags %}
 {% block addinlodge %}
 
 
 <div class="mb-3 row" >
     <div class="col-md-6">
-        <h2>Share some awesome music !</h2>
-        <h4 class="small">Add a link to your music</h4>
+        <h2>Delete Post...</h2>
+        <h3>Delete: {{ post.title }}</h3>
+
+
         <form class="form-control" id="forum_form" rows="3" action="{% url 'addinlodge' %}" method="POST">
             <article class="media content-section">
                 <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}" />
                 <div class="media-body">
                     <div class="article-metadata">
-                        <a class="mr-2" href="#">{{ post.author }}</a>
+                        <a class="mr-2" href="{{ post.author }}"></a>
                         <small class="text-muted">{{ post.date|date:"F d, Y" }}</small>
                     </div>
                     <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
                     <p class="article-content">{{ post.content }}</p>
                 </div>
             </article>
-            {% csrf_token %} {{form.as_p}}
-            <input type="submit" class="btn btn-success" value="submit">
+            {% csrf_token %}
+            <strong>Are you sure ?!</strong><br/>
+            <input type="submit" class="btn btn-success" value="Delete Post">
         </form>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

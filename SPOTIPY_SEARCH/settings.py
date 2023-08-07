@@ -65,12 +65,14 @@ INSTALLED_APPS = [
     'cloudinary',
     'crispy_forms',
     'allauth',
+    'members',
     'allauth.account',
     'allauth.socialaccount',
     'crispy_bootstrap4',
     'SPOTIPY_APP',
     'SPOTIPY_SEARCH',
     'spotipy',
+    'ckeditor',
 ]
 
 SITE_ID = 1

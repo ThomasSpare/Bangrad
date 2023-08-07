@@ -7,9 +7,8 @@
 <ul>
 {% for user in object_list %}
 {% if user.profile.image %}
-    <img height="50" class="rounded-circle" src="{{ user.profile.image.url }}"/>
     {% else %}
-       <li>  {{ user.username }}</li>
+       <li> <img height="50" class="rounded-circle" src="{{ user.profile.image.url }}"/> {{ user.firstname }} {{ user.lastname }}</li>
        {% endif %}
 {% empty %}
     <li>No users yet.</li>

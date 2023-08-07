@@ -17,11 +17,26 @@ from django.urls import reverse_lazy
 
 
 class Search(CreateView):
-
     # specify the model for create view
     model = BangradSearchFields
     template_name = "home.html"
     fields = ['key', 'tempo', 'language', 'release_year']
+
+
+class ArticleDetailView(DetailView):
+    model = LodgeForum
+    template_name = 'article_details.html'
+
+
+class UpdatePostView(UpdateView):
+    model = LodgeForum
+    template_name = 'member/editpost.html'
+    fields = ['topic','description', 'body', 'link', 'image' ]
+
+class DeletePostView(DeleteView):
+    model = LodgeForum
+    template_name = 'deletepost.html'
+    success_url = reverse_lazy('lodge')
 
 
 def Lodge(request):
@@ -48,8 +63,7 @@ def AddInLodge(request):
             return redirect('lodge.html')
         else:
             form = CreateInForum()
-            return render(request, 'addinlodge.html', {'form': form})
-    return redirect('lodge.html')
+            return render(request, 'member/addinlodge.html', {'form': form})
 
 
 def LodgeTalk(request):
@@ -60,7 +74,7 @@ def LodgeTalk(request):
             form.save()
             return redirect('lodge.html')
     context = {'form': form}
-    return render(request, 'lodgetalk.html', context)
+    return render(request, 'member/lodgetalk.html', context)
 
 
 def register(request):
@@ -82,7 +96,7 @@ class Profile(UpdateView):
     View to render Edit profile page
     """
     model = Profile
-    template_name = 'profile.html'
+    template_name = 'member/profile.html'
     fields = [  'image', 'bio', 'first_name', 'last_name', 'email',
                 'website_url', 'spotify_artist', 'instagram', 'facebook',
                 'twitter', 'mixcloud', 'soundcloud', 'youtube', 'link_1',
@@ -95,11 +109,35 @@ class Profile(UpdateView):
 
 class EditProfilePageView(generic.UpdateView):
     model = Profile
-    template_name = 'edit_profile_page'
+    form_class = ProfileUpdateForm
+    template_name = 'member/edit_profile_page'
     fields = ['bio', 'image', 'website_url', 'spotify_artist', 'instagram',
                 'facebook', 'twitter', 'mixcloud', 'soundcloud', 'youtube',
-                'link_1', 'link_2']
-    success_url = reverse_lazy('home')
+                'link_1', 'link_2'
+            ]
+    success_url = reverse_lazy('member/profile')
+
+
+class CreateProfilePageView(CreateView):
+    model = Profile
+    template_name = 'member/create_profile.html'
+    fields = '__all__'
+    
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+
+def delete_post(request, id):
+    post = get_object_or_404(Post, pk=id)
+    context = {'post': post}    
+    
+    if request.method == 'GET':
+        return render(request, 'lodge/post_confirm_delete.html',context)
+    elif request.method == 'POST':
+        post.delete()
+        messages.success(request,  'The post has been deleted successfully.')
+        return redirect('lodge')
 
 
 @login_required  # user logged in before they can access profile page
@@ -107,6 +145,7 @@ def profile_update(request):
 
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
+        post_form = CreateInForum(request.POST, instance=request.user.profile)
         p_form = ProfileUpdateForm(request.POST,
                                    request.FILES,
                                    instance=request.user.profile)
@@ -124,10 +163,11 @@ def profile_update(request):
         'p_form': p_form
     }
 
-    return render(request, '/profile.html', context)
+    return render(request, 'member/profile.html', context)
 
 
 class UserListView(ListView):
 
     model = User
-    template_name = 'memberlist.html'
+    template_name = 'member/memberlist.html'
+    fields = '__all__'

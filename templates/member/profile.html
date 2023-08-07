@@ -6,6 +6,19 @@
 
 <h3>Bangrad profile</h3>
 <br/><br/>
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Edit
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Edit Settings</a></li>
+      {% if user.profile.id %}
+      <li><a class="dropdown-item" href="{% url 'edit_profile_page' user.profile.id %}">Edit Profile</a></li>
+      {% else %}
+      {% endif %}
+      <li><a class="dropdown-item" href="{% url 'create_profile' %}">Create Profile Page</a></li>
+    </ul>
+  </div>
 <container class="container-fluid d-flex">
 <section class="col-md-6 d-flex">
 <img height="200" class="rounded-circle" src="{{ user.profile.image.url }}"/>
@@ -46,34 +59,6 @@
 <a href="{{ user.profile.link_2 }}">{{ user.profile.link_2 }}</a>
 {% endif %}
 {% endblock %}
-{% block update %}
-
-{% endblock %}
 
 
-<<<<<<< HEAD
-=======
-</section>
-<section class="col-md-4 account-body d-flex">
-    <div class="container p-4">
-        <div class="py-3 mt-5">
-            <div class="col-12 col-sm-10 col-md-6 col-lg-4">
-                <div class="card shadow" id="card">
-                    <div class="card-body">
-                        <div class="form-group">
-                            <form method="POST" enctype="multipart/form-data">
-                                {% csrf_token %}
-                                {{ form.as_p }}
-                                <button class="btn btn-dark btn-rounded" type="submit">
-                                    Update Profile</button>
-                            </form>
-                        </div>   
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-</container>
-{% endblock %}
->>>>>>> 1cac00e229a662e1dc030b142611512e16290a0c
+
