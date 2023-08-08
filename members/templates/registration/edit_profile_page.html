@@ -1,16 +1,26 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
-{% block title %}Create a New profile{% endblock %}
 {% load static %}
-{% block content %}
-
+{% block update %}
 <div class="content-section">
+    <div class="dropdown">
+        <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Edit
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Edit Settings</a></li>
+          {% if user.is_authenticated %}
+          <li><a class="dropdown-item" href="{% url 'edit_profile_page' user.profile.id %}">Edit Profile</a></li>
+          <li><a class="dropdown-item" href="{% url 'profile' %}">Show My Profile</a></li>
+          {% else %}
+          <li><a class="dropdown-item" href="{% url 'create_profile' %}">Create Profile Page</a></li>
+          <li><a class="dropdown-item" href="{% url 'profile' %}">Show My Profile</a></li>
+        </ul>
+      </div>
+      {% endif %}
+      {% if user.id == user.profile.id %}
     <div class="media">
-        {{% if user.profile.image %}}
         <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" />
-        {{% else %}}
-        <img class="rounded-circle account-img" src="static/images/default_user.png" />
-        {{% endif %}}
         <div class="media-body">
             <h2 class="account-heading">{{ user.username }}</h2>
             <p class="text-secondary">{{ email }}</p>
@@ -27,11 +37,15 @@
             <!-- Profile form -->
         </fieldset>
         <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Create Profile</button>
+            <button class="btn btn-outline-info" type="submit">Update</button>
         </div>
     </form>
 </div>
+{% else %}
+Please login to edit this Page..
+{% endif %}
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
+   
 {% endblock %}

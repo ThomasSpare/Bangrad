@@ -21,46 +21,47 @@
   </div>
 <container class="container-fluid d-flex">
 <section class="col-md-6 d-flex">
-  {{% if user.profile.image.url %}}
-  <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" />
-  {{% else %}}
-  <img class="rounded-circle account-img" src="/workspace/Bangrad/static/images/default_user.png" />
-  {{% endif %}}
+  {% if user.profile.image %}
+  <img class="rounded-circle account-img" style="height: 150px; width: 150px;" src="{{ user.profile.image.url }}" />
+  {% else %}
+  <img class="rounded-circle account-img" style="height: 150px; width: 150px;" src="https://res.cloudinary.com/djunroohl/image/upload/v1691507833/sxnum1e7ukkawgek6rgo.png" />
+  {% endif %}
 <br/><br/>
-<h2>{{ user.profile.first_name }} {{ user.profile.last_name }}</h2>
+<h2>{{ user.profile.first_name }} {{ user.profile.last_name }}</h2><br>
 {{ user.profile.bio }}
 {% if user.profile.email %}
-<a href="{{ user.profile.email }}">{{ user.profile.email }}</a>
+<a href="{{ user.profile.email }}">{{ user.profile.email }}</a><br>
 {% endif %}
 {% if user.profile.website_url %}
-<a href="{{ user.profile.website_url }}">{{ user.profile.website_url }}</a>
+<a href="{{ user.profile.website_url }}">{{ user.profile.website_url }}</a><br>
 {% endif %}
 {% if user.spotify_artist %}
-<a href="{{ user.profile.spotify_artist }}">{{ user.profile.spotify_artist }}</a>
+<label for="spotify_artist">Spotify</label>
+<a href="{{ user.profile.spotify_artist }}">{{ user.profile.spotify_artist }}</a><br>
 {% endif %}
 {% if user.profile.instagram %}
-<a href="{{ user.profile.instagram }}">{{ user.profile.instagram }}</a>
+<a href="{{ user.profile.instagram }}">{{ user.profile.instagram }}</a><br>
 {% endif %}
 {% if user.profile.facebook %}
-<a href="{{ user.profile.facebook }}">{{ user.profile.facebook }}</a>
+<a href="{{ user.profile.facebook }}">{{ user.profile.facebook }}</a><br>
 {% endif %}
 {% if user.profile.twitter %}
-<a href="{{ user.profile.twitter }}">{{ user.profile.twitter }}</a>
+<a href="{{ user.profile.twitter }}">{{ user.profile.twitter }}</a><br>
 {% endif %}
 {% if user.profile.mixcloud %}
-<a href="{{ user.profile.mixcloud }}">{{ user.profile.mixcloud }}</a>
+<a href="{{ user.profile.mixcloud }}">{{ user.profile.mixcloud }}</a><br>
 {% endif %}
 {% if user.profile.soundcloud %}
-<a href="{{ user.profile.soundcloud }}">{{ user.profile.soundcloud }}</a>
+<a href="{{ user.profile.soundcloud }}">{{ user.profile.soundcloud }}</a><br>
 {% endif %}
 {% if user.profile.youtube %}
-<a href="{{ user.profile.youtube }}">{{ user.profile.youtube }}</a>
+<a href="{{ user.profile.youtube }}">{{ user.profile.youtube }}</a><br>
 {% endif %}
 {% if user.profile.link_1 %}
-<a href="{{ user.profile.link_1 }}">{{ user.profile.link_1 }}</a>
+<a href="{{ user.profile.link_1 }}">{{ user.profile.link_1 }}</a><br>
 {% endif %}
 {% if user.profile.link_2 %}
-<a href="{{ user.profile.link_2 }}">{{ user.profile.link_2 }}</a>
+<a href="{{ user.profile.link_2 }}">{{ user.profile.link_2 }}</a><br>
 {% endif %}
 {% endblock %}
 

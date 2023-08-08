@@ -25,17 +25,17 @@ class Search(CreateView):
 
 class ArticleDetailView(DetailView):
     model = LodgeForum
-    template_name = 'article_details.html'
+    template_name = 'registration/article_details.html'
 
 
 class UpdatePostView(UpdateView):
     model = LodgeForum
-    template_name = 'member/editpost.html'
+    template_name = 'registration/editpost.html'
     fields = ['topic','description', 'body', 'link', 'image' ]
 
 class DeletePostView(DeleteView):
     model = LodgeForum
-    template_name = 'deletepost.html'
+    template_name = 'registration/deletepost.html'
     success_url = reverse_lazy('lodge')
 
 
@@ -63,7 +63,7 @@ def AddInLodge(request):
             return redirect('lodge.html')
         else:
             form = CreateInForum()
-            return render(request, 'member/addinlodge.html', {'form': form})
+            return render(request, 'registration/addinlodge.html', {'form': form})
 
 
 def LodgeTalk(request):
@@ -74,7 +74,7 @@ def LodgeTalk(request):
             form.save()
             return redirect('lodge.html')
     context = {'form': form}
-    return render(request, 'member/lodgetalk.html', context)
+    return render(request, 'registration/lodgetalk.html', context)
 
 
 def register(request):
@@ -88,21 +88,34 @@ def register(request):
             return redirect('login.html')
     else:
         form = UserRegisterForm()
-    return render(request, '/account/signup.html', {'form': form})
+    return render(request, 'registration/signup.html', {'form': form})
 
-
-class Profile(UpdateView):
+class ProfileDetails(DetailView):
     """
-    View to render Edit profile page
+    View to render profile page
     """
     model = Profile
-    template_name = 'member/profile.html'
+    template_name = 'registration/profile.html'
     fields = [  'image', 'bio', 'first_name', 'last_name', 'email',
                 'website_url', 'spotify_artist', 'instagram', 'facebook',
                 'twitter', 'mixcloud', 'soundcloud', 'youtube', 'link_1',
                 'link_2'
             ]
+    def get_object(self, *args, **kwargs):
+        return self.request.user
 
+
+class ProfileUpdateView(UpdateView):
+    """
+    View to render Edit profile page
+    """
+    model = Profile
+    template_name = 'registration/edit_profile_page.html'
+    fields = [  'image', 'bio', 'first_name', 'last_name', 'email',
+                'website_url', 'spotify_artist', 'instagram', 'facebook',
+                'twitter', 'mixcloud', 'soundcloud', 'youtube', 'link_1',
+                'link_2'
+            ]
     def get_object(self, *args, **kwargs):
         return self.request.user
 
@@ -110,17 +123,17 @@ class Profile(UpdateView):
 class EditProfilePageView(generic.UpdateView):
     model = Profile
     form_class = ProfileUpdateForm
-    template_name = 'member/edit_profile_page'
+    template_name = 'registration/edit_profile_page.html'
     fields = ['bio', 'image', 'website_url', 'spotify_artist', 'instagram',
                 'facebook', 'twitter', 'mixcloud', 'soundcloud', 'youtube',
                 'link_1', 'link_2'
             ]
-    success_url = reverse_lazy('member/profile')
+    success_url = reverse_lazy('registration/profile')
 
 
 class CreateProfilePageView(CreateView):
     model = Profile
-    template_name = 'member/create_profile.html'
+    template_name = 'registration/create_profile.html'
     fields = '__all__'
     
     def form_valid(self, form):
@@ -163,11 +176,11 @@ def profile_update(request):
         'p_form': p_form
     }
 
-    return render(request, 'member/profile.html', context)
+    return render(request, 'registration/profile.html', context)
 
 
 class UserListView(ListView):
 
     model = User
-    template_name = 'member/memberlist.html'
+    template_name = 'registration/memberlist.html'
     fields = '__all__'

@@ -38,7 +38,9 @@
                   <message class="messages">  
                       {% if messages %} {% for message in messages %}
                       <div id="alert" class="alert alert-{{ message.tag }}">{{ message }}</div>
+                      {% if user.profile.image %}
                       <img height="100" class="rounded-circle alert alert-{{ message.tag }}" src="{{ user.profile.image.url }}"/>
+                      {% endif %}
                       {% endfor%} {% endif %} {% block message %}{% endblock %}
                   </h1>
                   </message>

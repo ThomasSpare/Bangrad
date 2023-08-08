@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Create a New profile{% endblock %}
+{% load static %}
+{% block content %}
+
+<div class="content-section">
+    <div class="dropdown">
+        <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Edit
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Edit Settings</a></li>
+          {% if user.profile.id %}
+          <li><a class="dropdown-item" href="{% url 'edit_profile_page' user.profile.id %}">Edit Profile</a></li>
+          <li><a class="dropdown-item" href="{% url 'profile' %}">Show My Profile</a></li>
+          {% else %}
+          {% endif %}
+          <li><a class="dropdown-item" href="{% url 'create_profile' %}">Create Profile Page</a></li>
+        </ul>
+      </div>
+    <div class="media">
+        {% if user.profile.image %}
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" />
+        {% else %}
+        <img class="rounded-circle account-img" style="height: 100px; width: 100px;" 
+        src="https://res.cloudinary.com/djunroohl/image/upload/v1691507833/sxnum1e7ukkawgek6rgo.png" />
+        {% endif %}
+        <div class="media-body">
+            <h2 class="account-heading">{{ user.username }}</h2>
+            <p class="text-secondary">{{ email }}</p>
+        </div>
+    </div>
+    <!-- FORM HERE -->
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Profile Info</legend>
+            {{ u_form|crispy }}
+            <!-- User form -->
+            {{ p_form|crispy }}
+            <!-- Profile form -->
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Create Profile</button>
+        </div>
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+{% endblock %}
