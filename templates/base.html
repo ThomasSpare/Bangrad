@@ -132,6 +132,7 @@
     </div>
     <div class="container-fluid">
         <div class="row">
+
           {% block signup %}
 
             {%endblock%}
@@ -142,6 +143,9 @@
 
             </div>
             <div class="col-md-6" id="midcol">
+              {% block edit_profile_page %}
+
+              {%endblock%}
                 {% block lodgetalk %}
 
                 <!-- add in discussion -->

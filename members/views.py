@@ -36,6 +36,7 @@ class CreateProfilePageView(CreateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
+
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
