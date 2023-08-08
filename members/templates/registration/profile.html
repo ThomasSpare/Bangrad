@@ -13,19 +13,19 @@
     <ul class="dropdown-menu">
       <li><a class="dropdown-item" href="#">Edit Settings</a></li>
       {% if user.profile.id %}
-      <li><a class="dropdown-item" href="{ url 'edit_profile_page' user.profile.id }">Edit Profile</a></li>
+      <li><a class="dropdown-item" href="{% url 'edit_profile_page' user.profile.id %}">Edit Profile</a></li>
       {% else %}
       {% endif %}
-      <li><a class="dropdown-item" href="{ url 'create_profile' }">Create Profile Page</a></li>
+      <li><a class="dropdown-item" href="{% url 'create_profile' %}">Create Profile Page</a></li>
     </ul>
   </div>
 <container class="container-fluid d-flex">
 <section class="col-md-6 d-flex">
-  {% if user.profile.image %}
+  {{% if user.profile.image.url %}}
   <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" />
-  {% else %}
+  {{% else %}}
   <img class="rounded-circle account-img" src="/workspace/Bangrad/static/images/default_user.png" />
-  {% endif %}
+  {{% endif %}}
 <br/><br/>
 <h2>{{ user.profile.first_name }} {{ user.profile.last_name }}</h2>
 {{ user.profile.bio }}

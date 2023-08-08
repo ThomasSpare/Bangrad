@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 class CreateInForum(forms.ModelForm):
     class Meta:
         model = LodgeForum
-        fields = "__all__"
+        fields = ['body', 'topic', 'description', 'link', 'image']
     
     def __init__(self, *args, **kwargs):
             super(CreateInForum, self).__init__(*args, **kwargs)

@@ -4,7 +4,7 @@
 
 {% block lodge %}
 <h2 class="jumbotron">
-    Currently active forums: {{count}}
+    Currently active forums: {{ count }}
     <form method="POST" action="{% url 'addinlodge' %}">
         {% csrf_token %}
         <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Create a post</button>
@@ -13,20 +13,20 @@
 <div class="card-columns" style="padding: 10px; margin: 20px;"></div>
 
 
-{%for forum in forums %}
+{% for forum in forums %}
 
 <div class="card" style="width: 40rem; align-items: center; margin-left: 5vw; margin-bottom: 10px; background-color: #ebac757c;">
     <br>
     {{ post.body|safe }}
     <h5 class="card-title">
         <a href='{{forum.link}}'>
-            <h3>{{forum.topic}}</h3>
+            <h3>{{ forum.topic }}</h3>
         </a>
         <div class="card-body container">
-            <p>{{forum.description}}</p>
+            <p>{{ forum.description }}</p>
     </h5>
     <img src="{{post.author.profile.image}}" class="card-image" alt="author_picture">
-    <h5 class="card-title"> By: {{post.author.first_name}} {{post.author.last_name}} - <small>
+    <h5 class="card-title"> By: {{ post.author.first_name }} {{ post.author.last_name }} - <small>
         <a href="{url 'updatepost' post.pk}">Edit</a>
         <a href="{url 'deletepost' post.pk}">Delete</a>
     </small></h5>
@@ -51,7 +51,7 @@
         {% endif %}
     </p>
     <p class="card-text">
-        {{post.author.profile.bio}}
+        {{ post.author.profile.bio }}
     </p>
     <h4 class="small muted">Comments:</h4>
     {% for discuss in discussions %}

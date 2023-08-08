@@ -16,6 +16,13 @@ h1 {
     color: black;
 }
 
+/* Container fluid right and bottom */
+body > div:nth-child(2){
+    background: #108dc7;
+    background: -webkit-linear-gradient(to top, #ef8e38, #108dc7);
+    background: linear-gradient(to top, #ef8e38, #108dc7);
+}
+
 /* messages navbar */
 
 .section{
