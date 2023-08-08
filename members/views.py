@@ -79,6 +79,8 @@ class ProfileUpdateView(UpdateView):
     def get_object(self, *args, **kwargs):
         return self.request.user
 
+    success_url = reverse_lazy('profile')
+
 
 class EditProfilePageView(generic.UpdateView):
     model = Profile

@@ -80,6 +80,8 @@ class Profile(models.Model):
     def __str__(self):
         return str(self.user)
 
+    def get_success_url(self):
+        return reverse('profile')
 
  
 @receiver(post_save, sender=User)
