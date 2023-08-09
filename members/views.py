@@ -1,5 +1,4 @@
 from django.views import generic
-from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from SPOTIPY_APP.models import Profile
@@ -68,7 +67,7 @@ class ProfileUpdateView(SuccessMessageMixin, UpdateView):
     form_class = ProfileUpdateForm
     success_url = reverse_lazy('profile')
     template_name = 'registration/edit_profile_page.html'
-    success_message = 'Your profile has been updated successfully!'
+    success_message = 'Your profile  been updated successfully!'
     
     def get_object(self, *args, **kwargs):
         return self.request.user

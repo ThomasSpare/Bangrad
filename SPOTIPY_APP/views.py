@@ -42,6 +42,7 @@ class DeletePostView(DeleteView):
     template_name = 'registration/deletepost.html'
     success_url = reverse_lazy('lodge')
 
+
 def Lodge(request):
     forums = LodgeForum.objects.all()
     count = forums.count()
