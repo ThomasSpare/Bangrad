@@ -4,20 +4,28 @@ from .models import LodgeForum, Discussion, Profile
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.contrib.auth.models import User
+from django import forms
+from .models import LodgeForum
 
 
 class CreateInForum(forms.ModelForm):
     class Meta:
         model = LodgeForum
-        fields = ['body', 'topic', 'description', 'link', 'image']
+        fields = ['topic', 'description', 'body', 'link']
     
     def __init__(self, *args, **kwargs):
-            super(CreateInForum, self).__init__(*args, **kwargs)
-        
-            self.fields['topic'].widget.attrs={'class': 'form-control'}
-            self.fields['description'].widget.attrs={'class': 'form-control'}
-            self.fields['link'].widget.attrs={'class': 'form-control'}
-            self.fields['image'].widget.attrs={'class': 'form-control'}
+        super(CreateInForum, self).__init__(*args, **kwargs)
+        self.fields['topic'].widget.attrs = {'class': 'form-control'}
+        self.fields['description'].widget.attrs = {'class': 'form-control'}
+        self.fields['body'].widget.attrs = {'class': 'form-control', 'rows': 4}
+        self.fields['link'].widget.attrs = {'class': 'form-control'}
+    
+    def clean_link(self):
+        link = self.cleaned_data['link']
+        if link and not link.startswith(('http://', 'https://')):
+            raise forms.ValidationError(
+                _("Invalid link. Please provide a valid URL starting with 'http://' or 'https://'"))
+        return link
 
 
 

@@ -28,7 +28,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3" id="Firstcol">
-              <img id="star" src="static/images/star.png" alt="star">
+              <img id="star" src="https://res.cloudinary.com/djunroohl/image/upload/v1691533210/vbyf2x45tcp54nzyfptb.png" alt="star">
                 <div class="col-md-8">
                 </div>
               </div>
@@ -122,11 +122,6 @@
 
             </div>
             <div class="col-md-3">
-              {% if user.is_authenticated %}
-             {% block memberlist %}
-             {% endblock %}
-             {% else %}
-             {% endif %}
             </div>
         </div>
     </div>
@@ -138,7 +133,11 @@
             {%endblock%}
 
             <div class="col-sm-1 col-md-3" id="leftcol">
-               
+              {% if user.is_authenticated %}
+              {% block memberlist %}
+              {% endblock %}
+              {% else %}
+              {% endif %}
 
 
             </div>
@@ -155,7 +154,7 @@
 
                 <!-- Content Goes here -->
 
-                {% endblock%}
+                {% endblock %}
 
                 {% block login %}
 
@@ -167,24 +166,24 @@
 
                 <!-- Active forums in lodge -->
 
-                {%endblock%}
+                {% endblock %}
 
                 {% block addinlodge %}
 
                 <!-- Create new thread in lodge -->
 
-                {% endblock%}
+                {% endblock %}
 
 
                 {% block spotipy %}
 
-                {%endblock%}
+                {% endblock %}
 
                 {% block profile %}
 
                 <!-- Profile -->
 
-                {%endblock%}
+                {% endblock %}
 
             </div>
             <div class="col-md-3" id="Rightcol">

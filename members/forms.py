@@ -3,6 +3,7 @@ from SPOTIPY_APP.models import Profile
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.contrib.auth.models import User
+from SPOTIPY_APP.forms import CreateInDiscussion
 
 
 class UserRegisterForm(UserCreationForm):
@@ -12,14 +13,15 @@ class UserRegisterForm(UserCreationForm):
         fields = ['username', 'email', 'password1', 'password2']
 
     def __init__(self, *args, **kwargs):
-            super(CreateInDiscussion, self).__init__(*args, **kwargs)
+        super(UserRegisterForm, self).__init__(*args, **kwargs)
 
-            widgets = {
-                    'username': forms.TextInput(attrs={'class': 'form-control'}),
-                    'email': forms.TextInput(attrs={'class': 'form-control'}),
-                    'password1': forms.TextInput(attrs={'class': 'form-control'}),
-                    'password2': forms.TextInput(attrs={'class': 'form-control'}),
-                    }
+        widgets = {
+                'username': forms.TextInput(attrs={'class': 'form-control'}),
+                'email': forms.TextInput(attrs={'class': 'form-control'}),
+                'password1': forms.TextInput(attrs={'class': 'form-control'}),
+                'password2': forms.TextInput(attrs={'class': 'form-control'}),
+                }
+
 
 class UserUpdateForm(forms.ModelForm):
 

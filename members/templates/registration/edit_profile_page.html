@@ -22,7 +22,7 @@
       {% if user.id == user.profile.id %}
     <div class="media">
         {% if user.profile.image %}
-        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" />
+        <img class="rounded-circle account-img" style="height: 150px; width: 150px;" src="{{ user.profile.image.url }}" />
         {% else %}
         <img class="rounded-circle account-img" style="height: 150px; width: 150px;" src="https://res.cloudinary.com/djunroohl/image/upload/v1691507833/sxnum1e7ukkawgek6rgo.png" />
         {% endif %}

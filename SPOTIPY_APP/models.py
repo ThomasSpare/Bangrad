@@ -9,9 +9,9 @@ from django.dispatch import receiver
 from django.urls import reverse_lazy
 from ckeditor.fields import RichTextField
 from django.urls import reverse
+from django.utils import timezone
 
 # Search fields on home page
-
 
 class BangradSearchFields(models.Model):
     body = RichTextField(blank=True, null=True)
@@ -26,34 +26,35 @@ class BangradSearchFields(models.Model):
 
 # Lodge parent model
 class LodgeForum(models.Model):
+    name = models.CharField(max_length=200, default='anonymous')
     body = RichTextField(blank=True, null=True)
     topic = models.CharField(max_length=300)
     description = models.TextField(max_length=1000, blank=True)
     link = models.CharField(max_length=100, null=True)
     image = models.ImageField(null=True, upload_to='forum')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    date_created = models.DateTimeField(auto_now_add=True, null=True)
-
+    date_added = models.DateTimeField(auto_now_add=True)
     def __str__(self):
-        return str(self.topic + ' | ' + str(self.author))
+        return str(self.topic)
 
     def get_absolute_url(self):
         return reverse('lodge')
 
     class Meta:
-        ordering = ["date_created"]
+        ordering = ["date_added"]
         
-
 
 # Lodge child model
 class Discussion(models.Model):
     body = RichTextField(blank=True, null=True)
-    forum = models.ForeignKey(
-    LodgeForum, blank=True, on_delete=models.CASCADE)
+    forum = models.ForeignKey(LodgeForum, related_name="comments", blank=True, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    body = models.TextField()
     discuss = models.CharField(max_length=1000)
+    date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return (self.forum)
+        return '%s - %s' % (self.forum.topic, self.name)
 
 
 # Model to create user profile
@@ -80,10 +81,10 @@ class Profile(models.Model):
     def __str__(self):
         return str(self.user)
 
-    def get_success_url(self):
-        return reverse('profile')
+    def get_absolute_url(self):
+        return reverse('registration/profile', kwargs={'pk': self.pk})
 
- 
+
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
     """

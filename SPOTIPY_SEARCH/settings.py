@@ -46,13 +46,10 @@ SPOTIPY_CLIENT_ID = os.environ.get('SPOTIPY_CLIENT_ID')
 DEBUG = True
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-
 ALLOWED_HOSTS = ["bangrad.herokuapp.com",
-                "8000-thomasspare-bangrad-h65klui49d3.ws-eu102.gitpod.io",
-                "8000-thomasspare-bangrad-sgwgrdlwu4y.ws-eu102.gitpod.io",
-                "8000-thomasspare-bangrad-gcu9x3gcwo2.ws-eu102.gitpod.io",
+                "8000-thomasspare-bangrad-b9cb8g84i0l.ws-eu102.gitpod.io",
                 "8000-thomasspare-bangrad-5q314617lj.us2.codeanyapp.com", "localhost"]
-# Application definition
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -89,7 +86,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'SPOTIPY_SEARCH.urls'

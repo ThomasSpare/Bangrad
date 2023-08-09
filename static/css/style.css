@@ -15,12 +15,60 @@ h1 {
     font-weight: 800;
     color: black;
 }
+li{
+    list-style: none;
+}
+
+h3 {
+    font-family: 'Martian Mono', monospace;
+    font-weight: 400;
+    color: black;
+}
+
+
 
 /* Container fluid right and bottom */
 body > div:nth-child(2){
     background: #108dc7;
     background: -webkit-linear-gradient(to top, #ef8e38, #108dc7);
     background: linear-gradient(to top, #ef8e38, #108dc7);
+}
+
+#midcol > div > div > div{
+    width: 30rem;
+    background-color: #ef8e38;
+}
+/* Buttons */
+
+#comment_btn{
+    width: 8vw;
+    padding: 16px;
+    margin: 2px;
+    border-width: 10px;
+    position: fixed;
+    margin-top: -209vh;
+    font-family: 'Martian Mono';
+    font-weight: 600;
+    color:#333;
+}
+
+#midcol > h2 > form > button{
+    width: fit-content;
+    padding: 12px;
+    border-width: 10px;
+    margin: 31px;
+    color: black;
+    font-weight: 600;
+}
+
+#midcol > div > button{
+    font-family: 'Martian Mono';
+    width: 94px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 10px;
 }
 
 /* messages navbar */
@@ -34,6 +82,9 @@ body > div:nth-child(2){
     flex-direction: row;
 }
 
+#midcol > div > div:nth-child(3) > p:nth-child(3) > strong{
+    border-inline: 20px;
+}
 .alert {
     margin-left: 15vw;
     --bs-alert-bg: transparent;
@@ -131,7 +182,14 @@ body>div.row>div.col-md-3 {
 
 #Rightcol > div{
     padding: 20px;
+    display: none;
 }
+
+#Rightcol > div:hover{
+    padding: 20px;
+    display: block;
+}
+
 .dropdown-menu{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     --bs-dropdown-bg: #108dc7;

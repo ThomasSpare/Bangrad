@@ -7,37 +7,48 @@
     Currently active forums: {{ count }}
     <form method="POST" action="{% url 'addinlodge' %}">
         {% csrf_token %}
-        <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Create a post</button>
+        <button class="btn btn-outline-success">Create a post</button>
     </form>
 </h2>
-<div class="card-columns" style="padding: 10px; margin: 20px;"></div>
+<div class="card-columns" style="padding: 10px; margin: 20px;">
 
 
 {% for forum in forums %}
 
-<div class="card" style="width: 40rem; align-items: center; margin-left: 5vw; margin-bottom: 10px; background-color: #ebac757c;">
+<div class="card box container" 
+style="    width: 40rem;
+background-color: #ebac75;
+display: flex;
+align-items: center;
+flex-wrap: nowrap;
+margin-bottom: 5rem;">
     <br>
-    {{ post.body|safe }}
+    {{ forum.body|safe }}
     <h5 class="card-title">
-        <a href='{{forum.link}}'>
-            <h3>{{ forum.topic }}</h3>
+        <a href='{{forum.link}}' target="_blank">
+            <h4>{{ forum.topic }}</h4>
         </a>
         <div class="card-body container">
             <p>{{ forum.description }}</p>
     </h5>
-    <img src="{{post.author.profile.image}}" class="card-image" alt="author_picture">
-    <h5 class="card-title"> By: {{ post.author.first_name }} {{ post.author.last_name }} - <small>
+    <img class="rounded-circle account-img" style="height: 50px; width: 50px;" src="{{forum.author.profile.image.url}}" alt="author_picture">
+    <h5 class="card-title"> By: <p>{{ forum.author.profile.first_name }} {{ forum.author.profile.last_name }}</p> - <small>
+        
+        {% if user.is_authenticated %}
+        {% if user.id  == forum.author.id %}
         <a href="{url 'updatepost' post.pk}">Edit</a>
         <a href="{url 'deletepost' post.pk}">Delete</a>
+        {% endif %}
+        {% endif %}
     </small></h5>
     <p class="small text muted">
-        {% if post.author.profile.facebook %}
+        {% if forum.author.profile.facebook %}
         <a href="{{post.author.profile.facebook}}">Facebook</a>
         {% endif %}
-        {% if post.author.profile.instagram %}
+        {% if forum.author.profile.instagram %}
         <a href="{{post.author.profile.instagram}}">instagram</a>
         {% endif %}
-        {% if post.author.profile.spotify_artist %}
+        {% if forum.author.profile.spotify_artist %}
         <a href="{{post.author.profile.spotify_artist}}">Spotify</a>
         {% endif %}
         {% if post.author.profile.soundcloud %}
@@ -59,19 +70,22 @@
     {% if objs.forum == forum %}
     {{ objs.discuss }}
     <br>
-    {% endif %}
-    {% endfor %}
-    {% endfor %}
-    <form method="POST" action="{% url 'lodgetalk' %}">
-        {% csrf_token %}
-        <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Comment</button> 
-    </form>
 </div>
+{% endif %}
+
+    {% endfor %}
+    {% endfor %}
+</div>
+
+{% endfor %}
+<form method="POST" action="{% url 'lodgetalk' %}">
+    {% csrf_token %}
+    <button id="comment_btn" class="btn btn-outline-warning">Comment</button> 
+</form>
+</div>
+{%endblock%}
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-{% endfor %}
-{%endblock%}

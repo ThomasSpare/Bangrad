@@ -4,17 +4,19 @@ from django.views.generic.base import View
 from django.views.generic.list import ListView
 from django.views import generic
 from django.forms import ModelForm
+from django.contrib.auth.models import User
 from django.views.generic.edit import CreateView
 from django.views.generic import UpdateView, DetailView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Profile, Discussion, LodgeForum, forms, User, CloudinaryField, BangradSearchFields
+from .models import Profile, Discussion, LodgeForum, BangradSearchFields
 from members.views import ProfileDetails, ProfileUpdateView
 from django.shortcuts import render, redirect
-from .forms import CreateInForum
+from .forms import CreateInForum, CreateInDiscussion
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from SPOTIPY_SEARCH.settings import sp
 from django.urls import reverse_lazy
+
 
 
 
@@ -33,13 +35,12 @@ class ArticleDetailView(DetailView):
 class UpdatePostView(UpdateView):
     model = LodgeForum
     template_name = 'registration/editpost.html'
-    fields = ['topic','description', 'body', 'link', 'image' ]
+   
 
 class DeletePostView(DeleteView):
     model = LodgeForum
     template_name = 'registration/deletepost.html'
     success_url = reverse_lazy('lodge')
-
 
 def Lodge(request):
     forums = LodgeForum.objects.all()
@@ -59,13 +60,12 @@ def AddInLodge(request):
     if request.method == 'POST':
         form = CreateInForum(request.POST)
         if form.is_valid():
-            form.save()
-            messages.success(
-                request, f'Your forum is added successfully')
-            return redirect('lodge.html')
-        else:
-            form = CreateInForum()
-            return render(request, 'registration/addinlodge.html', {'form': form})
+            forum = form.save(commit=False)
+            forum.author = request.user
+            forum.save()
+            messages.success(request, 'Your forum post has been added successfully.')
+            return redirect('lodge')
+    return render(request, 'addinlodge.html', {'form': form})
 
 
 def LodgeTalk(request):
@@ -76,11 +76,21 @@ def LodgeTalk(request):
             form.save()
             return redirect('lodge.html')
     context = {'form': form}
-    return render(request, 'registration/lodgetalk.html', context)
+    return render(request, 'lodgetalk.html', context)
 
 
-
-
+def register(request):
+    if request.method == 'POST':
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            messages.success(
+                request, f'Your account has been created! You are now able to log in')
+            return redirect('registration/login.html')
+    else:
+        form = UserRegisterForm()
+    return render(request, '/register/signup.html', {'form': form})
 
 
 def delete_post(request, id):
@@ -93,32 +103,6 @@ def delete_post(request, id):
         post.delete()
         messages.success(request,  'The post has been deleted successfully.')
         return redirect('lodge')
-
-
-@login_required  # user logged in before they can access profile page
-def profile_update(request):
-
-    if request.method == 'POST':
-        u_form = UserUpdateForm(request.POST, instance=request.user)
-        post_form = CreateInForum(request.POST, instance=request.user.profile)
-        p_form = ProfileUpdateForm(request.POST,
-                                   request.FILES,
-                                   instance=request.user.profile)
-        if u_form.is_valid() and p_form.is_valid():
-            u_form.save()
-            p_form.save()
-            messages.success(request, f'Your account has been updated!')
-            return redirect('/templates/home/profile_page.html')  # Redirect back to profile pag
-        else:
-            u_form = UserUpdateForm(instance=request.user)
-            p_form = ProfileUpdateForm(instance=request.user.profile)
-
-    context = {
-        'u_form': u_form,
-        'p_form': p_form
-    }
-
-    return render(request, 'registration/profile.html', context)
 
 
 class UserListView(ListView):
