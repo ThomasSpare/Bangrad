@@ -12,8 +12,7 @@
 </h2>
 <div class="card-columns" style="padding: 10px; margin: 20px;">
 
-
-{% for forum in forums %}
+{% for forum in posts %}
 
 <div class="card box container" 
 style="    width: 40rem;
@@ -36,33 +35,33 @@ margin-bottom: 5rem;">
         
         {% if user.is_authenticated %}
         {% if user.id  == forum.author.id %}
-        <a href="{url 'updatepost' post.pk}">Edit</a>
-        <a href="{url 'deletepost' post.pk}">Delete</a>
+        <a href="{url 'updatepost' forum.pk}">Edit</a>
+        <a href="{url 'deletepost' forum.pk}">Delete</a>
         {% endif %}
         {% endif %}
     </small></h5>
     <p class="small text muted">
         {% if forum.author.profile.facebook %}
-        <a href="{{post.author.profile.facebook}}">Facebook</a>
+        <a href="{{forum.author.profile.facebook}}">Facebook</a>
         {% endif %}
         {% if forum.author.profile.instagram %}
-        <a href="{{post.author.profile.instagram}}">instagram</a>
+        <a href="{{forum.author.profile.instagram}}">instagram</a>
         {% endif %}
         {% if forum.author.profile.spotify_artist %}
-        <a href="{{post.author.profile.spotify_artist}}">Spotify</a>
+        <a href="{{forum.author.profile.spotify_artist}}">Spotify</a>
         {% endif %}
-        {% if post.author.profile.soundcloud %}
-        <a href="{{post.author.profile.soundcloud}}">Soundcloud</a>
+        {% if forum.author.profile.soundcloud %}
+        <a href="{{forum.author.profile.soundcloud}}">Soundcloud</a>
         {% endif %}
-        {% if post.author.profile.mixcloud %}
-        <a href="{{post.author.profile.mixcloud}}">Mixcloud</a>
+        {% if forum.author.profile.mixcloud %}
+        <a href="{{forum.author.profile.mixcloud}}">Mixcloud</a>
         {% endif %}
-        {% if post.author.profile.youtube %}
-        <a href="{{post.author.profile.youtube}}">Youtube</a>
+        {% if forum.author.profile.youtube %}
+        <a href="{{forum.author.profile.youtube}}">Youtube</a>
         {% endif %}
     </p>
     <p class="card-text">
-        {{ post.author.profile.bio }}
+        {{ forum.author.profile.bio }}
     </p>
     <h4 class="small muted">Comments:</h4>
     {% for discuss in discussions %}
@@ -83,7 +82,7 @@ margin-bottom: 5rem;">
     <button id="comment_btn" class="btn btn-outline-warning">Comment</button> 
 </form>
 </div>
-{%endblock%}
+{% endblock %}
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>

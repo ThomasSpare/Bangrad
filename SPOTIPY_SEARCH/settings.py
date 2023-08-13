@@ -150,6 +150,17 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFTETIME': timedelta(minutes=30),
 }
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'skin': 'moono',
+        'toolbar': 'basic',
+        'height': 'full',
+        'width': 'full',
+        'removePlugins': 'exportpdf',
+        'toolbarCanCollapse': 'true'
+    },
+}
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

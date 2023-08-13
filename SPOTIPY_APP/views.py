@@ -57,17 +57,17 @@ def Lodge(request):
 
 
 def AddInLodge(request):
-    form = CreateInForum()
     if request.method == 'POST':
         form = CreateInForum(request.POST)
         if form.is_valid():
-            form.save()
+            new_forum_post = form.save()
+            posts = LodgeForum.objects.all()  # gets all posts, consider ordering by 'date' for relevancy
+            context = {'form': CreateInForum(), 'posts': posts}
             messages.success(request, 'Your forum post has been added successfully.')
-            return render(request, 'lodge.html')
-        else:
-            form = CreateInForum()
-            return render(request, 'addinlodge.html', {'form': form})
-    return render(request, 'lodge.html')
+            return render(request, 'addinlodge.html', context)
+    else:
+        form = CreateInForum()
+    return render(request, 'addinlodge.html', {'form': form})
 
 
 def LodgeTalk(request):
