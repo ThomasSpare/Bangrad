@@ -4,7 +4,7 @@
 {% block title %}Edit profile{% endblock %}
 {% block content %}
 
-<h3>Bangrad Profile Page</h3>
+<h1>Bangrad Profile Page</h1>
 <br/><br/>
 <div class="dropdown">
     <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -28,9 +28,18 @@
   {% endif %}
 <br/><br/>
 <h2>{{ user.profile.first_name }} {{ user.profile.last_name }}</h2><br>
+<div class="card" style="width: 25rem; padding: 10px; margin: 20px;">
 {{ user.profile.bio }}
+</div>
 {% if user.profile.email %}
-<a href="{{ user.profile.email }}">{{ user.profile.email }}</a><br>
+<div class="row bg-dark">
+<div class="col-sm-3">
+  <span class="h6 mb-0" style="width: 25rem; padding: 20px;">Email:   </span>
+</div>
+<div class="col-sm-9 text-secondary" style="text-justify: newspaper;">
+<a href="{{ user.profile.email }}">{{ user.profile.email }}   </a><br>
+</div>
+</div>
 {% endif %}
 {% if user.profile.website_url %}
 <a href="{{ user.profile.website_url }}">{{ user.profile.website_url }}</a><br>

@@ -56,7 +56,7 @@ class ProfileDetails(LoginRequiredMixin, DetailView):
     template_name = 'registration/profile.html'
     
     def get_object(self, *args, **kwargs):
-        return self.request.user
+        return self.request.user.profile
 
 
 class ProfileUpdateView(SuccessMessageMixin, UpdateView):
@@ -67,10 +67,10 @@ class ProfileUpdateView(SuccessMessageMixin, UpdateView):
     form_class = ProfileUpdateForm
     success_url = reverse_lazy('profile')
     template_name = 'registration/edit_profile_page.html'
-    success_message = 'Your profile  been updated successfully!'
+    success_message = 'Your profile was successfully updated !'
     
     def get_object(self, *args, **kwargs):
-        return self.request.user
+        return self.request.user.profile
     
     def form_valid(self, form):
         form.instance.user = self.request.user

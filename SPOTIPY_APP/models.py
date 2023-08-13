@@ -54,7 +54,7 @@ class Discussion(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return '%s - %s' % (self.forum.topic, self.name)
+        return str(self.forum)
 
 
 # Model to create user profile

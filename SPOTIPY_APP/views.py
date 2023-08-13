@@ -61,12 +61,13 @@ def AddInLodge(request):
     if request.method == 'POST':
         form = CreateInForum(request.POST)
         if form.is_valid():
-            forum = form.save(commit=False)
-            forum.author = request.user
-            forum.save()
+            form.save()
             messages.success(request, 'Your forum post has been added successfully.')
-            return redirect('lodge')
-    return render(request, 'addinlodge.html', {'form': form})
+            return render(request, 'lodge.html')
+        else:
+            form = CreateInForum()
+            return render(request, 'addinlodge.html', {'form': form})
+    return render(request, 'lodge.html')
 
 
 def LodgeTalk(request):
@@ -75,7 +76,7 @@ def LodgeTalk(request):
         form = CreateInDiscussion(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('lodge.html')
+            return render(request, 'lodge.html')
     context = {'form': form}
     return render(request, 'lodgetalk.html', context)
 
