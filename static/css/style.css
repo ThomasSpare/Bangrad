@@ -108,6 +108,7 @@ body > div:nth-child(2){
     position: absolute;
     justify-content: center;
     font-size: medium;
+    margin-left: 10vw;
 }
 
 h2 {
@@ -122,8 +123,6 @@ p {
     font-size: 14px;
     text-align: left;
     margin-inline: 5px;
-
-
 }
 
 #leftcol,
@@ -231,8 +230,13 @@ body>div.wrapper>div>div>div.col-6.col-md-6>div>form>fieldset {
     color: lavenderblush;
     font-family: fangsong;
     padding: 15px;
+    border-radius: 3%;
     width: 400px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: #4b96b9;
+   
 }
+
 
 
 .d-flex{
@@ -401,7 +405,9 @@ body>div:nth-child(3)>div>div:nth-child(3) {
 
 /* Make Spotify Songs Look More Round */
 iframe {
-    border-radius: 30px;
+    border-radius: 5px;
+    width: 100px;
+    height: 80px;
 }
 
 /* Make the Spotify Results Fall Into the Same Row */
