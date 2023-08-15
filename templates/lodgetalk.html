@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 {% if user.is_authenticated %}
 {% block lodgetalk %}
-<form action="{% url 'lodge' %}" method="POST">
+<form action="{% url 'lodgetalk' %}" method="POST">
     {% csrf_token %}
     {{form.as_p}}
     <input type="submit" class="btn btn-info" value="submit">

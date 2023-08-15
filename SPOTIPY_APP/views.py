@@ -47,8 +47,8 @@ def Lodge(request):
     forums = LodgeForum.objects.all()
     count = forums.count()
     discussions = []
-    for i in forums:
-        discussions.append(i.discussion_set.all())
+    for forum in forums:
+        discussions.append(forum.comments.all())
 
     context = {'forums': forums,
                'count': count,
@@ -60,7 +60,9 @@ def AddInLodge(request):
     if request.method == 'POST':
         form = CreateInForum(request.POST)
         if form.is_valid():
-            new_forum_post = form.save()
+            new_forum_post = form.save(commit=False)
+            new_forum_post.author = request.user
+            new_forum_post.save()
             posts = LodgeForum.objects.all()  # gets all posts, consider ordering by 'date' for relevancy
             context = {'form': CreateInForum(), 'posts': posts}
             messages.success(request, 'Your forum post has been added successfully.')

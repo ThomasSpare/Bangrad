@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
-
 {% block lodge %}
 <h2 class="jumbotron">
     Currently active forums: {{ count }}
@@ -27,9 +26,11 @@ margin-bottom: 5rem;">
         <a href='{{forum.link}}' target="_blank">
             <h4>{{ forum.topic }}</h4>
         </a>
+    </h5>
         <div class="card-body container">
             <p>{{ forum.description }}</p>
-    </h5>
+
+
     <img class="rounded-circle account-img" style="height: 50px; width: 50px;" src="{{forum.author.profile.image.url}}" alt="author_picture">
     <h5 class="card-title"> By: <p>{{ forum.author.profile.first_name }} {{ forum.author.profile.last_name }}</p> - <small>
         
@@ -70,6 +71,8 @@ margin-bottom: 5rem;">
     {{ objs.discuss }}
     <br>
 </div>
+</div>
+
 {% endif %}
 
     {% endfor %}

@@ -24,7 +24,7 @@ class CreateInForum(forms.ModelForm):
         link = self.cleaned_data['link']
         if link and not link.startswith(('http://', 'https://')):
             raise forms.ValidationError(
-                _("Invalid link. Please provide a valid URL starting with 'http://' or 'https://'"))
+                ("Invalid link. Please provide a valid URL starting with 'http://' or 'https://'"))
         return link
 
 

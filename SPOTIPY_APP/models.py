@@ -34,15 +34,15 @@ class LodgeForum(models.Model):
     image = models.ImageField(null=True, upload_to='forum')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     date_added = models.DateTimeField(auto_now_add=True)
+    class Meta:
+        ordering = ["date_added"]
+
     def __str__(self):
         return str(self.topic)
 
     def get_absolute_url(self):
         return reverse('lodge')
 
-    class Meta:
-        ordering = ["date_added"]
-        
 
 # Lodge child model
 class Discussion(models.Model):
