@@ -30,7 +30,7 @@ $(document).ready(function () {
     // *************** REPLACE THESE VALUES! *************************
     let client_id = "343dc32e612a47cbbd658a30197599d1";
 
-    let redirect_uri = "https%3A%2F%2F8000-thomasspare-bangrad-1hovpn91ipy.ws-eu103.gitpod.io%2F";
+    let redirect_uri = "https%3A%2F%2Fbangrad.herokuapp.com%2F";
     
     // *************** END *************************
 
