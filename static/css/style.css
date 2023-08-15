@@ -35,8 +35,9 @@ body > div:nth-child(2){
 }
 
 #midcol > div > div > div{
-    width: 30rem;
-    background-color: #ef8e38;
+    width: 100%;
+    background-color: #ef8e3800;
+
 }
 /* Buttons */
 
@@ -406,8 +407,8 @@ body>div:nth-child(3)>div>div:nth-child(3) {
 /* Make Spotify Songs Look More Round */
 iframe {
     border-radius: 5px;
-    width: 100px;
-    height: 80px;
+    width: 200px;
+    height: 300px;
 }
 
 /* Make the Spotify Results Fall Into the Same Row */
@@ -420,11 +421,13 @@ iframe {
     width: 100%;
 }
 
-/* Position Results Below Search Bar */
-#song-list {
+#song_0,
+#song_1,
+#song_2
+ {
     position: absolute;
-    top: 25%;
-    margin: 0;
+    margin-top: 5%;
+    margin: 2px;
 }
 
 .buscar-caja {
@@ -491,12 +494,24 @@ iframe {
 #secondsongdiv,
 #thirdsongdiv,
 #fourthsongdiv {
-    margin-right: 30px;
-    height: 30px;
-    margin-top: 100px;
-    margin-bottom: 20px;
+    color: #33333300;
+    margin-right: 37px;
+    height: 20px;
+    margin-bottom: 218px;
     justify-content: center;
     max-width: fit-content;
+}
+
+.row{
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+    align-content: space-around;
+    align-items: center;
+
 }
 
 @media only screen and (max-width: 1024px) {
@@ -511,11 +526,6 @@ iframe {
         height: 170px;
     }
 
-
-    #midcol {
-        height: 100px;
-
-    }
 
     #midcol>div {
         margin-bottom: 80px;
@@ -556,6 +566,38 @@ iframe {
         justify-content: center;
     }
 
+@media only screen and (max-width: 768px){ 
+    /* Vertical space between song rows */
+    #midcol > div > div > div {
+    width: 100%;
+    background-color: #ef8e3800;
+    margin-bottom: 200px;
 
+}
+}
+@media only screen and (max-width: 425px){ 
+iframe {
+    border-radius: 5px;
+    width: 126px;
+    height: 284px;
+}
+}
+@media only screen and (max-width: 325px){ 
+    iframe { 
+    border-radius: 5px;
+    width: 265px;
+    height: 85px;
+}
 
+#midcol > div > div > div {
+    width: 100%;
+    background-color: #ef8e3800;
+    margin-bottom: 217px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-end;
+    justify-content: flex-end;
+}
+}
 }

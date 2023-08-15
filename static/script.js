@@ -32,6 +32,7 @@ $(document).ready(function () {
 
     let redirect_uri = "https%3A%2F%2Fbangrad.herokuapp.com";
     
+    
     // *************** END *************************
 
     const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}`;
