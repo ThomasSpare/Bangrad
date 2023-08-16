@@ -46,8 +46,8 @@ class LodgeForum(models.Model):
 
 # Lodge child model
 class Discussion(models.Model):
-    body = RichTextField(blank=True, null=True)
     forum = models.ForeignKey(LodgeForum, related_name="comments", blank=True, on_delete=models.CASCADE)
+    body = RichTextField(blank=True, null=True)
     name = models.CharField(max_length=255)
     body = models.TextField()
     discuss = models.CharField(max_length=1000)

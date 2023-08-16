@@ -5,6 +5,7 @@
 {% block lodgetalk %}
 <form action="{% url 'lodgetalk' %}" method="POST">
     {% csrf_token %}
+    {{form.media}} 
     {{form.as_p}}
     <input type="submit" class="btn btn-info" value="submit">
 </form>

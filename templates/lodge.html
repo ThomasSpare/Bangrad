@@ -11,15 +11,18 @@
 </h2>
 <div class="card-columns" style="padding: 10px; margin: 20px;">
 
-{% for forum in posts %}
+{% for forum in forums %}
 
 <div class="card box container" 
-style="width: 40rem;
+style="
+width: 40rem;
 background-color: #ebac75;
 display: flex;
 align-items: center;
-flex-wrap: nowrap;
-margin-bottom: 5rem;">
+flex-wrap: wrap;
+margin-bottom: 5rem;
+min-height: 399px;
+">
     <br>
     {{ forum.body|safe }}
     <h5 class="card-title">
@@ -40,6 +43,7 @@ margin-bottom: 5rem;">
         <a href="{url 'deletepost' forum.pk}">Delete</a>
         {% endif %}
         {% endif %}
+    <p>{{ forum.date_added }}</p>
     </small></h5>
     <p class="small text muted">
         {% if forum.author.profile.facebook %}
@@ -64,14 +68,22 @@ margin-bottom: 5rem;">
     <p class="card-text">
         {{ forum.author.profile.bio }}
     </p>
+    <br/><br/>
+    <div>
+        <form method="POST" action="{% url 'lodgetalk' %}">
+            {% csrf_token %}
+            <button id="comment_btn" class="btn btn-outline-warning">Comment</button> 
+        </form>
+        <br/><br/>
+        <br/><br/>
     <h4 class="small muted">Comments:</h4>
+    </div>
     {% for discuss in discussions %}
     {% for objs in discuss %}
     {% if objs.forum == forum %}
     {{ objs.discuss }}
     <br>
-</div>
-</div>
+    
 
 {% endif %}
 
@@ -79,11 +91,11 @@ margin-bottom: 5rem;">
     {% endfor %}
 
 
+</div>
+</div>
+</div>
+</div>
 {% endfor %}
-<form method="POST" action="{% url 'lodgetalk' %}">
-    {% csrf_token %}
-    <button id="comment_btn" class="btn btn-outline-warning">Comment</button> 
-</form>
 </div>
 {% endblock %}
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

@@ -20,7 +20,7 @@ class CreateInForum(forms.ModelForm):
         self.fields['body'].widget.attrs = {'class': 'form-control', 'rows': 4}
         self.fields['link'].widget.attrs = {'class': 'form-control'}
     
-    def clean_link(self):
+    def clean_link(self):                       # Validates if the user link provided
         link = self.cleaned_data['link']
         if link and not link.startswith(('http://', 'https://')):
             raise forms.ValidationError(
@@ -37,7 +37,9 @@ class CreateInDiscussion(forms.ModelForm):
     def __init__(self, *args, **kwargs):
             super(CreateInDiscussion, self).__init__(*args, **kwargs)
 
+            self.fields['body'].widget.attrs = {'class': 'form-control', 'rows': 4}
             self.fields['forum'].widget.attrs={'class': 'form-control'}
             self.fields['discuss'].widget.attrs={'class': 'form-control'}
+
 
 

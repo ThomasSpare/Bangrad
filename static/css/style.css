@@ -1,7 +1,9 @@
 body {
-    background-color: rgb(242, 227, 219);
     font-family: 'Red Hat Mono', monospace;
     color: black;
+    background: #108dc7;
+    background: -webkit-linear-gradient(to top, #ef8e38, #108dc7);
+    background: linear-gradient(to top, #ef8e38, #108dc7);
 }
 
 .h-100{
@@ -44,11 +46,13 @@ body > div:nth-child(2){
     padding: 16px;
     margin: 2px;
     border-width: 10px;
-    position: fixed;
-    margin-top: -209vh;
+    position: absolute;
+    margin-top: 0;
+    margin-left: 170px;
     font-family: 'Martian Mono';
     font-weight: 600;
-    color:#333;
+    color: #333;
+
 }
 
 #midcol > h2 > form > button{
@@ -238,7 +242,7 @@ body>div.wrapper>div>div>div.col-6.col-md-6>div>form>fieldset {
 #card{
       margin-left: 20%;  
       width: 20vw;
-      --bs-gutter-x: 15rem;
+      /* --bs-gutter-x: 15rem; */
       background-color: #ef8e38;
 }
 
@@ -382,7 +386,6 @@ body>div:nth-child(3)>div>div:nth-child(3) {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border: 4px solid rgb(2, 84, 100);
     max-width: 700px;
-
 }
 
 #forum_form{
@@ -493,13 +496,11 @@ iframe {
 .row{
     --bs-gutter-y: 0;
     display: flex;
-    flex-wrap: nowrap;
     margin-top: calc(-1 * var(--bs-gutter-y));
     margin-right: calc(-.5 * var(--bs-gutter-x));
     margin-left: calc(-.5 * var(--bs-gutter-x));
     align-content: space-around;
     align-items: center;
-
 }
 
 @media only screen and (max-width: 1024px) {
