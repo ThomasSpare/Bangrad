@@ -23,20 +23,21 @@ align-items: center;
 flex-wrap: wrap;
 margin-bottom: 5rem;
 min-height: 399px;
-">
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
     <br>
     {{ forum.body|safe }}
     <h5 class="card-title">
+        Music Link:
         <a href='{{forum.link}}' target="_blank">
             <h4>{{ forum.topic }}</h4>
         </a>
     </h5>
         <div class="card-body container">
-            <p>{{ forum.description }}</p>
-
+            <strong>Subject: {{ forum.description }}</strong>
+<br/><br/>
 
     <img class="rounded-circle account-img" style="height: 50px; width: 50px;" src="{{forum.author.profile.image.url}}" alt="author_picture">
-    <h5 class="card-title"> By: <p>{{ forum.author.profile.first_name }} {{ forum.author.profile.last_name }}</p> - <small>
+    <h5 class="card-title"> By: <strong>{{ forum.author }}</strong> - <small>
         
         {% if user.is_authenticated %}
         {% if user.id  == forum.author.id %}
@@ -66,9 +67,11 @@ min-height: 399px;
         <a href="{{forum.author.profile.youtube}}">Youtube</a>
         {% endif %}
     </p>
-    <p class="card-text">
-        {{ forum.author.profile.bio }}
-    </p>
+        <div class="card">
+            <div class="card-body ">
+                {{ forum.author.profile.bio }}
+            </div>
+        </div>
     <br/><br/>
     <div>
         <form method="POST" action="{% url 'lodgetalk' %}">
@@ -87,12 +90,6 @@ min-height: 399px;
     {% endif %}
     {% endfor %}
     {% endfor %}
-    
-
-
-    
-
-
 </div>
 </div>
 {% endfor %}

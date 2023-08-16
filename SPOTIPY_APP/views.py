@@ -110,7 +110,6 @@ def delete_post(request, id):
 
 
 class UserListView(ListView):
-
     model = User
     template_name = 'registration/memberlist.html'
     fields = '__all__'

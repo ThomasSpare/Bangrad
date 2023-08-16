@@ -14,9 +14,11 @@ body {
 
 h1 {
     font-family: 'Martian Mono', monospace;
-    font-weight: 800;
+    font-weight: 500;
     color: black;
+    font-size: 50px;
 }
+
 li{
     list-style: none;
 }
@@ -52,9 +54,11 @@ body > div:nth-child(2){
     font-family: 'Martian Mono';
     font-weight: 600;
     color: #333;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 
 }
-
+/* Create post Button */
 #midcol > h2 > form > button{
     width: fit-content;
     padding: 12px;
@@ -62,6 +66,8 @@ body > div:nth-child(2){
     margin: 31px;
     color: black;
     font-weight: 600;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 #midcol > div > button{
@@ -83,6 +89,7 @@ body > div:nth-child(2){
 .main{
     display: flex;
     flex-direction: row;
+    text-shadow: 0 3px 3px rgba(0,0,0,.5);
 }
 
 #midcol > div > div:nth-child(3) > p:nth-child(3) > strong{
@@ -118,6 +125,7 @@ h2 {
     font-family: 'Martian Mono', monospace;
     font-weight: 300;
     color: black;
+    text-shadow: 0 3px 3px rgba(0,0,0,.5);
 }
 
 p {
@@ -161,7 +169,17 @@ body>div.row>div.col-md-3 {
 
 /* Edit Profile */
 
+/* Edit profile card */
+#midcol > div > form > fieldset > div{
+    align-items: self-end;
+    padding-inline-end: 78px;
+    padding-top: 20px;
+}
 
+#midcol > div > form > fieldset > div{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: #4b96b9;
+}
 /* navbar */
 #star{
     height: 200px;
@@ -358,6 +376,12 @@ body>div:nth-child(3)>div>div:nth-child(1) {
 }
 
 /* Lodge div */
+
+/* gold frame in lodge forum */
+#goldframe {
+    border: 5px outset orange;
+  }
+  
 
 body>div:nth-child(2)>div>div:nth-child(3) {
     height: 200px;
