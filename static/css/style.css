@@ -503,11 +503,15 @@ iframe {
     align-items: center;
 }
 
-@media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 1024px) {
 
     #navbarSupportedContent>ul>li.nav-item>a {
         font-size: medium;
         z-index: 999;
+    }
+
+    #comment_btn {
+        width: 35vw;
     }
 
     body>div:nth-child(1)>div>div.col-md-6 {
@@ -554,38 +558,39 @@ iframe {
         justify-content: center;
     }
 
-@media only screen and (max-width: 768px){ 
-/* Vertical space between song rows */
+    @media only screen and (max-width: 768px){ 
+    /* Vertical space between song rows */
+        #midcol > div > div > div {
+        width: 100%;
+        background-color: #ef8e3800;
+        margin-bottom: 200px;
+
+    }
+
+    }
+    @media only screen and (max-width: 425px){ 
+    iframe {
+        border-radius: 5px;
+        width: 126px;
+        height: 284px;
+    }
+    }
+    @media only screen and (max-width: 325px){ 
+        iframe { 
+        border-radius: 5px;
+        width: 265px;
+        height: 85px;
+    }
+
     #midcol > div > div > div {
-    width: 100%;
-    background-color: #ef8e3800;
-    margin-bottom: 200px;
-
-}
-}
-@media only screen and (max-width: 425px){ 
-iframe {
-    border-radius: 5px;
-    width: 126px;
-    height: 284px;
-}
-}
-@media only screen and (max-width: 325px){ 
-    iframe { 
-    border-radius: 5px;
-    width: 265px;
-    height: 85px;
-}
-
-#midcol > div > div > div {
-    width: 100%;
-    background-color: #ef8e3800;
-    margin-bottom: 217px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-content: flex-end;
-    justify-content: flex-end;
-}
-}
-}
+        width: 100%;
+        background-color: #ef8e3800;
+        margin-bottom: 217px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-content: flex-end;
+        justify-content: flex-end;
+    }
+    }
+    }
