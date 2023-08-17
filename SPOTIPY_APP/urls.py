@@ -16,8 +16,8 @@ urlpatterns = [
     path("addinlodge/", views.AddInLodge, name="addinlodge"),
     path('memberlist/', UserListView.as_view(), name='memberlist'),
     path('<int:pk>/edit_profile_page/', ProfileUpdateView.as_view(), name='edit_profile_page'),
-    path('article/<int:id>/remove/', DeletePostView.as_view(), name='deletepost'),
-    path('article/edit/<int:id>/', UpdatePostView.as_view(), name='updatepost'),
+    path('<int:id>/remove/', DeletePostView.as_view(), name='deletepost'),
+    path('update/<int:pk>/update_post/', UpdatePostView.as_view(), name='updatepost'),
     path('article/<int:pk>/', ArticleDetailView.as_view(), name='article_detail'),
 ]
 # if settings.DEBUG:

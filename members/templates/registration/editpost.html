@@ -2,23 +2,18 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block title %}Edit Post{% endblock %}
-{% block addinlodge %}
+{% block update_post %}
 
 
 <div class="mb-3 row" >
     <div class="col-md-6">
         <h2>Update Post...</h2>
         <h4 class="small">Edit this Post</h4>
-        <form class="form-control" id="forum_form" rows="3" action="{% url 'editpost' %}" method="POST">
+        <form class="form-control" id="forum_form" rows="3" action="{% url 'editpost' post.pk %}" method="POST">
             <article class="media content-section">
-                <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}" />
                 <div class="media-body">
                     <div class="article-metadata">
-                        <a class="mr-2" href="{{ post.author }}"></a>
-                        <small class="text-muted">{{ post.date|date:"F d, Y" }}</small>
                     </div>
-                    <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
-                    <p class="article-content">{{ post.content }}</p>
                 </div>
             </article>
             {% csrf_token %}

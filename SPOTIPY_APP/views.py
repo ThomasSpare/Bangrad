@@ -34,6 +34,7 @@ class ArticleDetailView(DetailView):
 
 class UpdatePostView(UpdateView):
     model = LodgeForum
+    form_class = CreateInForum
     template_name = 'registration/editpost.html'
    
 
