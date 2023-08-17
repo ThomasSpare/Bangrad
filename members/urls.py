@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from .views import UserRegistrationView, CreateProfilePageView, ProfileUpdateView, ProfileDetails
+from SPOTIPY_APP.views import UpdatePostView
 
 
 urlpatterns = [
