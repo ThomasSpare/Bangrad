@@ -538,7 +538,7 @@ iframe {
     }
 
     body>div:nth-child(1)>div>div.col-md-6 {
-        height: 170px;
+        height: 348px;        
     }
 
 
@@ -589,13 +589,32 @@ iframe {
         margin-bottom: 200px;
 
     }
-
+    /* menu button shift side to right */
+    body > div:nth-child(1) > div > div.col-md-6 > nav > div{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    p{
+    font-size: larger;
+    }
     }
     @media only screen and (max-width: 425px){ 
     iframe {
         border-radius: 5px;
         width: 126px;
         height: 284px;
+    }
+    textarea{
+        width: 70vw;
+    }
+    #midcol > div{
+    margin-bottom: 80px;
+    width: 262vw;
+    }
+    .h-100{
+        width: 160vw;
     }
     }
     @media only screen and (max-width: 325px){ 
@@ -604,7 +623,54 @@ iframe {
         width: 265px;
         height: 85px;
     }
+    body > div:nth-child(1){
+        width: 270vw;
+    }
+    #comment_btn{
+        margin-left: 0px;
+        margin-top: 253px;
+        background-color: #cdb332;
+        width: 185px;
+        height: 142px;
+        font-size: 26px;
+    }
 
+    #midcol > h2 > form > button{
+        width: 250px;
+        height: 120px;
+        font-size: 24px;
+        background-color: #8fd38f;
+        padding: 12px;
+        border-width: 10px;
+        margin: 31px;
+        color: black;
+        font-weight: 600;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    body > div:nth-child(1) > div > div.col-md-6 > nav > div > button{
+        height: 48px;
+        width: 322px;
+    }
+    /* menu container */
+    body > div:nth-child(1) > div > div.col-md-6 > nav > div{
+        display: flex;
+        width: 315px;
+        margin-left: 154vw;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+    }
+    /* menu button */
+    body > div:nth-child(1) > div > div.col-md-6 > nav > div > button{
+        height: 95px;
+        width: 322px;
+        background-color: #ffc107;
+    }
+
+    /* menu font bigger size */
+    #navbarSupportedContent>ul>li.nav-item>a{
+        font-size: xx-large;
+    }
     #midcol > div > div > div {
         width: 100%;
         background-color: #ef8e3800;
