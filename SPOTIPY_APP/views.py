@@ -24,18 +24,19 @@ from django.shortcuts import (get_object_or_404,
 
 
 class Search(CreateView):
+    """ 
+    Unused future View for Spotify search fields 
+    """
     # specify the model for create view
     model = BangradSearchFields
     template_name = "home.html"
     fields = ['key', 'tempo', 'language', 'release_year']
 
 
-class ArticleDetailView(DetailView):
-    model = LodgeForum
-    template_name = 'registration/article_details.html'
-
-
 class UpdatePostView(UpdateView):
+    """ 
+    View Update forum posts
+    """
     model = LodgeForum
     form_class = CreateInForum
     template_name = 'registration/editpost.html'
@@ -43,12 +44,18 @@ class UpdatePostView(UpdateView):
    
 
 class DeletePostView(DeleteView):
+    """ 
+    View to delete posts in forum
+    """
     model = LodgeForum
     template_name = 'registration/deletepost.html'
     success_url = reverse_lazy('lodge')
 
 
 def Lodge(request):
+    """ 
+    Lodge forums
+    """
     forums = LodgeForum.objects.all()
     count = forums.count()
     discussions = []
@@ -62,6 +69,9 @@ def Lodge(request):
 
 
 def AddInLodge(request):
+    """ 
+    Adds new posts in forum
+    """
     if request.method == 'POST':
         form = CreateInForum(request.POST)
         if form.is_valid():
@@ -78,6 +88,9 @@ def AddInLodge(request):
 
 
 def LodgeTalk(request):
+    """ 
+    Adds comments to posts in forum
+    """
     form = CreateInDiscussion()
     if request.method == 'POST':
         form = CreateInDiscussion(request.POST)
@@ -89,6 +102,9 @@ def LodgeTalk(request):
 
 
 def register(request):
+    """ 
+    User register view
+    """
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
@@ -103,6 +119,9 @@ def register(request):
 
 
 def delete_post(request, id):
+    """ 
+    delete a users posts in forum
+    """
     post = get_object_or_404(Post, pk=id)
     context = {'post': post}    
     
@@ -115,6 +134,9 @@ def delete_post(request, id):
 
 
 class UserListView(ListView):
+    """ 
+    RView to render all members
+    """
     model = User
     template_name = 'registration/memberlist.html'
     fields = '__all__'

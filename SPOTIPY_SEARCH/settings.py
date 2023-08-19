@@ -30,14 +30,11 @@ SPOTIPY_CLIENT_SECRET = os.environ.get('SPOTIPY_CLIENT_SECRET')
 SPOTIPY_CLIENT_ID = os.environ.get('SPOTIPY_CLIENT_ID')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ["bangrad.herokuapp.com",
-                "8000-thomasspare-bangrad-ovs3gah08at.ws-eu104.gitpod.io",
                 "*",
-                "8000-thomasspare-bangrad-1hovpn91ipy.ws-eu102.gitpod.io",
-                "8000-thomasspare-bangrad-b9cb8g84i0l.ws-eu102.gitpod.io",
                 "localhost"]
 
 

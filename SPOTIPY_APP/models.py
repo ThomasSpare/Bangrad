@@ -11,8 +11,8 @@ from ckeditor.fields import RichTextField
 from django.urls import reverse
 from django.utils import timezone
 
-# Search fields on home page
 
+# Unused future extended Search functionality for spotify
 class BangradSearchFields(models.Model):
     body = RichTextField(blank=True, null=True)
     key = models.CharField(max_length=10)
@@ -24,7 +24,7 @@ class BangradSearchFields(models.Model):
         return self.key
 
 
-# Lodge parent model
+# Lodge parent model to create new posts in forum
 class LodgeForum(models.Model):
     name = models.CharField(max_length=200, default='anonymous')
     body = RichTextField(blank=True, null=True)
@@ -45,7 +45,7 @@ class LodgeForum(models.Model):
         return reverse('lodge')
 
 
-# Lodge child model
+# Lodge child model used for comments
 class Discussion(models.Model):
     forum = models.ForeignKey(LodgeForum, related_name="comments", blank=True, on_delete=models.CASCADE)
     body = RichTextField(blank=True, null=True)

@@ -2,7 +2,7 @@ from django.contrib import admin
 from . import views
 from .views import UserListView
 from django.urls import path, include
-from .views import Search, Lodge, LodgeTalk, AddInLodge, ProfileDetails, ArticleDetailView, DeletePostView, UpdatePostView, ProfileUpdateView
+from .views import Search, Lodge, LodgeTalk, AddInLodge, ProfileDetails, DeletePostView, UpdatePostView, ProfileUpdateView
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -17,9 +17,7 @@ urlpatterns = [
     path('memberlist/', UserListView.as_view(), name='memberlist'),
     path('<int:pk>/edit_profile_page/', ProfileUpdateView.as_view(), name='edit_profile_page'),
     path('delete/<int:pk>/remove/', DeletePostView.as_view(), name='deletepost'),
-    path('update/<int:pk>/', UpdatePostView.as_view(), name='update_post'),
-    path('article/<int:pk>/', ArticleDetailView.as_view(), name='article_detail'),
-]
+    path('update/<int:pk>/', UpdatePostView.as_view(), name='update_post'),]
 # if settings.DEBUG:
 #     urlpatterns += static(settings.MEDIA_URL,
 #                           document_root=settings.MEDIA_ROOT)
