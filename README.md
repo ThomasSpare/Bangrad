@@ -1,6 +1,7 @@
 # Bangrad radical music discovery
 The intent for creating the Bangrad site was to make a platform to make it easy and fun to share music.
 ![Bangrad Home page](https://github.com/ThomasSpare/Bangrad/blob/bangrad2/images/home_page_cover.jpg)
+![Bangrad Home page](https://github.com/ThomasSpare/Bangrad/blob/bangrad2/images/home_page_cover2.jpg)
 ## Features
 
 ### search queries
