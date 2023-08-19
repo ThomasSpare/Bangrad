@@ -31,9 +31,10 @@ new finds and favorite artists.
 
 # DEPLOYMENT
 
-# Wireframes
-
-
+# Debugging
+1. Ckeditor not working after deployment to Heroku
+The ability to style the posts in the form is not possible after deployment to Heroku.
+Source of this error: Unkown 
 
 ## Deployment
 
