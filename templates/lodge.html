@@ -41,7 +41,8 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
         
         {% if user.is_authenticated %}
         {% if user.id  == forum.author.id %}
-        
+        <a href="{% url 'update_post' forum.pk %}">Edit</a>
+        <a href="{% url 'deletepost' forum.pk %}">Delete</a>
         {% endif %}
         {% endif %}
     <p>{{ forum.date_added }}</p>
@@ -84,7 +85,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
     {% for discuss in discussions %}
     {% for objs in discuss %}
     {% if objs.forum == forum %}
-    {{ objs.discuss }}
+    {{ objs.discuss }} - {{ objs.name }}
     <br>
     {% endif %}
     {% endfor %}

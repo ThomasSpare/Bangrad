@@ -56,6 +56,9 @@ class Discussion(models.Model):
 
     def __str__(self):
         return str(self.forum)
+    
+    def get_absolute_url(self):
+        return reverse('lodge')
 
 
 # Model to create user profile

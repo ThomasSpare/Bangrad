@@ -8,7 +8,6 @@
 {% for user in object_list %}
 {% if user.profile.image %}
        <li><img height="40" style="margin: 10px; display: flex;" class="rounded-circle" src="{{ user.profile.image.url }}"/></li>
-       <a href="{% url 'profile' image.profile %}">test</a>
        {% else %}
        <li><img id="members" class="rounded-circle account-img" style="height: 20px; width: 20px;" 
        src="https://res.cloudinary.com/djunroohl/image/upload/v1691507833/sxnum1e7ukkawgek6rgo.png"></li>

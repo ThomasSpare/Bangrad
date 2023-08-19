@@ -16,6 +16,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from SPOTIPY_SEARCH.settings import sp
 from django.urls import reverse_lazy
+from django.shortcuts import (get_object_or_404,
+                              render,
+                              HttpResponseRedirect)
 
 
 
@@ -36,6 +39,7 @@ class UpdatePostView(UpdateView):
     model = LodgeForum
     form_class = CreateInForum
     template_name = 'registration/editpost.html'
+    success_url = reverse_lazy('lodge')
    
 
 class DeletePostView(DeleteView):
