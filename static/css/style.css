@@ -170,7 +170,8 @@ body>div.row>div.col-md-3 {
 /* Edit Profile */
 
 /* Edit profile card */
-#midcol > div > form > fieldset > div{
+#midcol > form > fieldset > div{
+    background-color: #4b96b9;
     align-items: self-end;
     padding-inline-end: 78px;
     padding-top: 20px;

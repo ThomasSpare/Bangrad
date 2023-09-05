@@ -86,7 +86,7 @@ class Profile(models.Model):
         return str(self.user)
 
     def get_absolute_url(self):
-        return reverse('registration/profile', kwargs={'pk': self.pk})
+        return reverse('/accounts/signup/', kwargs={'pk': self.pk})
 
 
 @receiver(post_save, sender=User)

@@ -19,7 +19,7 @@
         {% endif %}
       </div>
       
-      {% if user.id == user.profile.id %}
+  
     <div class="media">
         {% if user.profile.image %}
         <img class="rounded-circle account-img" style="height: 150px; width: 150px;" src="{{ user.profile.image.url }}" />
@@ -36,19 +36,16 @@
         {% csrf_token %}
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">Profile Info</legend>
+            
             <div class="card">
             {{ form.as_p }}
             <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Update</button>
+                <button class="btn btn-info" type="submit">Update</button>
             </div>
         </fieldset>
     </form>
 </div>
 </div>
-
-{% else %}
-Please login to edit this Page..
-{% endif %}
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
