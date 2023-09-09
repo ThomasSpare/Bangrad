@@ -611,8 +611,9 @@ iframe {
         width: 70vw;
     }
     #midcol > div{
-    margin-bottom: 80px;
-    width: 262vw;
+        margin-bottom: 80px;
+        width: 76vw;
+        margin-top: 47px;
     }
     .h-100{
         width: 160vw;
@@ -656,10 +657,12 @@ iframe {
     body > div:nth-child(1) > div > div.col-md-6 > nav > div{
         display: flex;
         width: 315px;
-        margin-left: 154vw;
-        justify-content: flex-end;
+        margin-left: -2vw;
+        justify-content: left;
         flex-wrap: wrap;
-        flex-direction: row-reverse;
+        flex-direction: row;
+        align-items: stretch;
+        align-content: flex-end;
     }
     /* menu button */
     body > div:nth-child(1) > div > div.col-md-6 > nav > div > button{
