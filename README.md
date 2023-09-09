@@ -15,9 +15,6 @@ Here the user can enter after registering. The user can upload a photo and write
 also create folders with links to songs they want to save. After setting up a profile the user can also
 post and comment in the lodge forums. 
 
-<<<<<<< HEAD
-### The Lodge Forum
-=======
 ### The Lodge
 
 The lodge is where users can meet and exchange artists they've discovered and share their links and saved lists.
@@ -48,7 +45,6 @@ https://www.devhandbook.com/django/user-registration/
 
 A frequent error also I had was when I logged in and tried entering the profile page I received
 this error message.
->>>>>>> origin/bangrad3
 
 The lodge is where users can meet and exchange artists they've discovered and share links to music.
 The user has to register in order to access the forum. 
