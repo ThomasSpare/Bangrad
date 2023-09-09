@@ -593,9 +593,12 @@ iframe {
     /* menu button shift side to right */
     body > div:nth-child(1) > div > div.col-md-6 > nav > div{
         display: flex;
-        align-items: center;
         flex-wrap: wrap;
         justify-content: flex-end;
+        width: 141px;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 461px;
     }
     p{
     font-size: larger;
@@ -612,8 +615,8 @@ iframe {
     }
     #midcol > div{
         margin-bottom: 80px;
-        width: 76vw;
-        margin-top: 47px;
+        width: 118vw;
+        margin-left: 44px;
     }
     .h-100{
         width: 160vw;
