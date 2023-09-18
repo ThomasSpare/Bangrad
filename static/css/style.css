@@ -593,14 +593,28 @@ iframe {
     @media only screen and (max-width: 768px){ 
     /* Vertical space between song rows */
         #midcol > div > div > div {
-        width: 100%;
-        background-color: #ef8e3800;
-        margin-bottom: 200px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-end;
-        align-content: flex-end;
+            width: 100%;
+            background-color: #ef8e3800;
+            margin-bottom: 130px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: wrap;
 
+    #midcol > div {
+            width: 96vw;
+    }
+    .card-columns{
+        padding: 5px;
+        width: 100vw;
+    }
+    #comment_btn{
+            width: 79vw;
+            padding: 16px;
+            margin: 2px;
+            border-width: 10px;
+            position: relative;
+            margin-top: 6vh;
     }
     /* menu button shift side to right */
     body > div:nth-child(1) > div > div.col-md-6 > nav > div{
@@ -622,6 +636,23 @@ iframe {
         width: 347px;
         height: 82px
     }
+    /* Edit Profile page */
+    #midcol > container > section:nth-child(1) {
+        flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    align-items: flex-start;
+    align-items: flex-start;
+    padding: 2px;
+    width: 96vw;
+    }
+
+    .card-columns{
+        padding: 2px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
     #song_0,
     #song_1,
     #song_2,
@@ -641,8 +672,8 @@ iframe {
     }
     #midcol > div {
         margin-bottom: 80px;
-        width: 68vw;
-        margin-top: 246px;
+        width: 96vw;
+        margin-top: 68px;
     }
 
     .h-100{
@@ -658,14 +689,6 @@ iframe {
     }
     body > div:nth-child(1){
         width: 270vw;
-    }
-    #comment_btn{
-        margin-left: 0px;
-        margin-top: 253px;
-        background-color: #cdb332;
-        width: 185px;
-        height: 142px;
-        font-size: 26px;
     }
 
     #midcol > h2 > form > button{
