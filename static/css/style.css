@@ -422,7 +422,7 @@ body>div:nth-child(3)>div>div:nth-child(3) {
 /* Make Spotify Songs Look More Round */
 iframe {
     border-radius: 5px;
-    width: 200px;
+    width: 300px;
     height: 300px;
 }
 
