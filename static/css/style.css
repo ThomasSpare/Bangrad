@@ -545,6 +545,9 @@ iframe {
 
     #midcol>div {
         margin-bottom: 80px;
+        margin-bottom: 80px;
+        width: 74vw;
+        margin-top: 20px;
 
     }
 
@@ -588,6 +591,10 @@ iframe {
         width: 100%;
         background-color: #ef8e3800;
         margin-bottom: 200px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        align-content: flex-end;
 
     }
     /* menu button shift side to right */
@@ -606,20 +613,35 @@ iframe {
     }
     @media only screen and (max-width: 425px){ 
     iframe {
-        border-radius: 5px;
-        width: 126px;
-        height: 284px;
+        border-radius: 11px;
+        width: 347px;
+        height: 82px
     }
+    #song_0,
+    #song_1,
+    #song_2,
+    #song_4,
+    #song_5
+    {
+        position: absolute;
+        margin-top: 5%;
+        margin: 2px;
+        display: flex;
+        max-width: 100vw;
+        margin-left: 241px;
+    }
+
     textarea{
         width: 70vw;
     }
-    #midcol > div{
+    #midcol > div {
         margin-bottom: 80px;
-        width: 118vw;
-        margin-left: 44px;
+        width: 68vw;
+        margin-top: 185px;
     }
+
     .h-100{
-        width: 160vw;
+        width: 100vw;
     }
     }
     @media only screen and (max-width: 325px){ 
