@@ -53,6 +53,7 @@ $(document).ready(function () {
             type: "GET",
             headers: {
                 Authorization: "Bearer " + accessToken,
+
             },
             success: function (data) {
                 // Load our songs from Spotify into our page

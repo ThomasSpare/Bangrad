@@ -223,6 +223,11 @@ body>div.row>div.col-md-3 {
 .navbar {
     background-color: rgb(2, 84, 100);
     color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
 }
 
 .dropdown-divider{
@@ -637,11 +642,12 @@ iframe {
     #midcol > div {
         margin-bottom: 80px;
         width: 68vw;
-        margin-top: 185px;
+        margin-top: 246px;
     }
 
     .h-100{
         width: 100vw;
+        overflow-x: hidden;
     }
     }
     @media only screen and (max-width: 325px){ 
