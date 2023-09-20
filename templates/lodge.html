@@ -9,21 +9,12 @@
         <button class="btn btn-outline-success">Create a post</button>
     </form>
 </h2>
-<div class="card-columns">
+<div class="card-columns" style="width: 100vw;">
 
 {% for forum in forums %}
 
 
-<div class="card box container" 
-style="
-width: 40rem;
-background-color: #ebac75;
-display: flex;
-align-items: center;
-flex-wrap: wrap;
-margin-bottom: 5rem;
-min-height: 399px;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+<div class="card box container">
     <br>
     {{ forum.body|safe }}
     <h5 class="card-title">

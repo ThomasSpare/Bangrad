@@ -122,13 +122,13 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-1 col-md-3" id="leftcol">
+            </div>
+            <div class="col-md-6" id="midcol">
               {% if user.is_authenticated %}
               {% block memberlist %}
               {% endblock %}
               {% else %}
               {% endif %}
-            </div>
-            <div class="col-md-6" id="midcol">
               {% block signup %}
 
               {%endblock%}

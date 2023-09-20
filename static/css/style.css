@@ -380,7 +380,17 @@ body>div:nth-child(3)>div>div:nth-child(1) {
     background-color: rgb(229, 124, 35);
 }
 
-/* Lodge div */
+/* Lodge Forum */
+#midcol > div > div{
+    width: 40rem;
+    background-color: #ebac75;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 5rem;
+    min-height: 399px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 /* gold frame in lodge forum */
 #goldframe {
@@ -600,10 +610,16 @@ iframe {
             justify-content: flex-start;
             align-items: flex-start;
             flex-wrap: wrap;
+        }
 
     #midcol > div {
-            width: 96vw;
+            width: 57vw;
+            margin-top: 189px;
     }
+    .buscar-caja {
+        left: 30%;
+    }
+
     .card-columns{
         padding: 5px;
         width: 100vw;
@@ -644,7 +660,7 @@ iframe {
     align-items: flex-start;
     align-items: flex-start;
     padding: 2px;
-    width: 96vw;
+    margin-top: 179px;
     }
 
     .card-columns{
@@ -652,6 +668,9 @@ iframe {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
+        padding: 5px;
+        width: 100vw;
+        }
     }
     #song_0,
     #song_1,
@@ -670,11 +689,7 @@ iframe {
     textarea{
         width: 70vw;
     }
-    #midcol > div {
-        margin-bottom: 80px;
-        width: 96vw;
-        margin-top: 68px;
-    }
+    
 
     .h-100{
         width: 100vw;
