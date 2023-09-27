@@ -8,7 +8,7 @@ from SPOTIPY_APP.forms import CreateInDiscussion
 
 class ProfilePageForm(forms.ModelForm):
     model = Profile
-    fields = ['bio', 'image', 'email',
+    fields = ['bio', 'image', 'first_name', 'last_name', 'email',
                 'website_url', 'spotify_artist', 'instagram', 'facebook',
                 'twitter', 'mixcloud', 'soundcloud', 'youtube', 'link_1',
                 'link_2'
@@ -17,8 +17,8 @@ class ProfilePageForm(forms.ModelForm):
     widgets = {
         # 'image': forms.ImageField(attrs={'class': 'form-control'}),
         'bio': forms.Textarea(attrs={'class': 'form-control'}),
-        'firstname': forms.TextInput(attrs={'class': 'form-control'}),
-        'lastname': forms.TextInput(attrs={'class': 'form-control'}),
+        'first_name': forms.TextInput(attrs={'class': 'form-control'}),
+        'last_name': forms.TextInput(attrs={'class': 'form-control'}),
         'website_url': forms.TextInput(attrs={'class': 'form-control'}),
         'spotify_artist': forms.TextInput(attrs={'class': 'form-control'}),
         'instagram': forms.TextInput(attrs={'class': 'form-control'}),
@@ -67,7 +67,7 @@ class UserUpdateForm(forms.ModelForm):
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['bio', 'image', 'email',
+        fields = ['bio', 'image', 'first_name', 'last_name', 'email',
                 'website_url', 'spotify_artist', 'instagram', 'facebook',
                 'twitter', 'mixcloud', 'soundcloud', 'youtube', 'link_1',
                 'link_2'
@@ -78,8 +78,8 @@ class ProfileUpdateForm(forms.ModelForm):
             widgets = {
             # 'image': forms.ImageField(attrs={'class': 'form-control'}),
             'bio': forms.Textarea(attrs={'class': 'form-control'}),
-            'firstname': forms.TextInput(attrs={'class': 'form-control'}),
-            'lastname': forms.TextInput(attrs={'class': 'form-control'}),
+            'first_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
             'website_url': forms.TextInput(attrs={'class': 'form-control'}),
             'spotify_artist': forms.TextInput(attrs={'class': 'form-control'}),
             'instagram': forms.TextInput(attrs={'class': 'form-control'}),

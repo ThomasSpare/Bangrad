@@ -5,6 +5,9 @@
 {% block content %}
 
 <h1>Bangrad Profile Page</h1>
+
+<h2>Alias: {{ user }}</h2><br>
+  <h2>{{ user.profile.first_name }} {{ user.profile.last_name }}</h2><br>
 <br/><br/> 
 <container class="container-fluid d-flex">
 <section class="col-md-6 d-flex">
@@ -14,7 +17,7 @@
   <img class="rounded-circle account-img" style="height: 150px; width: 150px;" src="https://res.cloudinary.com/djunroohl/image/upload/v1691507833/sxnum1e7ukkawgek6rgo.png" />
   {% endif %}
 <br/><br/>
-<h2>{{ user.profile.first_name }} {{ user.profile.last_name }}</h2><br>
+
 <div class="card" style="width: 25rem; padding: 10px; margin: 10px;">
 {{ user.profile.bio }}
 </div>
