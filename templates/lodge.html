@@ -28,7 +28,7 @@
 <br/><br/>
 
     <img class="rounded-circle account-img" style="height: 50px; width: 50px;" src="{{forum.author.profile.image.url}}" alt="author_picture">
-    <h5 class="card-title"> By: <strong>{{ forum.author }}</strong> - <small>
+    <h5 class="card-title"> By: <strong><a href="{% url 'user_profile' forum.author %}" target="_blank">{{ forum.author }}</a></strong> - <small>
         
         {% if user.is_authenticated %}
         {% if user.id  == forum.author.id %}
@@ -58,11 +58,6 @@
         <a href="{{forum.author.profile.youtube}}" target="_blank">Youtube</a>
         {% endif %}
     </p>
-        <div class="card">
-            <div class="card-body">
-                {{ forum.author.profile.bio }}
-            </div>
-        </div>
     <br/><br/>
     <div>
         <form method="POST" action="{% url 'lodgetalk' %}">
