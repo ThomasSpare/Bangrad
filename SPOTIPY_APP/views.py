@@ -72,6 +72,7 @@ def AddInLodge(request):
     """ 
     Adds new posts in forum
     """
+    moel = LodgeForum
     if request.method == 'POST':
         form = CreateInForum(request.POST)
         if form.is_valid():
@@ -91,7 +92,10 @@ def LodgeTalk(request):
     """ 
     Adds comments to posts in forum
     """
+    model = Discussion
     form = CreateInDiscussion()
+    success_url = reverse_lazy('lodge')
+    
     if request.method == 'POST':
         form = CreateInDiscussion(request.POST)
         if form.is_valid():
@@ -99,6 +103,7 @@ def LodgeTalk(request):
             return render(request, 'lodge.html')
     context = {'form': form}
     return render(request, 'lodgetalk.html', context)
+    return super().form_valid(form)
 
 
 def register(request):

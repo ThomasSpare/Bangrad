@@ -32,13 +32,13 @@ class CreateInForum(forms.ModelForm):
 class CreateInDiscussion(forms.ModelForm):
     class Meta:
         model = Discussion
-        fields = ['forum', 'name', 'discuss',]
+        fields = ['name', 'discuss',]
         success_url = "lodge"
     
     def __init__(self, *args, **kwargs):
             super(CreateInDiscussion, self).__init__(*args, **kwargs)
 
-            self.fields['forum'].widget.attrs={'class': 'form-control'}
+            # self.fields['forum'].widget.attrs={'class': 'form-control'}
             self.fields['name'].widget.attrs={'class': 'form-control'}
             self.fields['discuss'].widget.attrs={'class': 'form-control'}
 

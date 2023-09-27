@@ -6,6 +6,32 @@ from django.contrib.auth.models import User
 from SPOTIPY_APP.forms import CreateInDiscussion
 
 
+class ProfilePageForm(forms.ModelForm):
+    model = Profile
+    fields = ['bio', 'image', 'email',
+                'website_url', 'spotify_artist', 'instagram', 'facebook',
+                'twitter', 'mixcloud', 'soundcloud', 'youtube', 'link_1',
+                'link_2'
+                ]
+
+    widgets = {
+        # 'image': forms.ImageField(attrs={'class': 'form-control'}),
+        'bio': forms.Textarea(attrs={'class': 'form-control'}),
+        'firstname': forms.TextInput(attrs={'class': 'form-control'}),
+        'lastname': forms.TextInput(attrs={'class': 'form-control'}),
+        'website_url': forms.TextInput(attrs={'class': 'form-control'}),
+        'spotify_artist': forms.TextInput(attrs={'class': 'form-control'}),
+        'instagram': forms.TextInput(attrs={'class': 'form-control'}),
+        'facebook': forms.TextInput(attrs={'class': 'form-control'}),
+        'twitter': forms.TextInput(attrs={'class': 'form-control'}),
+        'mixcloud': forms.TextInput(attrs={'class': 'form-control'}),
+        'soundcloud': forms.TextInput(attrs={'class': 'form-control'}),
+        'youtube': forms.TextInput(attrs={'class': 'form-control'}),
+        'link_1': forms.TextInput(attrs={'class': 'form-control'}),
+        'link_2': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
+
 class UserRegisterForm(UserCreationForm):
 
     class Meta:

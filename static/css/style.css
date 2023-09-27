@@ -12,6 +12,18 @@ body {
     background: linear-gradient(to left, #ef8e38, #108dc7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+a {
+    color: azure;
+    text-decoration: overline;
+    background-color: #00010ea1;    
+    font-size: small;
+    padding: 3px;
+}
+
+a:hover {
+
+}
+
 h1 {
     font-family: 'Martian Mono', monospace;
     font-weight: 500;
@@ -39,8 +51,20 @@ body > div:nth-child(2){
 #midcol > div > div > div{
     width: 100%;
     background-color: #ef8e3800;
+    --bs-gutter-x: 0rem;
 
 }
+
+/* Animation elements*/
+
+.animate__rubberBand{
+    -webkit-animation-name: rubberBand;
+    animation-name: rubberBand;
+    animation-fill-mode: forwards;
+    animation-delay: 0.2s;
+    animation-duration: 2s;
+}
+
 /* Buttons */
 
 #comment_btn{
@@ -324,7 +348,22 @@ body>div:nth-child(1)>div>div:nth-child(3) {
  
 }
 
+/* Members */
+
+#midcol > ul{
+    display: flex;
+    width: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 /* Home */
+
+.center{
+    background-color: #ffffff00;
+    box-shadow: none;
+}
 
 body>div.wrapper>div:nth-child(1)>div>div:nth-child(1) {
     height: 218px;
@@ -390,6 +429,11 @@ body>div:nth-child(3)>div>div:nth-child(1) {
     margin-bottom: 5rem;
     min-height: 399px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#midcol > div > div> h5 > a {
+    background-color: rgba(0, 0, 0, 0);
+    color:brown;
 }
 
 /* gold frame in lodge forum */
@@ -603,7 +647,7 @@ iframe {
     @media only screen and (max-width: 768px){ 
     /* Vertical space between song rows */
         #midcol > div > div > div {
-            width: 100%;
+            width: 100vw;
             background-color: #ef8e3800;
             margin-bottom: 130px;
             display: flex;
@@ -613,7 +657,7 @@ iframe {
         }
 
     #midcol > div {
-            width: 57vw;
+            width: 100vw;
             margin-top: 189px;
     }
     .buscar-caja {
@@ -755,4 +799,4 @@ iframe {
         justify-content: flex-end;
     }
     }
-    }
+    

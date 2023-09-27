@@ -6,10 +6,10 @@
     Currently active forums: {{ count }}
     <form method="POST" action="{% url 'addinlodge' %}">
         {% csrf_token %}
-        <button class="btn btn-outline-success">Create a post</button>
+        <button class="btn btn-outline-success animate__bounceIn">Create a post</button>
     </form>
 </h2>
-<div class="card-columns" style="width: 100vw;">
+<div class="card-columns">
 
 {% for forum in forums %}
 
@@ -20,7 +20,7 @@
     <h5 class="card-title">
         Music Link:
         <a href='{{forum.link}}' target="_blank">
-            <h4>{{ forum.topic }}</h4>
+            <h4 class="animate__rubberBand">{{forum.topic}}</h4>
         </a>
     </h5>
         <div class="card-body container">
@@ -40,22 +40,22 @@
     </small></h5>
     <p class="small text muted">
         {% if forum.author.profile.facebook %}
-        <a href="{{forum.author.profile.facebook}}">Facebook</a>
+        <a href="{{forum.author.profile.facebook}}" target="_blank">Facebook</a>
         {% endif %}
         {% if forum.author.profile.instagram %}
-        <a href="{{forum.author.profile.instagram}}">instagram</a>
+        <a href="{{forum.author.profile.instagram}}" target="_blank">instagram</a>
         {% endif %}
         {% if forum.author.profile.spotify_artist %}
-        <a href="{{forum.author.profile.spotify_artist}}">Spotify</a>
+        <a href="{{forum.author.profile.spotify_artist}}" target="_blank">Spotify</a>
         {% endif %}
         {% if forum.author.profile.soundcloud %}
-        <a href="{{forum.author.profile.soundcloud}}">Soundcloud</a>
+        <a href="{{forum.author.profile.soundcloud}}" target="_blank">Soundcloud</a>
         {% endif %}
         {% if forum.author.profile.mixcloud %}
-        <a href="{{forum.author.profile.mixcloud}}">Mixcloud</a>
+        <a href="{{forum.author.profile.mixcloud}}" target="_blank">Mixcloud</a>
         {% endif %}
         {% if forum.author.profile.youtube %}
-        <a href="{{forum.author.profile.youtube}}">Youtube</a>
+        <a href="{{forum.author.profile.youtube}}" target="_blank">Youtube</a>
         {% endif %}
     </p>
         <div class="card">

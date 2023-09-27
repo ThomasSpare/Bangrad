@@ -14,7 +14,7 @@ from django.views.generic import UpdateView, DetailView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from SPOTIPY_APP.models import Profile, Discussion, LodgeForum, forms, User, CloudinaryField, BangradSearchFields
 from django.contrib.auth.decorators import login_required
-from .forms import ProfileUpdateForm, UserRegisterForm, UserCreationForm, UserUpdateForm
+from .forms import ProfileUpdateForm, UserRegisterForm, UserCreationForm, UserUpdateForm, ProfilePageForm
 from django.contrib import messages
 from SPOTIPY_SEARCH.settings import sp
 from django.urls import reverse_lazy
@@ -28,6 +28,7 @@ class UserRegistrationView(generic.CreateView):
 
 class CreateProfilePageView(CreateView):
     model = Profile
+    form_class = ProfilePageForm
     template_name = 'registration/create_profile.html'
     
     def form_valid(self, form):     # makes active user id available

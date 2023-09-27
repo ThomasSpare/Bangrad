@@ -48,6 +48,7 @@ class LodgeForum(models.Model):
 # Lodge child model used for comments
 class Discussion(models.Model):
     forum = models.ForeignKey(LodgeForum, related_name="comments", blank=True, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
     body = RichTextField(blank=True, null=True)
     name = models.CharField(max_length=255)
     body = models.TextField()
