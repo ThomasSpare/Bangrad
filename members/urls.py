@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from .views import UserRegistrationView, CreateProfilePageView, ProfileUpdateView, ProfileDetails
+from .views import UserRegistrationView, CreateProfilePageView, ProfileUpdateView, ProfileDetails, UserProfileView
 from SPOTIPY_APP.views import UpdatePostView
 
 
@@ -9,4 +9,5 @@ urlpatterns = [
     path('create_profile_page/', CreateProfilePageView.as_view(), name='create_profile'),
     path('edit_profile', ProfileUpdateView.as_view(), name='edit_profile_page'),
     path('profile/', ProfileDetails.as_view(), name="profile"),
+    path('memberlist/<str:user>/', UserProfileView.as_view(), name='user_profile'),
 ]

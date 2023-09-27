@@ -60,6 +60,26 @@ class ProfileDetails(LoginRequiredMixin, DetailView):
         return self.request.user.profile
 
 
+class UserProfileView(View):
+    """Class based view for other user's profile pages"""
+
+    def get(self, request, user, *args, **kwargs):
+        """Get method for other user's profile page"""
+        user_profile = Profile.objects.get(user__username=user)
+        if user_profile.user == request.user:
+            return HttpResponseRedirect(reverse('registration/user_profile.html'))
+        bio = user_profile.bio
+        image = user_profile.image
+        user = user_profile.user
+        
+        context = {
+            'user': user,
+            'bio': bio,
+            'image': image,
+        }
+        return render(request, 'registration/user_profile.html', context)
+
+
 class ProfileUpdateView(SuccessMessageMixin, UpdateView):
     """
     View to render Edit profile page

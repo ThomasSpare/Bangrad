@@ -7,7 +7,8 @@
 <ul>
 {% for user in object_list %}
 {% if user.profile.image %}
-       <li><img style="height: 50px; width: 50px; margin: 10px; display: flex;" class="rounded-circle" src="{{ user.profile.image.url }}"/><a href="{{user.profile}}" target="_blank">{{ user.profile }}</a></li>
+       <li><img style="height: 50px; width: 50px; margin: 10px; display: flex;" class="rounded-circle" src="{{ user.profile.image.url }}"/>
+        <a href="{{user.profile}}" target="_blank">{{ user.profile }}</a></li>
        {% else %}
        <li><img id="members" class="rounded-circle account-img" style="height: 50px; width: 50px; margin: 10px; display: flex;" 
        src="https://res.cloudinary.com/djunroohl/image/upload/v1691507833/sxnum1e7ukkawgek6rgo.png"><a href="{{user.profile}}" target="_blank">{{ user.profile }}</a></li>
