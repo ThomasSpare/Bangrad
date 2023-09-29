@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
+
+{% block corecss %}
+
+{% endblock %}
+
 {% if user.is_authenticated %}
 {% block lodgetalk %}
 <form action="{% url 'lodgetalk' post.pk %}" method="POST">
