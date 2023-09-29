@@ -427,6 +427,7 @@ body>div:nth-child(3)>div>div:nth-child(1) {
     width: 100vw;
     background-color: #ebac75;
     display: flex;
+    align-content: center;
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 5rem;
