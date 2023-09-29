@@ -144,6 +144,10 @@ body > div:nth-child(2){
     margin-left: 10vw;
 }
 
+.card{
+    --bs-card-bg: none;
+}
+
 h2 {
     font-family: 'Martian Mono', monospace;
     font-weight: 300;
@@ -420,7 +424,7 @@ body>div:nth-child(3)>div>div:nth-child(1) {
 
 /* Lodge Forum */
 #midcol > div > div{
-    width: 40rem;
+    width: 100vw;
     background-color: #ebac75;
     display: flex;
     align-items: center;
@@ -714,10 +718,14 @@ iframe {
         height: 82px
     }
 
+    #midcol > div > div {
+    width: 100vw;
+    }
+
     #midcol > div {
-    margin-bottom: 80px;
-    width: 81vw;
-    margin-top: 24vh;
+        margin-bottom: 80px;
+        width: 100vw;
+        margin-top: 24vh;
     }
 
     /* Edit Profile page */
