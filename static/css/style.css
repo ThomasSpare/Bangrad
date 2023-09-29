@@ -401,8 +401,8 @@ body>div.wrapper>div:nth-child(2)>div>div:nth-child(3) {
 
 div.row {
     background-color: rgb(242 227 219 / 0%);
-
 }
+
 
 /* Left home col */
 
@@ -656,6 +656,12 @@ iframe {
             align-items: flex-start;
             flex-wrap: wrap;
         }
+
+    #midcol > div.buscar-caja{
+        width: 83vw;
+        margin-left: 20vw;
+    
+    }
 
     #midcol > div {
             width: 100vw;
