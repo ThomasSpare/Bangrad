@@ -39,6 +39,7 @@ ALLOWED_HOSTS = ["bangrad.herokuapp.com",
 
 
 INSTALLED_APPS = [
+    'ckeditor',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -57,7 +58,6 @@ INSTALLED_APPS = [
     'SPOTIPY_APP',
     'SPOTIPY_SEARCH',
     'spotipy',
-    'ckeditor',
     'whitenoise',
 ]
 
