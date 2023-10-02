@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 {% if user.is_authenticated %}
 {% block lodgetalk %}
-<form action="{% url 'lodgetalk' post.pk %}" method="POST">
+<form action="{% url 'lodgetalk' %}" method="POST">
     {% csrf_token %}
     {{form.media}} 
     {{form.as_p}}

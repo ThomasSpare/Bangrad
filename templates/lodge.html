@@ -14,7 +14,7 @@
 {% for forum in forums %}
 
 
-<div class="card box container">
+<div style="background-color:rgb(255 223 172);" class="card box container">
     <br>
     {{ forum.body|safe }}
     <h5 class="card-title">
@@ -71,7 +71,7 @@
     {% for discuss in discussions %}
     {% for objs in discuss %}
     {% if objs.forum == forum %}
-    {{ objs.discuss }} - {{ objs.name }}
+    {{ objs.date_added }} <strong> {{ objs.discuss }}</strong>   by: {{ objs.user }}
     <br>
     {% endif %}
     {% endfor %}

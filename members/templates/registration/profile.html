@@ -5,6 +5,8 @@
 {% block content %}
 
 <h1>Bangrad Profile Page</h1>
+<h2>Alias: {{ user }}</h2><br>
+<h2>{{ user.profile.first_name }} {{ user.profile.last_name }}</h2><br>
 <br/><br/>
 <div class="dropdown">
     <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">

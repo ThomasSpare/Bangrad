@@ -105,7 +105,7 @@ body > div:nth-child(2){
 /* messages navbar */
 
 .section{
-    display: flexbox;
+    display: flex;
     flex-direction: column;
 }
 .main{
@@ -244,6 +244,13 @@ body>div.row>div.col-md-3 {
     --bs-dropdown-link-color: #ffffffcc;
 }
 
+/* Search Icon */
+#search_button{
+    color: #00fff5;
+    text-decoration: none;
+    background-color: #025464;
+}
+
 .bg-body-tertiary {
     --bs-bg-opacity: 0;
 }
@@ -268,22 +275,22 @@ body>div.wrapper>div>div>div.col-6.col-md-6>div>form>fieldset {
     padding: 30px;
 }
 
+/* Profile page fields */
 #midcol > container > section:nth-child(1) {
     flex-wrap: wrap;
     flex-direction: row;
     align-content: center;
     align-items: flex-start;
-    justify-content: space-around;
+    justify-content: start;
     align-items: flex-start;
     background: #00000021;
     color: lavenderblush;
     font-family: fangsong;
     padding: 15px;
     border-radius: 3%;
-    width: 400px;
+    width: 709px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background: #4b96b9;
-   
 }
 
 .d-flex{
@@ -347,8 +354,7 @@ body>div:nth-child(1)>div>div.col-md-6 {
 /* right side navbar */
 body>div:nth-child(1)>div>div:nth-child(3) {
     height: 200px;
-    background: #108dc7;
- 
+    background: #108dc700;
 }
 
 /* Members */
@@ -413,7 +419,7 @@ body>div:nth-child(2)>div>div:nth-child(1) {
 }
 
 #Firstcol {
-    background-color: #ef8e38;
+    background-color: #f0f8ff00;
 }
 
 
@@ -425,14 +431,13 @@ body>div:nth-child(3)>div>div:nth-child(1) {
 /* Lodge Forum */
 #midcol > div > div{
     width: 100vw;
-    background-color: #ebac75;
+    background-color: #ebac7500;
     display: flex;
     align-content: center;
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 5rem;
     min-height: 399px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #midcol > div > div> h5 > a {
@@ -609,7 +614,7 @@ iframe {
     }
     }
     #comment_btn {
-        width: 35vw;
+        width: 18vw;
     }
 
     body>div:nth-child(1)>div>div.col-md-6 {
@@ -619,21 +624,13 @@ iframe {
 
     #midcol>div {
         margin-bottom: 80px;
-        margin-bottom: 80px;
-        width: 74vw;
-        margin-top: 20px;
+        width: 21vw;
+        margin-top: 170px;
 
     }
 
     body>div:nth-child(1) {
         height: 350px;
-    }
-
-
-    #Firstcol,
-    #leftcol {
-        height: 0;
-        display: none;
     }
 
     #Rightcol {
@@ -645,7 +642,9 @@ iframe {
 
 
     body>div:nth-child(1) {
-        background-color: rgb(2 84 100);
+        background: #108dc7;
+        background: -webkit-linear-gradient(to right, #ef8e38, #108dc7);
+        background: linear-gradient(to right, #ef8e38, #108dc7);
     }
 
     #firstsongdiv,
@@ -679,9 +678,8 @@ iframe {
         }
 
     #midcol > div.buscar-caja{
-        width: 83vw;
-        margin-left: 20vw;
-    
+        width: 40vw;
+        margin-left: 7vw;
     }
 
     #midcol > div {
@@ -728,6 +726,16 @@ iframe {
         border-radius: 11px;
         width: 347px;
         height: 82px
+    }
+    
+    #leftcol, #midcol, #Rightcol {
+        height: 0vh;
+    }
+
+    #Firstcol,
+    #leftcol {
+        height: 0;
+        display: none;
     }
 
     #midcol > div > div {

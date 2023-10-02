@@ -103,7 +103,9 @@ def LodgeTalk(request):
             return render(request, 'lodge.html')
     context = {'form': form}
     return render(request, 'lodgetalk.html', context)
-    return super().form_valid(form)
+    def form_valid(self, form):     # makes active user id available
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 
 def register(request):
@@ -140,7 +142,7 @@ def delete_post(request, id):
 
 class UserListView(ListView):
     """ 
-    RView to render all members
+    View to render all members
     """
     model = User
     template_name = 'registration/memberlist.html'
