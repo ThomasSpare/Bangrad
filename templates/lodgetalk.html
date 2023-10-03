@@ -5,7 +5,14 @@
 {% block lodgetalk %}
 <form action="{% url 'lodgetalk' %}" method="POST">
     {% csrf_token %}
-    {{form.media}} 
+    {{form.media}}
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script> 
     {{form.as_p}}
     <input type="submit" class="btn btn-info" value="submit">
 </form>
@@ -14,5 +21,4 @@
     <a class="nav-item nav-link" href="{% url 'account_login' %}">Login</a>
 
     <a class="nav-item nav-link" href="{% url 'account_signup' %}">Register</a>
-    <script type="text/javascript" src="<%=ResolveClientUrl(" ~/ckeditor/ckedtor.js")></script>
 {% endif %}

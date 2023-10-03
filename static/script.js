@@ -26,14 +26,12 @@ $(document).ready(function () {
     // Get Access Token
     const accessToken = getUrlParameter("access_token");
 
-    // AUTHORIZE with Spotify (if needed)
-    // *************** REPLACE THESE VALUES! *************************
+    // AUTHORIZE with Spotify
+
     let client_id = "343dc32e612a47cbbd658a30197599d1";
 
     let redirect_uri = "https%3A%2F%2Fbangrad.herokuapp.com";
-    
-    git add .
-    // *************** END *************************
+
 
     const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}`;
     // Don't authorize if we have an access token already
