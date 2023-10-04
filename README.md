@@ -6,14 +6,14 @@ The intent for creating the Bangrad site was to make a platform to make it easy 
 
 ### search queries
 
-The search will return a list for the user with the search queries and display the artists, songs that are
-matching and if the user clickes on ... the links to the respective spotify tracks will appear and the user can copy
-this link directly and paste it in a new forum post.
+The spotify search field was from the start a feature intended to be used for users to use when posting in the forum. 
+From the spotify search results the users can copy the link for a particular track they want to share in the forum.
+The songs can be played from the site and opened in the spotify app if the user wants to get more info.  
 
 ### Profile Page
-Here the user can enter after registering. The user can upload a photo and write a short bio. They can
-also create folders with links to songs they want to save. After setting up a profile the user can also
-post and comment in the lodge forums. 
+Here the user can enter after succesfuly registering. The user can upload profile image and write a short bio. They can also
+add links to personal social media and various other accounts and 2 websites. These links will also display under the
+forum author in the forums. 
 
 ### The Lodge
 

@@ -6,109 +6,108 @@
 
 <h1>Bangrad Profile Page</h1>
 <h2>Alias: {{ user }}</h2><br>
-  <h2>{{ user.profile.first_name }} {{ user.profile.last_name }}</h2><br>
-<br/><br/> 
+<h2>{{ user.profile.first_name }} {{ user.profile.last_name }}</h2><br>
+<br /><br />
 <container class="container-fluid d-flex">
-<section class="col-md-6 d-flex">
-  {% if user.profile.image %}
-  <img class="animate__rubberBand rounded-circle account-img" style="height: 150px; width: 150px;" src="{{ user.profile.image.url }}" />
-  {% else %}
-  <img class="rounded-circle account-img" style="height: 150px; width: 150px;" src="https://res.cloudinary.com/djunroohl/image/upload/v1691507833/sxnum1e7ukkawgek6rgo.png" />
-  {% endif %}
-<br/><br/>
-<div class="card" style="width: 25rem; padding: 10px; margin: 10px;">
-{{ user.profile.bio }}
-</div>
-<br>
-{% if user.profile.email %}
-<div class="col-sm-3 card">
-  <span class="h6 mb-0" style="width: 25rem; padding: 10px;">Email:   </span>
-</div>
-<div class="col-sm-9 offset-sm-5">
-<a href="{{ user.profile.email }}" target="_blank">{{ user.profile.email }}   </a><br>
-</div>
-{% endif %}
-{% if user.profile.website_url %}
-<div class="col-sm-3 card">
-  <span class="h6 mb-0" style="width: 25rem; padding: 10px;">Website:   </span>
-</div>
-<div class="col-sm-9 offset-sm-5">
-<a href="{{ user.profile.website_url }}" target="_blank">{{ user.profile.website_url }}</a><br>
-</div>
-{% endif %}
-{% if user.profile.spotify_artist %}
-<div class="col-sm-3 card">
-    <span class="h6 mb-0" style="width: 25rem; padding: 10px;">Spotify:   </span>
-</div>
-  <div class="col-sm-9 offset-sm-5">
-  <a href="{{ user.profile.spotify_artist }}" target="_blank"> {{ user.profile.spotify_artist }}</a><br>
-  </div>
-{% endif %}
-{% if user.profile.instagram %}
-  <div class="col-sm-3 card">
-<span class="h6 mb-0" style="width: 25rem; padding: 10px;">Instagram:   </span>
-  </div>
-<div class="col-sm-9 offset-sm-5">
-<a href="{{ user.profile.instagram }}" target="_blank">{{ user.profile.instagram }}</a><br>
-</div>
-{% endif %}
-{% if user.profile.facebook %}
-  <div class="col-sm-3 card">
-<span class="h6 mb-0" style="width: 25rem; padding: 10px;">Facebook:   </span>
-  </div>
-  <div class="col-sm-9 offset-sm-5">
-<a href="{{ user.profile.facebook }}" target="_blank">{{ user.profile.facebook }}</a><br>
-</div>
-{% endif %}
-{% if user.profile.twitter %}
-  <div class="col-sm-3 card">
-<span class="h6 mb-0" style="width: 25rem; padding: 10px;"Twitter:   </span>
-  </div>
-  <div class="col-sm-9 offset-sm-5">
-<a href="{{ user.profile.twitter }}" target="_blank">{{ user.profile.twitter }}</a><br>
-</div>
-{% endif %}
-{% if user.profile.mixcloud %}
-  <div class="col-sm-3 card">
-<span class="h6 mb-0" style="width: 25rem; padding: 10px;">Mixcloud:   </span>
-</div>
-<div class="col-sm-9 offset-sm-5">
-<a href="{{ user.profile.mixcloud }}" target="_blank">{{ user.profile.mixcloud }}</a><br>
-</div>
-{% endif %}
-{% if user.profile.soundcloud %}
-  <div class="col-sm-3 card">
-<span class="h6 mb-0" style="width: 25rem; padding: 10px;">Soundcloud:   </span>
-  </div>
-  <div class="col-sm-9 offset-sm-5">
-<a href="{{ user.profile.soundcloud }}" target="_blank">{{ user.profile.soundcloud }}</a><br>
-</div>
-{% endif %}
-{% if user.profile.youtube %}
-  <div class="col-sm-3 card">
-<span class="h6 mb-0" style="width: 25rem; padding: 10px;">Youtube:   </span>
-  </div>
-  <div class="col-sm-9 offset-sm-5">
-<a href="{{ user.profile.youtube }}" target="_blank">{{ user.profile.youtube }}</a><br>
-</div>
-{% endif %}
-{% if user.profile.link_1 %}
-  <div class="col-sm-3 card">
-<span class="h6 mb-0" style="width: 25rem; padding: 10px;">Link 1:   </span>
-  </div>
-  <div class="col-sm-9 offset-sm-5">
-<a href="{{ user.profile.link_1 }}" target="_blank">{{ user.profile.link_1 }}</a><br>
-</div>
-{% endif %}
-{% if user.profile.link_2 %}
-  <div class="col-sm-3 card">
-<span class="h6 mb-0" style="width: 25rem; padding: 10px;">Link 2:   </span>
-  </div>
-  <div class="col-sm-9 offset-sm-5">
-<a href="{{ user.profile.link_2 }}" target="_blank">{{ user.profile.link_2 }}</a><br>
-</div>
-{% endif %}
-{% endblock %}
-
-
-
+  <section class="col-md-6 d-flex">
+    {% if user.profile.image %}
+    <img class="animate__rubberBand rounded-circle account-img" style="height: 150px; width: 150px;"
+      src="{{ user.profile.image.url }}" />
+    {% else %}
+    <img class="rounded-circle account-img" style="height: 150px; width: 150px;"
+      src="https://res.cloudinary.com/djunroohl/image/upload/v1691507833/sxnum1e7ukkawgek6rgo.png" />
+    {% endif %}
+    <br /><br />
+    <div class="card" style="width: 25rem; padding: 10px; margin: 10px;">
+      {{ user.profile.bio }}
+    </div>
+    <br>
+    {% if user.profile.email %}
+    <div class="col-sm-3 card">
+      <span class="h6 mb-0" style="width: 25rem; padding: 10px;">Email: </span>
+    </div>
+    <div class="col-sm-9 offset-sm-5">
+      <a href="{{ user.profile.email }}" target="_blank">{{ user.profile.email }} </a><br>
+    </div>
+    {% endif %}
+    {% if user.profile.website_url %}
+    <div class="col-sm-3 card">
+      <span class="h6 mb-0" style="width: 25rem; padding: 10px;">Website: </span>
+    </div>
+    <div class="col-sm-9 offset-sm-5">
+      <a href="{{ user.profile.website_url }}" target="_blank">{{ user.profile.website_url }}</a><br>
+    </div>
+    {% endif %}
+    {% if user.profile.spotify_artist %}
+    <div class="col-sm-3 card">
+      <span class="h6 mb-0" style="width: 25rem; padding: 10px;">Spotify: </span>
+    </div>
+    <div class="col-sm-9 offset-sm-5">
+      <a href="{{ user.profile.spotify_artist }}" target="_blank"> {{ user.profile.spotify_artist }}</a><br>
+    </div>
+    {% endif %}
+    {% if user.profile.instagram %}
+    <div class="col-sm-3 card">
+      <span class="h6 mb-0" style="width: 25rem; padding: 10px;">Instagram: </span>
+    </div>
+    <div class="col-sm-9 offset-sm-5">
+      <a href="{{ user.profile.instagram }}" target="_blank">{{ user.profile.instagram }}</a><br>
+    </div>
+    {% endif %}
+    {% if user.profile.facebook %}
+    <div class="col-sm-3 card">
+      <span class="h6 mb-0" style="width: 25rem; padding: 10px;">Facebook: </span>
+    </div>
+    <div class="col-sm-9 offset-sm-5">
+      <a href="{{ user.profile.facebook }}" target="_blank">{{ user.profile.facebook }}</a><br>
+    </div>
+    {% endif %}
+    {% if user.profile.twitter %}
+    <div class="col-sm-3 card">
+      <span class="h6 mb-0" style="width: 25rem; padding: 10px;" Twitter: </span>
+    </div>
+    <div class="col-sm-9 offset-sm-5">
+      <a href="{{ user.profile.twitter }}" target="_blank">{{ user.profile.twitter }}</a><br>
+    </div>
+    {% endif %}
+    {% if user.profile.mixcloud %}
+    <div class="col-sm-3 card">
+      <span class="h6 mb-0" style="width: 25rem; padding: 10px;">Mixcloud: </span>
+    </div>
+    <div class="col-sm-9 offset-sm-5">
+      <a href="{{ user.profile.mixcloud }}" target="_blank">{{ user.profile.mixcloud }}</a><br>
+    </div>
+    {% endif %}
+    {% if user.profile.soundcloud %}
+    <div class="col-sm-3 card">
+      <span class="h6 mb-0" style="width: 25rem; padding: 10px;">Soundcloud: </span>
+    </div>
+    <div class="col-sm-9 offset-sm-5">
+      <a href="{{ user.profile.soundcloud }}" target="_blank">{{ user.profile.soundcloud }}</a><br>
+    </div>
+    {% endif %}
+    {% if user.profile.youtube %}
+    <div class="col-sm-3 card">
+      <span class="h6 mb-0" style="width: 25rem; padding: 10px;">Youtube: </span>
+    </div>
+    <div class="col-sm-9 offset-sm-5">
+      <a href="{{ user.profile.youtube }}" target="_blank">{{ user.profile.youtube }}</a><br>
+    </div>
+    {% endif %}
+    {% if user.profile.link_1 %}
+    <div class="col-sm-3 card">
+      <span class="h6 mb-0" style="width: 25rem; padding: 10px;">Link 1: </span>
+    </div>
+    <div class="col-sm-9 offset-sm-5">
+      <a href="{{ user.profile.link_1 }}" target="_blank">{{ user.profile.link_1 }}</a><br>
+    </div>
+    {% endif %}
+    {% if user.profile.link_2 %}
+    <div class="col-sm-3 card">
+      <span class="h6 mb-0" style="width: 25rem; padding: 10px;">Link 2: </span>
+    </div>
+    <div class="col-sm-9 offset-sm-5">
+      <a href="{{ user.profile.link_2 }}" target="_blank">{{ user.profile.link_2 }}</a><br>
+    </div>
+    {% endif %}
+    {% endblock %}

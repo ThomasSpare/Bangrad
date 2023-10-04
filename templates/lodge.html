@@ -11,74 +11,74 @@
 </h2>
 <div class="card-columns">
 
-{% for forum in forums %}
+    {% for forum in forums %}
 
-
-<div style="background-color:rgb(255 223 172);" class="card box container">
-    <br>
-    {{ forum.body|safe }}
-    <h5 class="card-title">
-        Music Link:
-        <a href='{{forum.link}}' target="_blank">
-            <h4 class="animate__rubberBand">{{forum.topic}}</h4>
-        </a>
-    </h5>
-        <div class="card-body container">
+    <div style="background-color:rgb(255 223 172);" class="card box container">
+        <br>
+        {{ forum.body|safe }}
+        <h5 class="card-title">
+            Music Link:
+            <a href='{{forum.link}}' target="_blank">
+                <h4 class="animate__rubberBand">{{forum.topic}}</h4>
+            </a>
+        </h5>
+        <div class="card-body container" id="lodgecards">
             <strong>Subject: {{ forum.description }}</strong>
-<br/><br/>
+            <br /><br />
 
-    <img class="rounded-circle account-img" style="height: 50px; width: 50px;" src="{{forum.author.profile.image.url}}" alt="author_picture">
-    <h5 class="card-title"> By: <strong><a href="{% url 'user_profile' forum.author %}" target="_blank">{{ forum.author }}</a></strong> - <small>
-        
-        {% if user.is_authenticated %}
-        {% if user.id  == forum.author.id %}
-        <a href="{% url 'update_post' forum.pk %}">Edit</a>
-        <a href="{% url 'deletepost' forum.pk %}">Delete</a>
-        {% endif %}
-        {% endif %}
-    <p>{{ forum.date_added }}</p>
-    </small></h5>
-    <p class="small text muted">
-        {% if forum.author.profile.facebook %}
-        <a href="{{forum.author.profile.facebook}}" target="_blank">Facebook</a>
-        {% endif %}
-        {% if forum.author.profile.instagram %}
-        <a href="{{forum.author.profile.instagram}}" target="_blank">instagram</a>
-        {% endif %}
-        {% if forum.author.profile.spotify_artist %}
-        <a href="{{forum.author.profile.spotify_artist}}" target="_blank">Spotify</a>
-        {% endif %}
-        {% if forum.author.profile.soundcloud %}
-        <a href="{{forum.author.profile.soundcloud}}" target="_blank">Soundcloud</a>
-        {% endif %}
-        {% if forum.author.profile.mixcloud %}
-        <a href="{{forum.author.profile.mixcloud}}" target="_blank">Mixcloud</a>
-        {% endif %}
-        {% if forum.author.profile.youtube %}
-        <a href="{{forum.author.profile.youtube}}" target="_blank">Youtube</a>
-        {% endif %}
-    </p>
-    <br/><br/>
-    <div>
-        <form method="POST" action="{% url 'lodgetalk' %}">
-            {% csrf_token %}
-            <button id="comment_btn" class="btn btn-outline-warning">Comment</button> 
-        </form>
-        <br/><br/>
-        <br/><br/>
-    <h4 class="small muted">Comments:</h4>
+            <img class="rounded-circle account-img" style="height: 50px; width: 50px;"
+                src="{{forum.author.profile.image.url}}" alt="author_picture">
+            <h5 class="card-title"> By: <strong><a href="{% url 'user_profile' forum.author %}" target="_blank">
+                {{ forum.author }}</a></strong> - <small>
+                    {% if user.is_authenticated %}
+                    {% if user.id == forum.author.id %}
+                    <a href="{% url 'update_post' forum.pk %}">Edit</a>
+                    <a href="{% url 'deletepost' forum.pk %}">Delete</a>
+                    {% endif %}
+                    {% endif %}
+                    <p>{{ forum.date_added }}</p>
+                </small></h5>
+            <p class="small text muted">
+                {% if forum.author.profile.facebook %}
+                <a href="{{forum.author.profile.facebook}}" target="_blank">Facebook</a>
+                {% endif %}
+                {% if forum.author.profile.instagram %}
+                <a href="{{forum.author.profile.instagram}}" target="_blank">instagram</a>
+                {% endif %}
+                {% if forum.author.profile.spotify_artist %}
+                <a href="{{forum.author.profile.spotify_artist}}" target="_blank">Spotify</a>
+                {% endif %}
+                {% if forum.author.profile.soundcloud %}
+                <a href="{{forum.author.profile.soundcloud}}" target="_blank">Soundcloud</a>
+                {% endif %}
+                {% if forum.author.profile.mixcloud %}
+                <a href="{{forum.author.profile.mixcloud}}" target="_blank">Mixcloud</a>
+                {% endif %}
+                {% if forum.author.profile.youtube %}
+                <a href="{{forum.author.profile.youtube}}" target="_blank">Youtube</a>
+                {% endif %}
+            </p>
+            <br /><br />
+            <div>
+                <form method="POST" action="{% url 'lodgetalk' %}">
+                    {% csrf_token %}
+                    <button id="comment_btn" class="btn btn-outline-warning">Comment</button>
+                </form>
+                <br /><br />
+                <br /><br />
+                <h4 class="small muted">Comments:</h4>
+            </div>
+            {% for discuss in discussions %}
+            {% for objs in discuss %}
+            {% if objs.forum == forum %}
+            {{ objs.date_added }} <strong> {{ objs.discuss }}</strong> by: {{ objs.user }}
+            <br>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+        </div>
     </div>
-    {% for discuss in discussions %}
-    {% for objs in discuss %}
-    {% if objs.forum == forum %}
-    {{ objs.date_added }} <strong> {{ objs.discuss }}</strong>   by: {{ objs.user }}
-    <br>
-    {% endif %}
     {% endfor %}
-    {% endfor %}
-</div>
-</div>
-{% endfor %}
 </div>
 {% endblock %}
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

@@ -5,10 +5,9 @@
 {% block update_post %}
 
 
-<div class="mb-3 row" >
+<div class="mb-3 row">
     <div class="col-md-6">
         <h2>Update Post...</h2>
-        <h4 class="small">Edit this Post</h4>
         <form class="form-control" id="forum_form" rows="3" action="{% url 'addinlodge' %}" method="POST">
             <article class="media content-section">
                 <div class="media-body">
@@ -17,7 +16,7 @@
                 </div>
             </article>
             {% csrf_token %}
-            {{form.media}} 
+            {{form.media}}
             {{form.as_p}}
             <input type="submit" class="btn btn-success" value="Update">
         </form>
@@ -29,5 +28,4 @@
     </div>
 </div>
 </div>
-
 {%endblock%}

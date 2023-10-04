@@ -1,13 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
-
-
-<!-- Results container  -->
-
 {% block spotipy %}
 <!-- Spotipy Search  -->
-<!-- Search Bar -->
 <div class="buscar-caja">
     <input type="text" name="tempo" id="search-text" class="buscar-txt" placeholder="Track search.....">
     <a class="buscar-btn" id="search_button"> <i class="fa fa-search"></i> </a>
@@ -45,10 +40,10 @@
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
 
-<!-- Loading our JavaScript for SPOTIPY -->
+<!-- Loading JavaScript for SPOTIPY -->
 <script src="{% static 'script.js' %}" charset="utf-8"></script>
 
-<!-- JavaScript to search Track with enter button -->
+<!-- Custom JavaScript to search Track with enter button -->
 <script>
     var input = document.getElementById("search-text");
     input.addEventListener("keyup", function (event) {

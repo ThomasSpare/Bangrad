@@ -2,7 +2,7 @@
 $(document).ready(function () {
     // Helper Function to Extract Access Token for URL
     const getUrlParameter = (sParam) => {
-        let sPageURL = window.location.search.substring(1), ////substring will take everything after the https link and split the #/&
+        let sPageURL = window.location.search.substring(1),
             sURLVariables =
                 sPageURL != undefined && sPageURL.length > 0 ? sPageURL.split("#") : [],
             sParameterName,
@@ -22,7 +22,6 @@ $(document).ready(function () {
             }
         }
     };
-
     // Get Access Token
     const accessToken = getUrlParameter("access_token");
 
@@ -32,13 +31,11 @@ $(document).ready(function () {
 
     let redirect_uri = "https%3A%2F%2Fbangrad.herokuapp.com";
 
-
     const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}`;
     // Don't authorize if we have an access token already
     if (accessToken == null || accessToken == "" || accessToken == undefined) {
         window.location.replace(redirect);
     }
-
     // Search button has been clicked
     $("#search_button").click(function () {
         //Get the value of the search box
@@ -51,7 +48,6 @@ $(document).ready(function () {
             type: "GET",
             headers: {
                 Authorization: "Bearer " + accessToken,
-
             },
             success: function (data) {
                 // Load our songs from Spotify into our page

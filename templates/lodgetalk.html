@@ -11,17 +11,17 @@
     </div>
     <script>
         ClassicEditor
-            .create( document.querySelector( '#editor' ) )
-            .catch( error => {
-                console.error( error );
-            } );
-    </script> 
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
     {{form.as_p}}
     <input type="submit" class="btn btn-info" value="submit">
 </form>
 {%endblock%}
 {% else %}
-    <a class="nav-item nav-link" href="{% url 'account_login' %}">Login</a>
+<a class="nav-item nav-link" href="{% url 'account_login' %}">Login</a>
 
-    <a class="nav-item nav-link" href="{% url 'account_signup' %}">Register</a>
+<a class="nav-item nav-link" href="{% url 'account_signup' %}">Register</a>
 {% endif %}

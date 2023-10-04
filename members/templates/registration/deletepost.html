@@ -5,7 +5,7 @@
 {% block deletepost %}
 
 
-<div class="mb-3 row" >
+<div class="mb-3 row">
     <div class="col-md-6">
         {% if user.is_authenticated %}
         <h2>Delete Post...</h2>
@@ -13,7 +13,7 @@
         <form class="form-group" id="forum_form" rows="3" action="{% url 'addinlodge' %}" method="POST"></form>
         <form method="POST">
             {% csrf_token %}
-            <strong>Are you sure ?!</strong><br/>
+            <strong>Are you sure ?!</strong><br />
             <button class="btn btn-success">Delete Forum !</button>
         </form>
         {% else %}
