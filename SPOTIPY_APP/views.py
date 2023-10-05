@@ -72,7 +72,7 @@ def AddInLodge(request):
     """ 
     Adds new posts in forum
     """
-    moel = LodgeForum
+    model = LodgeForum
     if request.method == 'POST':
         form = CreateInForum(request.POST)
         if form.is_valid():
@@ -100,12 +100,14 @@ def LodgeTalk(request):
         form = CreateInDiscussion(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, 'lodge.html')
+            return render(request, 'lodgetalk.html')
     context = {'form': form}
     return render(request, 'lodgetalk.html', context)
-    def form_valid(self, form):     # makes active user id available
-        form.instance.user = self.request.user
-        return super().form_valid(form)
+
+
+def form_valid(self, form):     # makes active user id available
+    form.instance.user = self.request.user
+    return super().form_valid(form)
 
 
 def register(request):

@@ -59,7 +59,7 @@ class Discussion(models.Model):
         return str(self.forum)
     
     def get_absolute_url(self):
-        return reverse('lodge')
+        return reverse('lodgetalk')
 
 
 # Model to create user profile
@@ -68,7 +68,6 @@ class Profile(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
     bio = models.TextField(null=True)
     image = models.ImageField(null=True, upload_to='profile_pics')
-    # profile_pic = models.ImageField(null=True, upload_to='profile_pics')
     first_name = models.CharField(blank=True, max_length=50)
     last_name = models.CharField(blank=True, max_length=50)
     email = models.EmailField(max_length=100, null=True, blank=True)

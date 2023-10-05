@@ -71,7 +71,7 @@
             {% for discuss in discussions %}
             {% for objs in discuss %}
             {% if objs.forum == forum %}
-            {{ objs.date_added }} <strong> {{ objs.discuss }}</strong> by: {{ objs.user }}
+            {{ objs.date_added }} <strong> {{ objs.discuss }}</strong> by: {{ objs.name }}
             <br>
             {% endif %}
             {% endfor %}

@@ -6,16 +6,6 @@
 <form action="{% url 'lodgetalk' %}" method="POST">
     {% csrf_token %}
     {{form.media}}
-    <div id="editor">
-        <p>This is some sample content.</p>
-    </div>
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#editor'))
-            .catch(error => {
-                console.error(error);
-            });
-    </script>
     {{form.as_p}}
     <input type="submit" class="btn btn-info" value="submit">
 </form>
