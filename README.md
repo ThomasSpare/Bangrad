@@ -28,10 +28,6 @@ forum author in the forums.
 The forum is where users can meet and exchange artists and music they've discovered and share links and create posts.
 All registered users can also comment in the forums. 
 
-### CKEDITOR
-
-In the forum the users have a many choices for how they like their posts to look. With ckeditor in the form the user can insert
-images from img links and a whole lot of styling to make the post and the forum more interesting and engaging.
 
 ### Memberlist
 
@@ -221,6 +217,13 @@ NOTE: For initial deployment DISABLE_COLLECTSTATIC was also added
 The profile page could have more features such as a folder system where the user could save
 lists of music in different categories or collections. The users could then grant access to these folders or 
 share them with other user in the forum.
+
+### CKEDITOR
+
+Unfortunatly I could not make ckeditor to function in a production state. It only worked in the development stage.
+After deployment the STATIC path was mixed up so the editor could not run properly. I have tried several solution 
+and managed to have it up ones in production. The posts in the forum were made using ckeditor. 
+In the forum the users have a many choices for how they like their posts to look. With ckeditor in the form the user can insert images from img links and a whole lot of styling to make the post and the forum more interesting and engaging.
 
 ## Advanced Search
 Add advanced search query functionality to the spotipy endpoint. The endpoint in script.js

@@ -87,3 +87,5 @@
 <details><summary>Screenshot of Lighthouse TEST</summary>
 <img src="TESTING/screenshots/lighthouseTEST.png" >
 </details>
+
+
