@@ -12,7 +12,7 @@ from django.forms import ModelForm
 from django.views.generic.edit import CreateView
 from django.views.generic import UpdateView, DetailView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from SPOTIPY_APP.models import Profile, Discussion, LodgeForum, forms, User, CloudinaryField, BangradSearchFields
+from SPOTIPY_APP.models import Profile, Discussion, LodgeForum, forms, User, CloudinaryField
 from django.contrib.auth.decorators import login_required
 from .forms import ProfileUpdateForm, UserRegisterForm, UserCreationForm, UserUpdateForm, ProfilePageForm
 from django.contrib import messages

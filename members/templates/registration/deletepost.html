@@ -9,7 +9,6 @@
     <div class="col-md-6">
         {% if user.is_authenticated %}
         <h2>Delete Post...</h2>
-        <h3>Delete: {{ forum.title }}</h3>
         <form class="form-group" id="forum_form" rows="3" action="{% url 'addinlodge' %}" method="POST"></form>
         <form method="POST">
             {% csrf_token %}

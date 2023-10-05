@@ -120,7 +120,7 @@ body > div:nth-child(2){
 }
 .alert {
     margin-top: 20vh;
-    margin-left: 8vw;
+    margin-left: 0vw;
     --bs-alert-bg: transparent;
     --bs-alert-padding-x: 1rem;
     --bs-alert-padding-y: 1rem;
@@ -685,11 +685,7 @@ iframe {
             flex-wrap: wrap;
             margin: auto;
         }
-
-    #lodgecards{
-        width: !important45vw;
-    }
-
+        
     #midcol > div.buscar-caja{
         width: 40vw;
         margin-left: 7vw;

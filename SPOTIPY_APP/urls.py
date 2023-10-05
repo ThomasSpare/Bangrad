@@ -18,6 +18,3 @@ urlpatterns = [
     path('<int:pk>/edit_profile_page/', ProfileUpdateView.as_view(), name='edit_profile_page'),
     path('delete/<int:pk>/remove/', DeletePostView.as_view(), name='deletepost'),
     path('update/<int:pk>/', UpdatePostView.as_view(), name='update_post'),]
-# if settings.DEBUG:
-#     urlpatterns += static(settings.MEDIA_URL,
-#                           document_root=settings.MEDIA_ROOT)

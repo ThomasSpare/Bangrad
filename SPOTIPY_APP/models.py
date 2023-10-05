@@ -59,7 +59,7 @@ class Discussion(models.Model):
         return str(self.forum)
     
     def get_absolute_url(self):
-        return reverse('lodgetalk')
+        return reverse('lodge')
 
 
 # Model to create user profile
