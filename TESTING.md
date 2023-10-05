@@ -4,8 +4,10 @@
 
 1. [Device Testing](#device-testing)
 2. [Manual Testing](#manual-testing-of-user-stories)
-3. [Bugs](#bugs)
-4. [Unfixed Bugs](#unfixed-bugs)
+3. [Lighthouse](#lighthouse)
+4. [HTML Validator](#WC3-Validator)
+5. [CSS Validator](#JIGSAW-Validator)
+
 
 ### Device testing
 
@@ -22,7 +24,6 @@
     
   </details>
     - Not tested for Safari for laptop/ desktop
-  </details>
 - Also tested various device sizes using [Dev.tools](https://developer.chrome.com/docs/devtools/)
 
 ### Manual testing of user stories
@@ -69,7 +70,7 @@
 <img src="TESTING/screenshots/user_forum_author.jpg" >
 <img src="TESTING/screenshots/user_edit_forum.jpg" >
 <img src="TESTING/screenshots/delete_post.jpg" >
-
+</details>
 
 3. As a user I can share links, images, text, smileys in the forum so that other users can view, comment and them
 
@@ -81,3 +82,8 @@
 | User click on create post               | create post form appear                 | Work as expected  |
 | User can style post with ckeditor       | Ckeditor available in form              | Work as expected  |
 | User push submit                        | Create new post by the user as author   | Work as expected  |
+
+
+<details><summary>Screenshot of Lighthouse TEST</summary>
+<img src="TESTING/screenshots/lighthouseTEST.png" >
+</details>

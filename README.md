@@ -1,37 +1,55 @@
-# Bangrad radical music discovery
-The intent for creating the Bangrad site was to make a platform to make it easy and fun to share music.
-![Bangrad Home page](https://github.com/ThomasSpare/Bangrad/blob/bangrad2/images/home_page_cover.jpg)
-![Bangrad Home page](https://github.com/ThomasSpare/Bangrad/blob/bangrad2/images/home_page_cover2.jpg)
-## Features
+# Bangrad - Share the music
 
-### search queries
+Bangrad is a music sharing site where users can recommend music and connect with other users. A user can create a unique
+profile and find all other users on the site. The site has a forum where most of the activity is going on.
+The site is also wired up to the Spotify library from the home page so its possible to search for a track directly
+on the site, making it easy to copy the link from a track directly and paste in the forum. This is the whole idea
+of the forum, that users should share the music. The forum works so that to make a post you also has to post a link to
+some music. 
+
+![Bangrad Home page](https://res.cloudinary.com/djunroohl/image/upload/v1696541151/pfnlefttcxkyao51avfu.png)
+
+# Features
+
+### Track Search
 
 The spotify search field was from the start a feature intended to be used for users to use when posting in the forum. 
-From the spotify search results the users can copy the link for a particular track they want to share in the forum.
-The songs can be played from the site and opened in the spotify app if the user wants to get more info.  
+From the spotify search results the users can then copy the link for a particular track they want to share in the forum. 
+(if they press ... on the track a link will appear).
+The songs can be played from the site and opened in the spotify app if the user wants to get more info. 
 
 ### Profile Page
-Here the user can enter after succesfuly registering. The user can upload profile image and write a short bio. They can also
+Here the user can enter after succesfully registering. The user can upload profile image and write a short bio. They can also
 add links to personal social media and various other accounts and 2 websites. These links will also display under the
 forum author in the forums. 
 
-### The Lodge
+### The Forum
 
-The lodge is where users can meet and exchange artists they've discovered and share their links and saved lists.
-All registered users can comment in the forums. 
+The forum is where users can meet and exchange artists and music they've discovered and share links and create posts.
+All registered users can also comment in the forums. 
+
+### CKEDITOR
+
+In the forum the users have a many choices for how they like their posts to look. With ckeditor in the form the user can insert
+images from img links and a whole lot of styling to make the post and the forum more interesting and engaging.
+
+### Memberlist
+
+If the user is registered the members tab is visible in the navbar. If the user navigates to members, all registered users on the site
+will be listed and the user can then access any users profilepage to learn more about them by clicking on each member.
+
 
 # DEBUGGING AND TECHNICAL ISSUES
 
-This project had a bad turn in the end as I had to delete my whole user registration folder called 'users'
-as this was causing a major conflict and caused errors I could not correct. This error stopped the project
-completely and I had to revert to using allauth templates in the last days before submission.
-The user could not register, the forum did not work anymore nor did the profile page. 
+I had some difficulty getting ckeditor to work after deployment to heroku. In development it worked just fine
+when making forum posts but when deployed it would not show up in the body field of the forum form.
+I believe the source to this was that ckeditor somehow ended up in STATICFILES storage instead of the ordinary STATIC
+storage after deployment.
+## Solution:
+I installed whitenoise and did the recommended changes in setting.py together with a script for ckeditor in the addinlodge 
+template to solve this issue (I found this script from reading the ckeditor docs )
+https://ckeditor.com/docs/ckeditor5/latest/installation/getting-started/quick-start-other.html#running-the-editor-2
 
-![Error 1](https://github.com/ThomasSpare/Bangrad/blob/bangrad2/images/save%20%20force%20argument%20probably%20todo%20with%20the%20username%20issue%20in%20users-%20views.jpg)
-
-I also had to reset my databases several times during the build.
-
-![Database reset](https://github.com/ThomasSpare/Bangrad/blob/bangrad2/images/last%20error.jpg)
 
 
 ## Code Sources
@@ -53,9 +71,10 @@ The user has to register in order to access the forum.
 # THE SPOTIPY API
 
 I managed to have the spotipy api working on the site. The user will be prompted when entering the site to authorize
-his/her spotify account. I had the credentials and secret keys stored in the env.py but could not link these up to the API.
+his/her spotify account, this will happen each time the users navigates to the home page. The credentials and secret keys 
+are stored in the env.py.
 So when having been authorized the user can search in the round search field and hit enter. The results will be collected in
-rows beneath. The thought was that the user could then copy the links directly in the results and add in forums to recommend 
+rows beneath. The idea was that the user could then copy the links directly in the results and add in forums to recommend 
 new finds and favorite artists.
 
 As I wanted to integrate the Spotipy API I followed this simple method to use a sript.js file in the Static folder
@@ -79,13 +98,6 @@ https%3A%2F%2Fbangrad.herokuapp.com
 
 # DEPLOYMENT
 
-# Debugging
-1. Ckeditor not working after deployment to Heroku
-The ability to style the posts in the form is not possible after deployment to Heroku.
-Source of this error: Unkown 
-
-## Deployment
-
 ###  Creating Database using ElephantSQL
 
 1. To generate a managed PostgreSQL database, please proceed to [ElephantSQL](https://customer.elephantsql.com/) and either sign up or sign in to your account. Once you've logged in, click on the 'Create New Instance' button.
@@ -103,7 +115,6 @@ Source of this error: Unkown
   2. Procfile : Very important for deployment and must be added with capital P
   
   3. Requirements.txt: This must be updated for deployment in Heroku. It stores data of libraries used for project
-
 
 - The website was deployed to Heroko using following steps:
 
@@ -149,7 +160,7 @@ NOTE: For initial deployment DISABLE_COLLECTSTATIC was also added
 ##### Automatic and Manual deploy
 
 - Choose a method to deploy
-- After Deploy is clicked it will install various file
+- After Deploy is clicked it will install various files
 
 
 ##### Initial Deployment
@@ -196,26 +207,25 @@ NOTE: For initial deployment DISABLE_COLLECTSTATIC was also added
 - As a user I can Search for music
 - As a user I can post links from searches in the forums
 - As a user I can posts comments on threads in the forum
-- As a user I can create a profile and edit it (does not work)
+- As a user I can create a profile and edit it
 - As an admin I can create, edit and delete user from the admin panel
 - As an admin I can delete comments in the forum
 - As an admin I can delete threads in the forum
-- As an admin i can see information about the users in the admin panel
+- As an admin I can see information about the users in the admin panel
 
 
 # FUTURE IMPROVEMENTS
 
-In the user profile page the user could be able to create more advanced setups. For
-instance be able to create folders, name these and fill these with links to music they want to store.
-They could then grant access to these fodlers or share them with other user in the forum.
+## Profile Collections
 
-Desgin of forum and overall site could be better. As I didnt have the time to properly go through the layout of the forum.
+The profile page could have more features such as a folder system where the user could save
+lists of music in different categories or collections. The users could then grant access to these folders or 
+share them with other user in the forum.
 
+## Advanced Search
 Add advanced search query functionality to the spotipy endpoint. The endpoint in script.js
 can be changed to search for more specific information for music such as tempo, musical keys, danceabilty, popularity, language, 
-locations and much more.
-
-The spotify credentials should be linked up so that the user dont need to grant the site permission every time.
+locations and much more. Using spotify credentials as tokens for longer periods is also possible.
 
 
 # Special thanks
