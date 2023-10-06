@@ -4,9 +4,9 @@
 
 1. [Device Testing](#device-testing)
 2. [Manual Testing](#manual-testing-of-user-stories)
-3. [Lighthouse](#lighthouse)
-4. [HTML Validator](#WC3-Validator)
-5. [CSS Validator](#JIGSAW-Validator)
+3. [Lighthouse](#lighthouse-test)
+4. [HTML Validator](#html-test)
+5. [CSS Validator](#jigsaw)
 
 
 ### Device testing
@@ -83,9 +83,26 @@
 | User can style post with ckeditor       | Ckeditor available in form              | Work as expected  |
 | User push submit                        | Create new post by the user as author   | Work as expected  |
 
-
+### LIGHTHOUSE Test
 <details><summary>Screenshot of Lighthouse TEST</summary>
 <img src="TESTING/screenshots/lighthouseTEST.png" >
 </details>
+
+### HTML Test
+- W3C Validator shows errors related to use of ckeditor
+- MIME error as I understand it has to do with file path errors 
+<details><summary>Screenshot of HTML TEST</summary>
+<img src="TESTING/screenshots/HTMLTest.png" >
+</details>
+
+### JIGSAW
+- Jigsaw test shows 19 errors related to bootstrap CDN
+<details><summary>Screenshot of HTML TEST</summary>
+<img src="TESTING/screenshots/JIGSAWTest.png" >
+</details>
+
+
+
+
 
 

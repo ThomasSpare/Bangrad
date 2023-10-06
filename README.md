@@ -37,31 +37,22 @@ will be listed and the user can then access any users profilepage to learn more 
 
 # DEBUGGING AND TECHNICAL ISSUES
 
-I had some difficulty getting ckeditor to work after deployment to heroku. In development it worked just fine
+I had difficulty getting ckeditor to work after deployment to heroku. In development it worked just fine
 when making forum posts but when deployed it would not show up in the body field of the forum form.
 I believe the source to this was that ckeditor somehow ended up in STATICFILES storage instead of the ordinary STATIC
 storage after deployment.
-## Solution:
+## unfixed bug:
 I installed whitenoise and did the recommended changes in setting.py together with a script for ckeditor in the addinlodge 
 template to solve this issue (I found this script from reading the ckeditor docs )
 https://ckeditor.com/docs/ckeditor5/latest/installation/getting-started/quick-start-other.html#running-the-editor-2
-
+However as much as I wanted it to work the path would not work.
 
 
 ## Code Sources
 I started building the user registraion from the start using this guide.
 https://www.devhandbook.com/django/user-registration/
-
-
-
-
-
-
-A frequent error also I had was when I logged in and tried entering the profile page I received
-this error message.
-
-The lodge is where users can meet and exchange artists they've discovered and share links to music.
-The user has to register in order to access the forum. 
+I have also learned alot from John Elder and his youtube videos on Django
+https://www.youtube.com/watch?v=B40bteAMM_M
 
 
 # THE SPOTIPY API
