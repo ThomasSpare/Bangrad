@@ -5,9 +5,9 @@ from django.forms import MultiWidget, Textarea
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.contrib.auth.models import User
-from ckeditor.widgets import CKEditorWidget
 from django import forms
 from .models import LodgeForum
+from ckeditor.widgets import CKEditorWidget
 
 
 class CreateInForum(forms.ModelForm):
@@ -19,7 +19,7 @@ class CreateInForum(forms.ModelForm):
         super(CreateInForum, self).__init__(*args, **kwargs)
         self.fields['topic'].widget.attrs = {'class': 'form-control'}
         self.fields['description'].widget.attrs = {'class': 'form-control'}
-        self.fields['body'].widget.attrs = {'class': 'CKEditorWidget', 'rows': 4}
+        body = forms.CharField(widget=CKEditorWidget())
         self.fields['link'].widget.attrs = {'class': 'form-control'}
     
     def clean_link(self):                       # Validates if the user link provided
@@ -42,4 +42,5 @@ class CreateInDiscussion(forms.ModelForm):
 
             self.fields['forum'].widget.attrs={'class': 'form-control'}
             self.fields['name'].widget.attrs={'class': 'form-control'}
-            self.fields['discuss'].widget.attrs={'class': 'CKEditorWidget'}
+            discuss = forms.CharField(widget=CKEditorWidget())
+

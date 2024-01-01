@@ -51,7 +51,7 @@ class Discussion(models.Model):
     body = RichTextField(blank=True, null=True)
     name = models.CharField(max_length=255)
     body = models.TextField()
-    discuss = models.CharField(max_length=1000)
+    discuss = RichTextField(max_length=100)
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
