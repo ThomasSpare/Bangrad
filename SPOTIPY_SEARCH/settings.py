@@ -39,6 +39,7 @@ ALLOWED_HOSTS = ["bangrad.herokuapp.com",
 
 INSTALLED_APPS = [
     'ckeditor',
+    'ckeditor_uploader',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -129,8 +130,27 @@ USE_L10N = True
 USE_TZ = True
 
 
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 CKEDITOR_BASEPATH = "static/ckeditor/ckeditor/"
+
+CKEDITOR_CONFIGS = {
+    'awesome_ckeditor': {
+        'toolbar': 'Basic',
+    },
+}
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
+        ]
+    }
+}
 
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
@@ -138,7 +158,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 CLOUDINARY_STORAGE = {
@@ -149,17 +169,6 @@ CLOUDINARY_STORAGE = {
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFTETIME': timedelta(minutes=30),
-}
-
-CKEDITOR_CONFIGS = {
-    'default': {
-        'skin': 'moono',
-        'toolbar': 'basic',
-        'height': 'full',
-        'width': 'full',
-        'removePlugins': 'exportpdf',
-        'toolbarCanCollapse': 'true'
-    },
 }
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
