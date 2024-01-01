@@ -11,7 +11,6 @@ from ckeditor.fields import RichTextField
 from django.urls import reverse
 from django.utils import timezone
 
-
 # Unused future extended Search functionality for spotify
 class BangradSearchFields(models.Model):
     body = RichTextField(blank=True, null=True)
