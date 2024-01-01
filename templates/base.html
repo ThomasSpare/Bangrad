@@ -1,4 +1,10 @@
 {% load static %}
+
+{% block extrahead %}
+<script>window.CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/';</script>
+{{ block.super }}
+{% endblock %}
+
 {% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html class="h-100" lang="en">
