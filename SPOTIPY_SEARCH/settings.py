@@ -130,7 +130,7 @@ USE_TZ = True
 
 
 
-CKEDITOR_BASEPATH = "/ckeditor/ckeditor/"
+CKEDITOR_BASEPATH = "static/ckeditor/ckeditor/"
 
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
