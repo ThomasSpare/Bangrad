@@ -145,7 +145,7 @@ CLOUDINARY_STORAGE = {
    'API_KEY': os.environ.get('API_KEY'),
    'API_SECRET': os.environ.get('API_SECRET'),
 }
-STATICFILES_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFTETIME': timedelta(minutes=30),
