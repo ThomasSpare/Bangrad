@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'SPOTIPY_APP',
     'SPOTIPY_SEARCH',
     'spotipy',
+    'whitenoise',
 ]
 
 SITE_ID = 1
@@ -67,6 +68,7 @@ LOGOUT_REDIRECT_URL = '/home/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
