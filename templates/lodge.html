@@ -25,9 +25,13 @@
         <div class="card-body container" id="lodgecards">
             <strong>Subject: {{ forum.description }}</strong>
             <br /><br />
-
+            {% if forum.author.profile.image %}
             <img class="rounded-circle account-img" style="height: 50px; width: 50px;"
                 src="{{forum.author.profile.image.url}}" alt="author_picture">
+            {% else %}
+            <img class="rounded-circle account-img" style="height: 50px; width: 50px;"
+                src="https://res.cloudinary.com/djunroohl/image/upload/v1691507833/sxnum1e7ukkawgek6rgo.png" alt="bangrad_default_user_picture">
+            {% endif %}
             <h5 class="card-title"> By: <strong><a href="{% url 'user_profile' forum.author %}" target="_blank">
                 {{ forum.author }}</a></strong> - <small>
                     {% if user.is_authenticated %}
