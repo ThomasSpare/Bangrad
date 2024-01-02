@@ -29,7 +29,7 @@ SPOTIPY_CLIENT_SECRET = os.environ.get('SPOTIPY_CLIENT_SECRET')
 SPOTIPY_CLIENT_ID = os.environ.get('SPOTIPY_CLIENT_ID')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ["bangrad.herokuapp.com",
@@ -40,7 +40,6 @@ ALLOWED_HOSTS = ["bangrad.herokuapp.com",
 INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
-    'simple_deploy',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
