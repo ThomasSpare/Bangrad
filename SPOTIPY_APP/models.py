@@ -25,6 +25,20 @@ class BangradSearchFields(models.Model):
 
 # Lodge parent model to create new posts in forum
 class LodgeForum(models.Model):
+    """
+    Represents a lodge forum post.
+
+    Attributes:
+        name (str): The name of the lodge forum post (default: 'anonymous').
+        body (str): The body of the lodge forum post (optional).
+        topic (str): The topic of the lodge forum post.
+        description (str): The description of the lodge forum post (optional).
+        link (str): The link associated with the lodge forum post (optional).
+        image (ImageField): The image associated with the lodge forum post (optional).
+        author (ForeignKey): The author of the lodge forum post.
+        date_added (DateTimeField): The date and time when the lodge forum post was added.
+    """
+
     name = models.CharField(max_length=200, default='anonymous')
     body = RichTextField(blank=True, null=True)
     topic = models.CharField(max_length=300)

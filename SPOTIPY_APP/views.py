@@ -4,6 +4,7 @@ from django.views.generic.base import View
 from django.views.generic.list import ListView
 from django.views import generic
 from django.forms import ModelForm
+from members.forms import UserRegisterForm
 from django.contrib.auth.models import User
 from django.views.generic.edit import CreateView
 from django.views.generic import UpdateView, DetailView, DeleteView
@@ -107,7 +108,7 @@ def LodgeTalk(request):
 
 def form_valid(self, form):     # makes active user id available
     form.instance.user = self.request.user
-    return super().form_valid(form)
+    return super(UpdatePostView, self).form_valid(form)
 
 
 def register(request):
@@ -131,7 +132,7 @@ def delete_post(request, id):
     """ 
     delete a users posts in forum
     """
-    post = get_object_or_404(Post, pk=id)
+    post = get_object_or_404(LodgeForum, pk=id)
     context = {'post': post}    
     
     if request.method == 'GET':

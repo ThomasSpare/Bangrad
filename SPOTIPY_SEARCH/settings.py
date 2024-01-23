@@ -10,6 +10,10 @@ from spotipy.oauth2 import SpotifyClientCredentials
 import dj_database_url
 if os.path.isfile("env.py"):
     import env
+import spotipy
+from spotipy.oauth2 import SpotifyClientCredentials
+import dj_database_url
+import env
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,12 +33,25 @@ SPOTIPY_CLIENT_SECRET = os.environ.get('SPOTIPY_CLIENT_SECRET')
 SPOTIPY_CLIENT_ID = os.environ.get('SPOTIPY_CLIENT_ID')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ["bangrad.herokuapp.com",
-                "*",
-                "localhost"]
+ALLOWED_HOSTS = ["https://bangrad.herokuapp.com",
+                "localhost",
+                "127.0.0.1",
+                "[::1]",
+                ]
+
+CSRF_TRUSTED_ORIGINS = [
+                    "localhost",
+                    "127.0.0.1",
+                    "[::1]",
+                    "https://bangrad.herokuapp.com",
+                    ]
+
+CORS_ALLOW_ALL_HEADERS = True
+
+CORS_ALLOW_CREDENTIALS = True
 
 
 INSTALLED_APPS = [
@@ -86,9 +103,9 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.request',
                 'django.template.context_processors.media',
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
